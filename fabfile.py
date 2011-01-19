@@ -5,6 +5,7 @@ from fabric.api import *
 """
 Base configuration
 """
+env.disable_known_hosts = True
 env.project_name = 'gulu'
 env.database_password = 'PrtPA4KV4E'
 env.site_media_prefix = "static"
@@ -14,7 +15,7 @@ env.env_path = '%(path)s/env' % env
 env.repo_path = '%(path)s/repository' % env
 env.apache_config_path = '/home/gulu/sites/apache/%(project_name)s' % env
 env.python = 'python2.6'
-env.repository_url = "git@git.example.com:example/project_name.git"
+env.repository_url = "git@github.com:gcapital/gulu_landing.git"
 env.multi_server = False
 env.memcached_server_address = "cache.example.com"
 
@@ -35,7 +36,7 @@ def staging():
     Work on staging environment
     """
     env.settings = 'staging'
-    env.hosts = ['ec2-175-41-151-227.ap-southeast-1.compute.amazonaws.com'] 
+    env.hosts = ['beta.gulu.com'] 
     env.user = 'gulu'
     env.s3_bucket = 'media-beta.gulu.com'
     
@@ -103,7 +104,7 @@ def clone_repo():
     """
     Do initial clone of the git repository.
     """
-    run('git clone %(repository_url)s %(repo_path)s' % env)
+    run('git clone -q %(repository_url)s %(repo_path)s' % env)
 
 def checkout_latest():
     """

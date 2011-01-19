@@ -1,5 +1,5 @@
 <VirtualHost *:80>
-    ServerName ec2-175-41-151-227.ap-southeast-1.compute.amazonaws.com
+    ServerName beta.gulu.com
     
     Redirect permanent /favicon.ico http://media-beta.gulu.com/static/favicon.ico
     

@@ -9,7 +9,7 @@ TEMPLATE_DEBUG = DEBUG
 MEDIA_URL = 'http://media-beta.gulu.com'
 
 # Predefined domain
-MY_SITE_DOMAIN = 'ec2-175-41-151-227.ap-southeast-1.compute.amazonaws.com'
+MY_SITE_DOMAIN = 'beta.gulu.com'
 
 # Email
 #EMAIL_HOST = 'mail.ec2-122-248-196-115.ap-southeast-1.compute.amazonaws.com'
