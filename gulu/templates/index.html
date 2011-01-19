@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +14,7 @@
     	<span class="gradient_top"></span>
     	<div>
 	    	<div class="newsletter_banner cf">
-	    		<div class="banner_content">
+	    		<div class="banner_content cf">
 		    		<div class="gulu_icon fleft">
 		    			<img src="{{ MEDIA_URL }}images/img_logo4.png" />
 		    		</div>
@@ -21,15 +22,16 @@
 			    		<div class="url_title">
 			    			gulu.com 
 			    		</div>
-			    		<div class="">
-			    			gulu beta version will online next month,<br> 
-			    			there will be many amazing features! <br>
-			    			Signup your data to get the latest news!
+			    		<div class="cf">
+			    			{% trans "gulu beta version will online next month, there will be many<br>  
+			    			amazing features! Signup your data to get the latest news!" %}
 			    		</div>
 			    	</div>
-		    		<div class="fb_icon fright"></div>
-		    		<div class="fb_like_btn fright">
-						<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgulu.com&amp;layout=button_count&amp;show_faces=false&amp;width=200&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:200px; height:21px;" allowTransparency="true"></iframe>
+			    	<div class="cf">
+		    			<div class="fb_icon fright"></div>
+		    			<div class="fb_like_btn fright cf" style="left: 80px;">
+							<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgulu.com&amp;layout=button_count&amp;show_faces=false&amp;width=200&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
+						</div>
 					</div>
 	    		</div>
 	    	</div>
@@ -47,7 +49,7 @@
 	    	</div>
     	</div>
     	<div class="newsletter_form cf">
-    		<form class="fright form {% if form.is_valid %}display_none{% else %}{% endif %}" method="post">
+    		<form class="fright form {% if form.is_valid %}display_none{% else %}{% endif %}" method="POST">
             	{% csrf_token %}
                 <div class="fright cf">{{ form.username.errors }}<br>
                 	<div class="label_username fleft"></div>
@@ -65,13 +67,15 @@
             	
             </form>
             <div class="fright msg {% if form.is_valid %}{% else %}display_none{% endif %}">
-                <p>
-                	您的電子郵件已登錄成功！
+                <p style="font-size: 30px;">
+                	{% trans "Registration successful!" %}
                 </p>
             </div>
     	</div>
     	<div class="copyright">
-    		© 2011, Genie Capital, All Rights Reserved
+    		{% trans "© 2011, Genie Capital, All Rights Reserved" %}
+    		<br> {{msg}}
+    
     	</div>
         <a class="logo" href="http://gulu.com"><img src="{{ MEDIA_URL }}images/img_logo3.png"></a>
         <div class="newsletter_note"></div>
