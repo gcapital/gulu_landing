@@ -12,8 +12,8 @@ MEDIA_URL = 'http://media-beta.gulu.com/static/'
 MY_SITE_DOMAIN = 'beta.gulu.com'
 
 # Email
-#EMAIL_HOST = 'mail.ec2-122-248-196-115.ap-southeast-1.compute.amazonaws.com'
-#EMAIL_PORT = 25
+EMAIL_HOST = 'localhost'
+SERVER_EMAIL = 'do.not.reply@beta.gulu.com'
 
 # Caching
 CACHE_BACKEND = 'memcached://127.0.0.1:11211/'

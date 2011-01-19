@@ -79,8 +79,8 @@ def setup():
     checkout_latest()
     destroy_database()
     create_database()
-    load_data()
     install_requirements()
+    load_data()
     install_apache_conf()
 
 def setup_directories():
@@ -246,7 +246,7 @@ def load_data():
     """
     Loads data from the repository into PostgreSQL.
     """
-    run('%(path)s/repository/manage syncdb --no-input' % env)
+    run('source %(env_path)s/bin/activate; cd %(path)s/repository; ./manage syncdb --noinput' % env)
     #south migration
     #run('psql -q %(project_name)s < %(path)s/repository/data/psql/dump.sql' % env)
     #run('psql -q %(project_name)s < %(path)s/repository/data/psql/finish_init.sql' % env)
