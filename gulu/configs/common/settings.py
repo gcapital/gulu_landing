@@ -129,7 +129,7 @@ logging.basicConfig(
     level=logging.DEBUG,
 )
 
-MAILSNAKE_API_KEY = '2770d86d0d2ef3b5daf38b2749cd4304-us2'
+MAILSNAKE_API_KEY = '2770d86d0d2ef3b5daf38b2749cd43'#04-us2'
 
 
 # Allow for local (per-user) override

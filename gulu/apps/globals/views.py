@@ -1,5 +1,5 @@
 """ Gulu globals module views """
-bra
+
 import json
 import logging
 
