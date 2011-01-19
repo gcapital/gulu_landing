@@ -246,7 +246,7 @@ def load_data():
     """
     Loads data from the repository into PostgreSQL.
     """
-    run('cd %(path)s/repository; ./manage syncdb --no-input' % env)
+    run('source %(env_path)s/bin/activate; %(path)s/repository/manage syncdb --no-input' % env)
     #south migration
     #run('psql -q %(project_name)s < %(path)s/repository/data/psql/dump.sql' % env)
     #run('psql -q %(project_name)s < %(path)s/repository/data/psql/finish_init.sql' % env)
