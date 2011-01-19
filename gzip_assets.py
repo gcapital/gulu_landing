@@ -19,8 +19,8 @@ shutil.copytree(os.path.join(project_dir, 'assets'), os.path.join(project_dir, '
 
 for path, dirs, files in os.walk(os.path.join(project_dir, 'gzip/assets')):
     for filename in files:
-        if filename[-3:] in ['gif', 'png', 'jpg']:
-            continue
+        #if filename[-3:] in ['gif', 'png', 'jpg']:
+        #    continue
     
         file_path = os.path.join(path, filename)
         

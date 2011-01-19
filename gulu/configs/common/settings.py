@@ -88,7 +88,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
  )
 
 MIDDLEWARE_CLASSES = (
-    #'django.middleware.gzip.GZipMiddleware',
+    'django.middleware.gzip.GZipMiddleware',
     #'django.middleware.cache.UpdateCacheMiddleware',
     'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
