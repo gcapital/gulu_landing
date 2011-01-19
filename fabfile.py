@@ -79,8 +79,8 @@ def setup():
     checkout_latest()
     destroy_database()
     create_database()
-    load_data()
     install_requirements()
+    load_data()
     install_apache_conf()
 
 def setup_directories():
