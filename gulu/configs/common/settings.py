@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import logging
 import os
 
@@ -21,22 +23,38 @@ MANAGERS = ADMINS
 # Note: DATABASE_USER and DATABASE_PASSWORD are defined in the staging and
 # production settings.py files. For local use, either define them in
 # local_settings.py or ignore to use your local user.
-DATABASE_ENGINE = 'postgresql_psycopg2'
-DATABASE_HOST = 'localhost'
-DATABASE_PORT = '5432'
-DATABASE_NAME = 'gulu'
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'gulu', # Or path to database file if using sqlite3.#
+		'USER': 'gulu', # Not used with sqlite3.
+        'PASSWORD': 'PrtPA4KV4E', # Not used with sqlite3.
+        'HOST': '', # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '', # Set to empty string for default. Not used with sqlite3.
+    }
+}
 
 # Local time
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'Asia/Taipei'
 
 # Local language
 LANGUAGE_CODE = 'en-us'
+
+# Available languages
+LANGUAGES = (
+    ('en', u"English"),
+    ('jp', u"日本語"),
+	('tw', u"中文"),
+)
 
 # Site framework
 SITE_ID = 1
 
 # Internationalization
-USE_I18N = False
+USE_I18N = True
+
+# Localization
+USE_L10N = True
 
 # Absolute path to the directory that holds media.
 MEDIA_ROOT = os.path.join(SITE_ROOT, 'assets')
@@ -44,12 +62,12 @@ MEDIA_ROOT = os.path.join(SITE_ROOT, 'assets')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = 'http://localhost.local:8000/media/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
-ADMIN_MEDIA_PREFIX = '/media/'
+ADMIN_MEDIA_PREFIX = '/admin_media/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'g!@h6(n*45*u2(!2jhbrhc0o@%c249cf$ohz0gkhwr-o_eo&&)'
@@ -58,19 +76,26 @@ SECRET_KEY = 'g!@h6(n*45*u2(!2jhbrhc0o@%c249cf$ohz0gkhwr-o_eo&&)'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.load_template_source',
     'django.template.loaders.app_directories.load_template_source',
-    'django.template.loaders.eggs.load_template_source',
+#    'django.template.loaders.eggs.load_template_source',
 )
 
-TEMPLATE_CONTEXT_PROCESSORS = (
-)
+TEMPLATE_CONTEXT_PROCESSORS = ( 
+	'django.core.context_processors.request',
+	'django.core.context_processors.i18n',
+	'django.core.context_processors.debug',
+	'django.core.context_processors.media',
+	#'django.contrib.messages.context_processors.messages',
+ )
 
 MIDDLEWARE_CLASSES = (
     'django.middleware.gzip.GZipMiddleware',
     'django.middleware.cache.UpdateCacheMiddleware',
+    'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.cache.FetchFromCacheMiddleware',
 )
+
+APPEND_SLASH = True
 
 ROOT_URLCONF = 'gulu.configs.common.urls'
 
@@ -79,24 +104,20 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
-    'django.contrib.contenttypes',
-    'django.contrib.sites',
-    'django.contrib.admin',
-    'django.contrib.admindocs',
-    'django.contrib.humanize',
-    'django.contrib.gis',
-    'django.contrib.sitemaps',
+    #'django.contrib.contenttypes',
+    #'django.contrib.sites',
+    'globals',
 )
 
 # Predefined domain
-MY_SITE_DOMAIN = 'localhost:8000'
+MY_SITE_DOMAIN = 'localhost.local:8000'
 
 # Email
 # run "python -m smtpd -n -c DebuggingServer localhost:1025" to see outgoing
 # messages dumped to the terminal
-EMAIL_HOST = 'localhost'
-EMAIL_PORT = 1025
-DEFAULT_FROM_EMAIL = 'do.not.reply@ec2-175-41-161-6.ap-southeast-1.compute.amazonaws.com'
+#EMAIL_HOST = 'localhost'
+#EMAIL_PORT = 1025
+#DEFAULT_FROM_EMAIL = 'do.not.reply@ec2-175-41-161-6.ap-southeast-1.compute.amazonaws.com'
 
 # Caching
 CACHE_MIDDLEWARE_KEY_PREFIX='gulu'
@@ -108,8 +129,10 @@ logging.basicConfig(
     level=logging.DEBUG,
 )
 
+MAILSNAKE_API_KEY = '2770d86d0d2ef3b5daf38b2749cd4304-us2'
+
 # Allow for local (per-user) override
 try:
-    from local_settings import *
+    from settings_local import *
 except ImportError:
     pass

@@ -1,14 +1,12 @@
-from django.conf import settings
 from django.conf.urls.defaults import *
-from django.contrib import admin
+from django.conf import settings
 
-admin.autodiscover()
+# Customized Error pages
+#from globals import views
+#handler404 = views.newsletter
+#handler500 = views.newsletter
 
 urlpatterns = patterns('',
-    (r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    (r'^admin/(.*)', admin.site.root),
-    
-    (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {
-        'document_root': settings.MEDIA_ROOT
-    }),
+    url( r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True} ),  
+    url( r'^$', 'globals.views.home', name = "globals-home" ),
 )
