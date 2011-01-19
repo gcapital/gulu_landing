@@ -7,14 +7,14 @@ TEMPLATE_DEBUG = DEBUG
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = 'http://media.gulu.com'
+MEDIA_URL = 'http://media.gulu.com/static/'
 
 # Predefined domain
 MY_SITE_DOMAIN = 'gulu.com'
 
 # Email
-EMAIL_HOST = 'mail.gulu.com'
-EMAIL_PORT = 25
+#EMAIL_HOST = 'mail.gulu.com'
+#EMAIL_PORT = 25
 
 # Caching
 CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
