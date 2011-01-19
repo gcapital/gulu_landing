@@ -10,14 +10,22 @@ DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
 SITE_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 # Debugging
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@domain.com'),
+    ('Gulu', 'gulu@geniecapital.com.tw'),
 )
 
 MANAGERS = ADMINS
+
+# Email
+EMAIL_HOST = 'smtp.google.com'
+EMAIL_HOST_USER = 'gulu@geniecapital.com.tw'
+EMAIL_HOST_PASSWORD = '123456'
+EMAIL_PORT = 465
+EMAIL_USE_TLS = True
+SERVER_EMAIL = 'do.not.reply@gulu.com'
 
 # Database
 # Note: DATABASE_USER and DATABASE_PASSWORD are defined in the staging and
@@ -130,6 +138,7 @@ logging.basicConfig(
 )
 
 MAILSNAKE_API_KEY = '2770d86d0d2ef3b5daf38b2749cd4304-us2'
+
 
 # Allow for local (per-user) override
 try:
