@@ -19,14 +19,6 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-# Email
-EMAIL_HOST = 'smtp.google.com'
-EMAIL_HOST_USER = 'gulu@geniecapital.com.tw'
-EMAIL_HOST_PASSWORD = '123456'
-EMAIL_PORT = 465
-EMAIL_USE_TLS = True
-SERVER_EMAIL = 'do.not.reply@gulu.com'
-
 # Database
 # Note: DATABASE_USER and DATABASE_PASSWORD are defined in the staging and
 # production settings.py files. For local use, either define them in
