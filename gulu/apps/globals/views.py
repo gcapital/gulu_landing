@@ -7,6 +7,7 @@ from django import http
 from django.conf import settings
 from django.shortcuts import render_to_response
 from django.template import RequestContext, loader
+from django.utils.translation import ugettext as _
 from django.utils.translation.trans_real import parse_accept_lang_header
 
 from globals.forms import CreateNewsletterForm
@@ -27,7 +28,7 @@ def home(request):
 			if subscribed == True or subscribed['code'] == 214:
 				post.save()
 			else:
-				form._errors['username'] = form.error_class([u"Could not subscribe.  Please try again later."])
+				form._errors['username'] = form.error_class([_(u"Could not subscribe.  Please try again later.")])
 				logging.error("Subscription failed for %s: %s" % (post.email, subscribed['error']))
 	else:
 		form = CreateNewsletterForm()

@@ -43,8 +43,8 @@ LANGUAGE_CODE = 'en-us'
 # Available languages
 LANGUAGES = (
     ('en', u"English"),
-    ('jp', u"日本語"),
-	('tw', u"中文"),
+    ('ja', u"日本語"),
+	('zh-tw', u"中文"),
 )
 
 # Site framework
@@ -88,11 +88,11 @@ TEMPLATE_CONTEXT_PROCESSORS = (
  )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.gzip.GZipMiddleware',
-    'django.middleware.cache.UpdateCacheMiddleware',
+    #'django.middleware.gzip.GZipMiddleware',
+    #'django.middleware.cache.UpdateCacheMiddleware',
     'localeurl.middleware.LocaleURLMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.cache.FetchFromCacheMiddleware',
+    #'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 APPEND_SLASH = True

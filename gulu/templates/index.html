@@ -1,3 +1,4 @@
+{% load i18n %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,8 +23,8 @@
 			    			gulu.com 
 			    		</div>
 			    		<div class="cf">
-			    			gulu beta version will online next month, there will be many<br>  
-			    			amazing features! Signup your data to get the latest news!
+			    			{% trans "gulu beta version will online next month, there will be many<br>  
+			    			amazing features! Signup your data to get the latest news!" %}
 			    		</div>
 			    	</div>
 			    	<div class="cf">
@@ -67,12 +68,12 @@
             </form>
             <div class="fright msg {% if form.is_valid %}{% else %}display_none{% endif %}">
                 <p style="font-size: 30px;">
-                	Successful Registered！!
+                	{% trans "Registration successful!" %}
                 </p>
             </div>
     	</div>
     	<div class="copyright">
-    		© 2011, Genie Capital, All Rights Reserved
+    		{% trans "© 2011, Genie Capital, All Rights Reserved" %}
     		<br> {{msg}}
     
     	</div>
