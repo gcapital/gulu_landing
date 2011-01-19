@@ -1,0 +1,4 @@
+fabric==0.9.3
+Django==1.2.4
+psycopg2
+python-memcached
