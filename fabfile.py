@@ -230,7 +230,7 @@ def create_database(func=run):
     Creates the user and database for this project.
     """
     func('echo "CREATE USER %(project_name)s WITH PASSWORD \'%(database_password)s\';" | psql postgres' % env)
-    func('createdb -O %(project_name)s %(project_name)s -T template_postgis' % env)
+    func('createdb -O %(project_name)s %(project_name)s' % env)
     
 def destroy_database(func=run):
     """
@@ -246,7 +246,7 @@ def load_data():
     """
     Loads data from the repository into PostgreSQL.
     """
-    run('psql -q %(project_name)s < %(path)s/repository/data/psql/dump.sql' % env)
+    #run('psql -q %(project_name)s < %(path)s/repository/data/psql/dump.sql' % env)
     run('psql -q %(project_name)s < %(path)s/repository/data/psql/finish_init.sql' % env)
     
 def pgpool_down():
