@@ -1,5 +1,5 @@
 <VirtualHost *:80>
-    ServerName beta.gulu.com
+    ServerName ec2-175-41-151-227.ap-southeast-1.compute.amazonaws.com
 
     WSGIScriptAlias / /home/gulu/sites/gulu/repository/gulu/configs/staging/staging.wsgi
     

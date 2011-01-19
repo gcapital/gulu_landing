@@ -35,7 +35,7 @@ def staging():
     Work on staging environment
     """
     env.settings = 'staging'
-    env.hosts = ['beta.gulu.com'] 
+    env.hosts = ['ec2-175-41-151-227.ap-southeast-1.compute.amazonaws.com'] 
     env.user = 'gulu'
     env.s3_bucket = 'media-beta.gulu.com'
     
