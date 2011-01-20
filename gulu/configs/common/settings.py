@@ -38,7 +38,7 @@ DATABASES = {
 TIME_ZONE = 'Asia/Taipei'
 
 # Local language
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-tw'
 
 # Available languages
 LANGUAGES = (
@@ -46,6 +46,9 @@ LANGUAGES = (
     ('ja', u"日本語"),
 	('zh-tw', u"中文"),
 )
+
+# Use browser's accept language header
+LOCALEURL_USE_ACCEPT_LANGUAGE = True
 
 # Site framework
 SITE_ID = 1
