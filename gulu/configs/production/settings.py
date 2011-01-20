@@ -13,8 +13,8 @@ MEDIA_URL = 'http://media.gulu.com/static/'
 MY_SITE_DOMAIN = 'gulu.com'
 
 # Email
-#EMAIL_HOST = 'mail.gulu.com'
-#EMAIL_PORT = 25
+EMAIL_HOST = 'localhost'
+SERVER_EMAIL = 'do.not.reply@gulu.com'
 
 # Caching
 CACHE_BACKEND = 'memcached://127.0.0.1:11211/'
