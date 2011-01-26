@@ -32,7 +32,7 @@
     
     RewriteEngine on
     # canonical hostname
-    RewriteCond %{HTTP_HOST} !^gulu.com [NC] 
+    RewriteCond %{HTTP_HOST} !^www.gulu.com [NC] 
     RewriteRule ^/(.*)  http://www.gulu.com/$1 [L,R]
     
     RewriteCond %{REQUEST_URI} /maintenance.html$ 

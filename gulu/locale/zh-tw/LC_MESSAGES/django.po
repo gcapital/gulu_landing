@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-01-19 13:14+0800\n"
+"POT-Creation-Date: 2011-01-20 11:51+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,14 +17,20 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: apps/globals/views.py:31
+#: apps/globals/views.py:36
 msgid "Could not subscribe.  Please try again later."
 msgstr ""
 
-#: templates/index.html:71
+#: templates/index.html:26
+msgid ""
+"gulu beta version will online next month, there will be many<br> amazing "
+"features! Signup your data to get the latest news!"
+msgstr ""
+
+#: templates/index.html:70
 msgid "Registration successful!"
 msgstr ""
 
-#: templates/index.html:76
+#: templates/index.html:75
 msgid "© 2011, Genie Capital, All Rights Reserved"
 msgstr ""
