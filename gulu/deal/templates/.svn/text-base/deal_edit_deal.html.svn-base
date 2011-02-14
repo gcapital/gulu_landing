@@ -1,0 +1,162 @@
+{% extends "restaurant_base.html" %}
+
+{% block bodyclass %}deal_nav{% endblock %}
+
+{% load global_tags %}
+
+{% block content %}
+
+<div class="edit_deal tab_page_header">
+    <div class="title cf">
+        <h2 class="fleft">Edit Deal</h2>
+        <div class="fright operate cf">
+            <a class="btn3 fright"  href="{% slugurl restaurant deal-view-deal restaurant.id deal.id %}">Cancel</a>
+        </div>
+    </div>
+    <div class="sp_hr_line"></div>
+</div>
+
+<div class="deal_form">
+    <form class="cf" enctype="multipart/form-data" method="post" action="{% slugurl restaurant deal-add-deal restaurant.id %}">
+		{% csrf_token %}
+		{{ form.non_field_errors }}
+        <div class="title">
+            <label for="id_title">Title</label>
+            {{ form.title }}
+        </div>
+        <div class="error_msg">
+        	{{ form.title.errors }}
+        </div>
+        
+        <div class="sp_hr_line"></div>
+        
+        <div class="deal_benefit cf">
+            <h3>Deal Benefit</h3>
+            <div class="dish fleft">
+                <label for="id_dish">Dish</label>
+                {{ form.dish }}
+            </div>
+            <div class="type fleft">
+                <label for="id_type">type</label>
+                {{ form.type }}
+            </div>
+            <div class="amount fleft">
+                {{ form.amount }}
+                <label for="id_amount">% Off</label>
+            </div>
+        </div>
+        <div class="error_msg">
+        	{{ form.dish.errors }}
+        </div>
+        <div class="error_msg">
+        	{{ form.type.errors }}
+        </div>
+        <div class="error_msg">
+        	{{ form.amount.errors }}
+        </div>
+        
+        <div class="sp_hr_line"></div>
+        
+        <div class="deal_condition">
+            <h3>Deal Condition</h3>
+            <div class="people">
+            </div>
+            <div class="date">
+                <input type="hidden" id="id_start_datetime" name="start_datetime">
+                <input type="hidden" id="id_end_datetime" name="end_datetime">
+                <div class="start_datetime_picker"></div>~
+                <div class="end_datetime_picker"></div>
+            </div>
+            <div class="error_msg">
+				{{ form.start_datetime.errors }}
+			</div>
+			<div class="error_msg">
+				{{ form.end_datetime.errors }}
+			</div>
+            <div class="conditions">
+                {{ form.conditions }}
+            </div>
+            <div class="error_msg">
+				{{ form.conditions.errors }}
+			</div>
+            
+            <div class="tool_box">
+            	上傳圖片
+            	{{ form.cover }}
+            	<div id="btn_upload" class="upload_photo fleft"></div>
+	            <div id="error_msg"></div>
+	            <div id="img_placeholder" class="photo"></div>
+	        </div>
+	        <div class="error_msg">
+	            {{ form.cover_id.errors }}
+	        </div>
+            
+        </div>
+        <div class="error_msg">
+        	{{ form.conditions.errors }}
+        </div>
+        
+        <div class="sp_hr_line"></div>
+        
+        <div class="">
+            <h3>Place</h3>
+            <div class="location_list">
+			    <ul class="cf">
+			    {{ form.restaurants}}
+			    {% for location in other_locations %}
+			        <li class=" deselect">
+			        	<input class="restaurant_checked" type="checkbox" name="restaurant_checked" value="{{ location.id }}">
+			            <div class="info cf">
+			                <div class="content fleft">
+			                    <h3 class="entry_title">{{ location.name }}</h3>
+							    <p class="address">{{ location.address }}</p>
+							    <p class="tell">{{ location.phone }}</p>
+			                </div>
+			            </div>
+			            {% if forloop.counter|divisibleby:2 %}{% if forloop.counter != other_locations|length %}<div class="sp_hr_line"></div>{% endif %}{% endif %}
+			        </li>
+			    {% endfor %}
+			    </ul>
+			</div>
+        </div>
+        <div class="sp_hr_line"></div>
+        
+        <div class="">
+            <h3>Premium Features</h3>
+            <div class="">
+
+            </div>
+            <div class="estimated_people">
+				預估人數<br>
+				<h3>0</h3>
+            </div>
+        </div>
+        
+        <div class="sp_hr_line"></div>
+        
+        <div class="">
+            <h3>Pricing</h3>
+            <div class="">
+				設定預算
+				依折換次數(CPA)付費
+            </div>
+        </div>
+        
+        <div class="sp_hr_line"></div>
+        
+        <div class="">
+            <h3>Payment</h3>
+            <div class="">
+				
+            </div>
+        </div>
+        <div class="cf">
+        	<input type="hidden" name="ongoing" value="True">
+        	<input class="btn4 fleft" type="submit" name="submit" value="Cancel" />
+        	<input class="btn4 fright" type="submit" name="submit" value="Create Deal" />
+        </div>
+    </form>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/media/js/tiny_mce/plugins/advhr"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="css"
+   kind="dir"/>
+<entry
+   name="editor_plugin.js"
+   checksum="d0a03059205455e5c19cf3a845a0ebde"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="editor_plugin_src.js"
+   checksum="a7fda2e674f15a33baf53cea2e23ec66"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="js"
+   kind="dir"/>
+<entry
+   name="langs"
+   kind="dir"/>
+<entry
+   name="rule.htm"
+   checksum="bb16b0b8feab8a604b14be9ae6da66e7"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+</wc-entries>

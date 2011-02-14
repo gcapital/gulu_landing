@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/haystack/templatetags"
+   committed-rev="562"
+   kind="dir"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="highlight.py"
+   checksum="23d0556b1c901f3ca7693c522238d092"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="more_like_this.py"
+   checksum="da95b2a6038d957495038b2ed447276c"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+</wc-entries>

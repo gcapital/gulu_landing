@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/haystack/templates/search_configuration"
+   committed-rev="562"
+   kind="dir"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="solr.xml"
+   checksum="8238c08c42ba8c0778811e5ef3721662"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+</wc-entries>

@@ -1,0 +1,268 @@
+{% extends "restaurant_index_base.html" %}
+
+{% load gcomments_tags global_tags %}
+
+{% block bodyclass %}menu_nav{% endblock %}
+{% block index_base_class %}dish_view{% endblock %}
+
+{% block profile_index_head %}
+<div class="dish_menu_header tab_page_header">
+    <div class="title cf">
+        <h2 class="fleft">Menu - Dish</h2>
+        <div class="fright operate cf">
+            <a class="btn5" href="{% slugurl restaurant restaurant-menu restaurant.id %}">Back to List</a>
+        </div>
+    </div>
+    <div class="sp_hr_line"></div>
+</div>
+
+<div class="dish_view_wrapper large_photo_block">
+    <div class="title cf">
+        <h3 class="fleft">{{ dish.name }}</h3>
+        <div class="fright share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+    </div>
+    <p>{{ dish.description }}</p>
+    <div class="show_price cf">
+        {% if dish.reserve %}
+                    
+        {% if not dish.sale_out %}
+            <div class="normal fleft"> NT.{{ dish.price }}</div>
+            {% comment %}
+	        {% if dish.vip_price > 0 %}
+	        <div class="vip"><span>VIP</span> NT.{{ dish.vip_price }}</div>
+	        {% endif %}
+	        {% endcomment %}
+	        <div class="num_operate_input fleft cf">
+	            <div class="fright add_to_cart"><a class="btn4" href="#">Add to Cart</a></div>
+	            <div class="fright order_num cf">
+	                <input class="fleft num_input" type="text" name="" value="0" />
+	                <div class="num_oprate fleft">
+	                    <input class="num_add" type="button" />
+	                    <input class="num_minus" type="button" />
+	                </div>
+	            </div>
+	            <label class="fright" for="order_num">數量</label>
+	        </div>
+        {% else %}
+            <div class="sold_out"><span>Sold Out</span></div>
+        {% endif %}
+
+        {% else %}
+            <div class="no_reserve"><span>不開放線上訂餐</span></div>
+        {% endif %}
+    </div>
+    <div class="show_photo">
+        <img src="{{ dish.main_pic.image622x417.url }}" />
+        <span class="photo_frame"></span>
+    </div>
+    
+    <div class="bottom_functions cf">
+        <div class="fleft share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+        <div class="fright buttons cf">
+            <a class="btn4" href="{% slugurl restaurant restaurant-edit-dish restaurant.id dish.id %}">Edit dish</a>
+            <a class="btn5" href="#">Delete dish</a>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
+
+{% block profile_index_body_left %}
+<div class="review_writer_box">
+    <div class="tabs">
+        <div class="dish tab">Dish</div>
+    </div>
+    <div class="bd cf">
+        <div class="give_badge">
+            <h3>Give a Badge</h3>
+            <ul class="fleft cf">
+                <li><div class="delicious"></div><h6>美味</h6></li>
+                <li><div class="service"></div><h6>服務</h6></li>
+                <li><div class="price"></div><h6>價格</h6></li>
+                <li><div class="atmosphere"></div><h6>環境</h6></li>
+            </ul>
+            <span></span>
+            <ul class="fleft cf">
+                <li><div class="worthy"></div><h6>Worthy</h6></li>
+                <li><div class="favorite"></div><h6>Favorite</h6></li>
+                <li><div class="ever_favorite"></div><h6>Favorite</h6></li>
+            </ul>
+        </div>
+        <div class="dish review_form">
+        	<form method="post" id="review_form">
+	            <h3>Write Review</h3>
+	            <input type="text" value="請輸入您的消費金額">
+	            {% csrf_token %}
+				<input type="hidden" id="user_id" value="{{ current_user.pk }}">
+				<input type="hidden" id="dish_id" value="{{ dish.pk }}">
+				<input type="hidden" id="restaurant_id" value="{{ restaurant.pk }}">
+				<input type="hidden" id="reviewer_pic" value="{{ current_user.main_profile_pic.image40x40.url }}"></input>
+				<input type="hidden" id="user_name" value="{{ current_user.nickname }}"></input>
+				{{ form.content.errors }}
+				{{ form.content }}
+				<div class="cf">
+		            <div class="post_options fleft cf">
+		                <div class="cf">
+					        <span>同步分享到</span>
+					        <input type="checkbox" value="" />
+					        <img src="{{ MEDIA_URL }}images/icon_facebook_s.png" alt="share to facebook" />
+					        <input type="checkbox" value="" />
+					        <img src="{{ MEDIA_URL }}images/icon_twitter_s.png" alt="share to twitter" />
+					        <input type="checkbox" value="" />
+					        <img src="{{ MEDIA_URL }}images/icon_plurk_s.png" alt="share to plurk" />
+				        </div>
+				        <div class="more_setting">add more to the <a href="#">setting</a></div>
+				    </div>
+				    <div class="buttons fright cf">
+				        <input type="button" class="btn_post" id="review_submit">
+					</div>
+				</div>
+			</form>
+        </div>
+    </div>
+</div>
+
+<div id="all_reviews_container">
+	{% for review in all_reviews %}
+		<div class="cf review_container">
+			<div class="fleft photo_bg_69x65"><img src="{{ review.user.main_profile_pic.image40x40.url }}" /></div>
+			<div class="fleft content">
+				<h4 class="name"><strong>{{review.user.get_full_name}}</strong></h4>
+				<h6 class="time">{{review.time_stamp}}</h6>
+				<p>
+				    {{review.content|truncatewords:"100"}}...
+				    <span class="read_more"><a href="{% slugurl restaurant restaurant-view-review restaurant.id review.id%}"><strong>more</strong></a></span>
+				</p>
+				<div class="share_buttons"><a href="#"><img src="http://localhost:8000/media/images/tmp_all_icons.png" alt=""></a></div>
+				<div class="cf review_comments_container">
+		            <div class="review_comments">
+		                {% comments_form review %}
+		            </div>
+		        </div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+<button class="more_btn" value="" type="button"></button>
+{% endblock %}
+
+{% block profile_index_body_right %}
+
+<div class="right_side_module best_photo">
+    <h3>Best Photo</h3>
+    <ul class="cf">
+    {% for photo in restaurant.best_photos.all %}
+    {% if forloop.counter <= 6 %}
+        <li>
+            
+        </li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+</div>
+
+<div class="right_side_module best_video">
+    <h3>Best Video</h3>
+    <ul class="cf">
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_video_129x88.png"></a></li>
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_video_129x88.png"></a></li>
+    </ul>
+</div>
+
+<div class="right_side_module best_review">
+    <h3>Best Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+
+<div class="right_side_module favorite_review">
+    <h4 class="sub">Most Helpful</h4>
+    <h3>Favorite Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+
+<div class="right_side_module critical_review last">
+    <h4 class="sub">Most Helpful</h4>
+    <h3>Critical Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+{% endblock %}
+
+{% block bottom_script %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/dish.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gcomments.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/review.js"></script>
+<script type="text/javascript">
+
+$(window).load(function() {
+    // Initialize the review updater
+    var config = {
+        'all_reviews_container': '#all_reviews_container',
+        'review_content_input': '#review_content_input',
+        'review_submit': '#review_submit',
+        'review_form': '#review_form',
+        'reviewer_pic': '#reviewer_pic',
+        'review_content_input': '#review_content_input',
+        'review_comments': '.review_comments',
+        'user_name': '#user_name',
+        'user_id': '#user_id',
+        'restaurant_id': '#restaurant_id',
+        'dish_id': '#dish_id',
+        'media_url': '#media_url',
+    };  
+    Review.init(config);
+});
+
+$(document).ready(function(){
+	// let left_col has the same height with right_col if left_col is too short.
+    var right_height = $('.profile_view .right_col').height();
+    var left_height = $('.profile_view .left_col').height();
+    if(right_height > left_height){
+    	$('.profile_view .left_col').height(right_height);
+    }
+    
+    // Initialize the input of dish order number 
+    $('.order_num').each(function(index){
+        var dish_order_input = new Dish.DishOrderInput({
+            add : $(this).find('.num_add'),
+            minus : $(this).find('.num_minus'),
+            input : $(this).find('.num_input'),
+        });
+    });
+    $('.review_comments').each(function(){
+		var comment = new GComments.Commenter({
+			container : $(this),
+	    });
+	});
+});
+</script>
+{% endblock %}

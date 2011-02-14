@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/photos/templates"
+   committed-rev="607"
+   kind="dir"
+   committed-date="2011-01-27T08:29:59.040578Z"/>
+<entry
+   name="inc_photo_item.html"
+   checksum="5e23d8592ee17bd030cf3581e8e20758"
+   last-author="gage"
+   text-time="2011-01-27T08:29:59.000000Z"
+   committed-rev="607"
+   kind="file"
+   committed-date="2011-01-27T08:29:59.040578Z"/>
+<entry
+   name="photos_change.html"
+   checksum="bdc16e835b5eb81d4d5ba6d0ff854ab5"
+   last-author="gage"
+   committed-rev="542"
+   text-time="2011-01-12T08:40:05.000000Z"
+   kind="file"
+   committed-date="2011-01-12T08:40:05.645738Z"
+   prop-time="2011-01-31T09:15:50.000000Z"/>
+<entry
+   name="photos_dish_list.html"
+   checksum="dc8f1a9975bc64e2181b44459a485068"
+   last-author="ben"
+   text-time="2011-01-12T06:10:52.000000Z"
+   committed-rev="539"
+   kind="file"
+   committed-date="2011-01-12T06:10:52.830456Z"/>
+<entry
+   name="photos_restaurant_list.html"
+   checksum="11f08bedd5d92559641c69ddb53afe93"
+   last-author="gage"
+   text-time="2011-01-26T07:39:21.000000Z"
+   committed-rev="570"
+   kind="file"
+   committed-date="2011-01-26T07:39:21.975713Z"/>
+<entry
+   name="photos_userprofile_list.html"
+   checksum="f48b654b05048d6892bd5571798c7671"
+   last-author="gage"
+   text-time="2011-01-27T08:29:59.000000Z"
+   committed-rev="607"
+   kind="file"
+   committed-date="2011-01-27T08:29:59.040578Z"/>
+<entry
+   name="photos_view.html"
+   checksum="557d209a7dd5786b66522142410c2eda"
+   last-author="gage"
+   committed-rev="570"
+   text-time="2011-01-26T07:39:21.000000Z"
+   kind="file"
+   committed-date="2011-01-26T07:39:21.975713Z"
+   prop-time="2011-01-31T09:15:50.000000Z"/>
+</wc-entries>

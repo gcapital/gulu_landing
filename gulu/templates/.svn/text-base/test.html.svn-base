@@ -1,0 +1,108 @@
+{% extends "adbanner_base.html" %}
+
+{% block extrahead %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/fileuploader.js"></script>
+<style>
+.qq-uploader { position:relative; width: 100%;}
+
+.qq-upload-button {
+    display:block; /* or inline-block */
+    width: 105px; padding: 7px 0; text-align:center;    
+    background:#880000; border-bottom:1px solid #ddd;color:#fff;
+}
+.qq-upload-button-hover {background:#cc0000;}
+.qq-upload-button-focus {outline:1px dotted black;}
+
+.qq-upload-drop-area {
+    position:absolute; top:0; left:0; width:100%; height:100%; min-height: 70px; z-index:2;
+    background:#FF9797; text-align:center; 
+}
+.qq-upload-drop-area span {
+    display:block; position:absolute; top: 50%; width:100%; margin-top:-8px; font-size:16px;
+}
+.qq-upload-drop-area-active {background:#FF7171;}
+
+.qq-upload-list {margin:15px 35px; padding:0; list-style:disc;}
+.qq-upload-list li { margin:0; padding:0; line-height:15px; font-size:12px;}
+.qq-upload-file, .qq-upload-spinner, .qq-upload-size, .qq-upload-cancel, .qq-upload-failed-text {
+    margin-right: 7px;
+}
+
+.qq-upload-file {}
+.qq-upload-spinner {display:inline-block; background: url("loading.gif"); width:15px; height:15px; vertical-align:text-bottom;}
+.qq-upload-size,.qq-upload-cancel {font-size:11px;}
+
+.qq-upload-failed-text {display:none;}
+.qq-upload-fail .qq-upload-failed-text {display:inline;}
+</style>
+
+{% endblock %}
+
+{% block content %}
+<script type="text/javascript">
+$(window).ready(function() {
+
+	var uploader = new qq.FileUploaderBasic({
+		button: document.getElementById('btn_upload'),
+		action: '/photos/ajax/upload-photo',
+		onProgress: function(id, fileName, loaded, total){
+			$("#progress-percent").text(loaded/total*100);
+		},
+		onSubmit: startUpload,
+		onComplete: processResponse,
+		params: {
+			'spec': 'image185x185',
+		}
+	});
+
+	function startUpload(id, file){
+		$("#img_placeholder").fadeOut(600);
+		$(".invite-uploader-img-bg").css('background-color', '#CCCCCC');
+	}
+
+	function processResponse(id, file, response){
+		if(response.status == 1){
+			$(".invite-uploader-img-bg").css('background-color', '#FFFFFF');
+			$("#img_placeholder").attr('src', response.url).fadeIn(2000);
+		}
+		else{
+			$("#img_error").html("Failure, reason: " + response.message);
+		}
+	}
+
+});
+</script>
+
+<h1>AJAX Uploader Test</h1>
+
+<br /><br />
+
+<div class="invite-uploader">
+	<div class="invite-uploader-img">
+		<div class="invite-uploader-img-bg">
+			<img id="img_placeholder" style="display: none;" />
+		</div>
+	</div>
+	<div class="invite-uploader-frame"></div>
+	
+	<div class="invite-uploader-instructions">
+		Please do not upload pictures containing celebrities, nudity, artwork
+		or copyright images.  Your image will be displayed in multiple square 
+		sizes as large as 250px by 250px and as small as 25px by 25px.
+	</div>
+
+	<div class="invite-uploader-button">
+		<button id="btn_upload">Go!</button>
+	</div>
+</div>
+
+<div id="img_error" style="color: red;"></div>
+
+<div id="progress">
+	Progress: <span id="progress-percent"></span>%
+</div>
+
+
+<button id="file-uploader">Do it!</button>
+
+{% endblock %}

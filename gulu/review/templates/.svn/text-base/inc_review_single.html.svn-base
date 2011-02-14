@@ -1,0 +1,23 @@
+{% load gcomments_tags global_tags like_tags %}
+<div class="cf review_container" _sid="{{ review.sid }}">
+	<div class="fleft photo_bg_69x65"><img src="{{ review.user.main_profile_pic.image40x40.url }}" /></div>
+	<div class="content">
+		<h4 class="name"><strong>{{ review.user.get_full_name }}</strong></h4>
+		<h6 class="time">{{ review.created }}</h6>
+		<div>
+			{% if review.photo %}
+	        <div class="photo_css_frame"><a href="{% slugurl request.content_object photos-restaurant-view request.content_object.id review.photo.id  %}"><img src="{{ review.photo.image121x90.url }}"></a></div>
+	        {% endif %}
+			<p class="tx3 cf">
+			    {{review.content|truncatewords:"100"}}...
+			    <span class="read_more"><a href="{% slugurl request.content_object restaurant-view-review request.content_object.id review.id%}"><strong>more</strong></a></span>
+			</p>
+		</div>
+		<div class="share_buttons">{% like review %}</div>
+		<div class="cf review_comments_container">
+		    <div class="review_comments">
+		        {% comments_form review %}
+		    </div>
+		</div>
+	</div>
+</div>

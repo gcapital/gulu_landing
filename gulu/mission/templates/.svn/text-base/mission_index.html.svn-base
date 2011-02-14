@@ -1,0 +1,18 @@
+{% extends "mission_base.html" %}
+
+{% block title %}Missions{% endblock %}
+
+{% block extrahead %}
+{% endblock %}
+
+{% block left %}
+{% endblock %}
+
+
+{% block right_title %}Missions{% endblock %}
+ 
+{% block right %} 
+  {% for mission in missions %}
+    {{mission}}<br>
+  {% endfor %}
+{% endblock %}

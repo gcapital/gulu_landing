@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/south/db"
+   committed-rev="310"
+   kind="dir"
+   committed-date="2010-12-06T10:45:53.109947Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="__init__.py"
+   checksum="68f833986ee2d35f9b3dc91c1060510d"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="generic.py"
+   checksum="1c3aa1e0dfb55254d025f6174e309865"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="mysql.py"
+   checksum="aaa3db20e6794db4d0a69de195101ada"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="oracle.py"
+   checksum="04cf56f9dd9e64bae779689ba6511d26"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="postgresql_psycopg2.py"
+   checksum="c6d5d6e13d8e54fb2ccc5038e6c4bbf8"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="sql_server"
+   kind="dir"/>
+<entry
+   name="sqlite3.py"
+   checksum="8f7991d7d4587dfbb62afcadde98168a"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+</wc-entries>

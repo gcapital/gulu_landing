@@ -1,0 +1,296 @@
+[
+    {
+        "pk": 1, 
+        "model": "dish.dish", 
+        "fields": {
+            "count_recommend": 1, 
+            "description": "Great!!!", 
+            "restaurant": 2, 
+            "sale_out": false, 
+            "price": 40.0, 
+            "created": "2010-12-08 12:27:07", 
+            "dish_pics": [], 
+            "vip_price": 30.0, 
+            "points": 0, 
+            "user": 4, 
+            "active": true, 
+            "special": false, 
+            "reserve": true, 
+            "type": 1, 
+            "main_pic": null, 
+            "total_reserve": 0, 
+            "name": "Stinky tofu"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "dish.dish", 
+        "fields": {
+            "count_recommend": 1, 
+            "description": "Spicy Ramen description", 
+            "restaurant": 2, 
+            "sale_out": false, 
+            "price": 170.0, 
+            "created": "2010-12-08 14:12:35", 
+            "dish_pics": [], 
+            "vip_price": 160.0, 
+            "points": 0, 
+            "user": 6, 
+            "active": true, 
+            "special": false, 
+            "reserve": true, 
+            "type": 2, 
+            "main_pic": null, 
+            "total_reserve": 0, 
+            "name": "Spicy Ramen"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "dish.dish", 
+        "fields": {
+            "count_recommend": 1, 
+            "description": "\u4e09\u676f\u96de\u5230\u5e95\u662f\u54ea\u4e09\u676f???\r\n\u7f8e\u98df\u9cf3\u5473\u7684\u90ed\u4e3b\u5eda \u5728\u9304\u5f71\u7576\u5929\u56de\u7b54\u4e86\u6211:\r\n\" \u4e00\u676f\u6cb9  \u4e00\u676f\u9152 \u4e00\u676f\u91ac\u6cb9 \"\r\n\u7d50\u679c\u6211\u5b8c\u5168\u6c92\u60f3\u5230 \u9019\u4e09\u676f\u96de\u7684\u70f9\u98ea\u904e\u7a0b \u662f\u5982\u6b64\u6709\u8da3\u7684\r\n\u7528\u6efe\u71d9\u7684\u71b1\u6cb9 \u50cf\u653e\u97ad\u70ae\u4f3c\u7684\u5c07\u8001\u8591\u7247\u548c\u4e00\u9846\u9846\u7684\u849c\u982d\u714e\u6210\u5e36\u9ede\u7126\u9999\u7684\u91d1\u9ec3\u8272 \r\n\u5c07\u4e00\u676f\u7c73\u9152\u5012\u9032\u71b1\u934b   \u6ecb~\u7684\u4e00\u8072\u6240\u7522\u751f\u7684\u6c34\u6c23  \u7acb\u523b\u4f7f\u7a7a\u6c23\u4e2d\u5145\u6eff\u4e86\u64b2\u9f3b\u7684\u9152\u9999\r\n\u5c07\u4e00\u676f\u91ac\u6cb9\u5857\u62b9\u5728\u96de\u8089\u4e0a \u611f\u89ba\u50cf\u7528\u6c34\u5f69\u4e0a\u8272\u4e00\u6a23\r\n\u7c21\u55ae\u53c8\u6709\u6eff\u8db3\u611f\r\n\u5176\u5be6\u6253\u5f9e\u4e00\u958b\u59cb\u62ff\u5200\u5207\u8001\u8591\u6642  \u90a3\u7a2e\u4e00\u5200\u5200\u5283\u4e0b\u53bb\u7684\u7d2e\u5be6\u611f\r\n\u548c\u5c08\u5fc3\u6e2c\u91cf\u8b93\u5207\u4e0b\u53bb\u7684\u6bcf\u4e00\u7247\u90fd\u4fdd\u6301\u5920\u8584\u7684\u90a3\u7a2e\u6a02\u8da3\r\n\u90fd\u8b93\u6211\u4e86\u89e3\u5230\u9019\u9053\u8d85\u914d\u5564\u9152\u7684\u7f8e\u98df\r\n\u4e0d\u50c5\u5920\u5473\u597d\u5403\r\n\u9023\u70f9\u8abf\u7684\u904e\u7a0b\u4e5f\u5f88\u904e\u766e\r\n\u5927\u529b\u63a8\u85a6\u7d66\u559c\u6b61\u91cd\u53e3\u5473\u7684\u670b\u53cb", 
+            "restaurant": 2, 
+            "sale_out": false, 
+            "price": 100.0, 
+            "created": "2010-12-10 11:03:22", 
+            "dish_pics": [], 
+            "vip_price": 80.0, 
+            "points": 0, 
+            "user": 4, 
+            "active": true, 
+            "special": false, 
+            "reserve": true, 
+            "type": 3, 
+            "main_pic": 36, 
+            "total_reserve": 0, 
+            "name": "\u4e09\u676f\u96de"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "dish.dish", 
+        "fields": {
+            "count_recommend": 1, 
+            "description": "\u9019\u662f\u4e00\u7897CP\u503c\u8d85\u7d1a\u9ad8\u7684\u725b\u8089\u9eb5\uff0c\u597d\u5403\u53c8\u5927\u7897\uff01\u5169\u500b\u4eba\u5403\u90fd\u5403\u7684\u98fd\uff01\u6709\u6a5f\u6703\u4e00\u5b9a\u8981\u53bb\u5617\u8a66\u4e00\u4e0b\u5594\uff5e", 
+            "restaurant": 1, 
+            "sale_out": false, 
+            "price": 90.0, 
+            "created": "2010-12-10 11:13:01", 
+            "dish_pics": [
+                40
+            ], 
+            "vip_price": 90.0, 
+            "points": 99, 
+            "user": 4, 
+            "active": true, 
+            "special": false, 
+            "reserve": true, 
+            "type": 4, 
+            "main_pic": 40, 
+            "total_reserve": 0, 
+            "name": "\u725b\u8089\u9eb5"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "dish.dish", 
+        "fields": {
+            "count_recommend": -1, 
+            "description": "\u9019\u500b\u725b\u96dc\u9eb5\u662f\u7121\u6575\u7684\u597d\u5403\uff5e\u4e0d\u5403\u4f60\u4e00\u5b9a\u6703\u5f8c\u6094\uff01", 
+            "restaurant": 1, 
+            "sale_out": false, 
+            "price": 95.0, 
+            "created": "2010-12-10 11:25:40", 
+            "dish_pics": [
+                35
+            ], 
+            "vip_price": 95.0, 
+            "points": 0, 
+            "user": 4, 
+            "active": true, 
+            "special": false, 
+            "reserve": true, 
+            "type": 4, 
+            "main_pic": 35, 
+            "total_reserve": 0, 
+            "name": "\u725b\u96dc\u9eb5"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "dish.dish", 
+        "fields": {
+            "count_recommend": -1, 
+            "description": "\u57fa\u672c\u6b3e\u967d\u6625\u9eb5\uff0c\u4e5f\u662f\u597d\u5403\u7684\u4e0d\u5f97\u4e86", 
+            "restaurant": 1, 
+            "sale_out": false, 
+            "price": 30.0, 
+            "created": "2010-12-10 11:35:38", 
+            "dish_pics": [
+                34
+            ], 
+            "vip_price": 30.0, 
+            "points": 0, 
+            "user": 4, 
+            "active": true, 
+            "special": false, 
+            "reserve": true, 
+            "type": 5, 
+            "main_pic": 34, 
+            "total_reserve": 0, 
+            "name": "\u967d\u6625\u9eb5"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "dish.dish", 
+        "fields": {
+            "count_recommend": -1, 
+            "description": "\u9019\u500b\u9178\u8fa3\u9eb5\u5167\u670930\u591a\u7a2e\u98df\u6750\uff0c\u53e3\u611f\u8c50\u5bcc\uff0c\u5473\u9053\u8d85\u68d2\uff01\u4e00\u5b9a\u8981\u4f86\u8a66\u8a66\u770b\uff01", 
+            "restaurant": 1, 
+            "sale_out": false, 
+            "price": 65.0, 
+            "created": "2010-12-13 00:00:23", 
+            "dish_pics": [
+                33
+            ], 
+            "vip_price": 65.0, 
+            "points": 89, 
+            "user": 4, 
+            "active": true, 
+            "special": false, 
+            "reserve": false, 
+            "type": 5, 
+            "main_pic": 33, 
+            "total_reserve": 0, 
+            "name": "\u9178\u8fa3\u9eb5"
+        }
+    }, 
+    {
+        "pk": 8, 
+        "model": "dish.dish", 
+        "fields": {
+            "count_recommend": -1, 
+            "description": "\u8001\u9109\u7684\u5927\u6ef7\u9eb5\u98df\u6750\u8c50\u5bcc\u3001\u53e3\u5473\u9053\u5730\uff0c\u8a31\u591a\u904a\u5ba2\u56e0\u6b64\u6155\u540d\u800c\u4f86\u3002", 
+            "restaurant": 1, 
+            "sale_out": true, 
+            "price": 0.0, 
+            "created": "2010-12-13 00:08:34", 
+            "dish_pics": [
+                32
+            ], 
+            "vip_price": 0.0, 
+            "points": 0, 
+            "user": 4, 
+            "active": true, 
+            "special": false, 
+            "reserve": true, 
+            "type": 5, 
+            "main_pic": 32, 
+            "total_reserve": 0, 
+            "name": "\u5927\u6ef7\u9eb5"
+        }
+    }, 
+    {
+        "pk": 9, 
+        "model": "dish.dish", 
+        "fields": {
+            "count_recommend": 1, 
+            "description": "\u6e6f\u982d\u6fc3\u90c1\uff0c\u9999\u5473\u64b2\u9f3b\uff0c\u5c31\u7b97\u4e0d\u662f\u725b\u8089\u9eb5\uff0c\u5149\u559d\u6e6f\u5c31\u53ef\u4ee5\u611f\u89ba\u5230\u725b\u8089\u6eff\u8db3\u611f\uff01", 
+            "restaurant": 1, 
+            "sale_out": false, 
+            "price": 50.0, 
+            "created": "2010-12-13 00:37:41", 
+            "dish_pics": [
+                31
+            ], 
+            "vip_price": 50.0, 
+            "points": 86, 
+            "user": 4, 
+            "active": true, 
+            "special": false, 
+            "reserve": true, 
+            "type": 4, 
+            "main_pic": 31, 
+            "total_reserve": 0, 
+            "name": "\u725b\u8089\u6e6f\u9eb5"
+        }
+    }, 
+    {
+        "pk": 10, 
+        "model": "dish.dish", 
+        "fields": {
+            "count_recommend": 0, 
+            "description": "Was", 
+            "restaurant": 1, 
+            "sale_out": false, 
+            "price": 234.0, 
+            "created": "2010-12-23 14:49:41", 
+            "dish_pics": [
+                30
+            ], 
+            "vip_price": 234.0, 
+            "points": 0, 
+            "user": 3, 
+            "active": false, 
+            "special": false, 
+            "reserve": true, 
+            "type": 3, 
+            "main_pic": 30, 
+            "total_reserve": 0, 
+            "name": "Surprise"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "dish.dishtype", 
+        "fields": {
+            "is_default": false, 
+            "created": "2010-12-10 15:09:58", 
+            "name": "Taiwanese food", 
+            "restaurant": 2
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "dish.dishtype", 
+        "fields": {
+            "is_default": false, 
+            "created": "2010-12-10 15:09:58", 
+            "name": "Japanese food", 
+            "restaurant": 2
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "dish.dishtype", 
+        "fields": {
+            "is_default": false, 
+            "created": "2010-12-10 15:09:58", 
+            "name": "\u5feb\u7092", 
+            "restaurant": 1
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "dish.dishtype", 
+        "fields": {
+            "is_default": false, 
+            "created": "2010-12-10 15:09:58", 
+            "name": "\u725b\u8089\u9eb5", 
+            "restaurant": 1
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "dish.dishtype", 
+        "fields": {
+            "is_default": false, 
+            "created": "2010-12-10 15:09:58", 
+            "name": "\u6e6f\u9eb5", 
+            "restaurant": 1
+        }
+    }
+]

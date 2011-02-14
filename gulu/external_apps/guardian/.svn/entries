@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/guardian"
+   committed-rev="551"
+   kind="dir"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="__init__.py"
+   checksum="585b2615c898e2f05bbad24f36c105ba"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="admin.py"
+   checksum="8cf5bdfb79a52873d6f25e81d3f9d06f"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="backends.py"
+   checksum="114d1ad21c71f44aaa2a4a14841bfafa"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="conf"
+   kind="dir"/>
+<entry
+   name="core.py"
+   checksum="bcd52abd708caeca6434291fccc23fb1"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="decorators.py"
+   checksum="fb64cb631703756855b9321ea1c4f761"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="exceptions.py"
+   checksum="d1066eda952822e494c3a31c5d9c2717"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="fixtures"
+   kind="dir"/>
+<entry
+   name="forms.py"
+   checksum="43503f99fe30a3b1bcc21d6ddd6305a6"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="management"
+   kind="dir"/>
+<entry
+   name="managers.py"
+   checksum="ef7e247b845bad7d4cf9ce2ecd5dfb2c"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="migrations"
+   kind="dir"/>
+<entry
+   name="models.py"
+   checksum="eea95d555995d22f4c962c0b97da52e8"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="shortcuts.py"
+   checksum="bbdcb14197352ef678ba38e6c6bdf78f"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="templates"
+   kind="dir"/>
+<entry
+   name="templatetags"
+   kind="dir"/>
+<entry
+   name="tests"
+   kind="dir"/>
+<entry
+   name="utils.py"
+   checksum="a724f67e184613c3b5233d199108beb6"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+</wc-entries>

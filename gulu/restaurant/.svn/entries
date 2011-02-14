@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="de"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/restaurant"
+   committed-rev="626"
+   kind="dir"
+   committed-date="2011-01-31T09:49:56.088623Z"
+   prop-time="2011-01-31T09:15:50.000000Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:49.000000Z"/>
+<entry
+   name="admin.py"
+   checksum="f56d43f5d9ee32e94d9ffc7b710cb484"
+   last-author="gage"
+   committed-rev="549"
+   text-time="2011-01-19T05:37:26.000000Z"
+   kind="file"
+   committed-date="2011-01-19T05:37:26.450318Z"
+   prop-time="2011-01-31T09:15:49.000000Z"/>
+<entry
+   name="ajax.py"
+   checksum="2a899fecf1983b8dde474814f487c821"
+   last-author="ben"
+   committed-rev="388"
+   text-time="2010-12-16T06:59:01.000000Z"
+   kind="file"
+   committed-date="2010-12-16T06:59:01.364581Z"
+   prop-time="2011-01-31T09:15:49.000000Z"/>
+<entry
+   name="decorators.py"
+   checksum="84f9ebe7c3fce2b78850885a1af9d999"
+   last-author="ben"
+   committed-rev="388"
+   text-time="2010-12-16T06:59:01.000000Z"
+   kind="file"
+   committed-date="2010-12-16T06:59:01.364581Z"
+   prop-time="2011-01-31T09:15:49.000000Z"/>
+<entry
+   name="fixtures"
+   kind="dir"/>
+<entry
+   name="migrations"
+   kind="dir"/>
+<entry
+   name="models.py"
+   checksum="e272fe371aadfb7b88ea3841fdc9df3e"
+   last-author="gage"
+   committed-rev="570"
+   text-time="2011-01-26T07:39:21.000000Z"
+   kind="file"
+   committed-date="2011-01-26T07:39:21.975713Z"
+   prop-time="2011-01-31T09:15:49.000000Z"/>
+<entry
+   name="search_indexes.py"
+   checksum="53d04992f4f74b94ee96f3f506e0d5ce"
+   last-author="de"
+   committed-rev="626"
+   text-time="2011-01-31T09:49:56.000000Z"
+   kind="file"
+   committed-date="2011-01-31T09:49:56.088623Z"/>
+<entry
+   name="templates"
+   kind="dir"/>
+<entry
+   name="tests.py"
+   checksum="1fde9e174e80f7680d95dc905a3533a3"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:49.000000Z"/>
+<entry
+   name="urls.py"
+   checksum="3d44583c0ff6044efb2cba27f73c0a6c"
+   last-author="ben"
+   committed-rev="593"
+   text-time="2011-01-27T06:50:26.000000Z"
+   kind="file"
+   committed-date="2011-01-27T06:50:26.066889Z"
+   prop-time="2011-01-31T09:15:50.000000Z"/>
+<entry
+   name="views.py"
+   checksum="a5ff30f6290cea220225debe6766fdfe"
+   last-author="ben"
+   committed-rev="593"
+   text-time="2011-01-27T06:50:26.000000Z"
+   kind="file"
+   committed-date="2011-01-27T06:50:26.066889Z"
+   prop-time="2011-01-31T09:15:49.000000Z"/>
+</wc-entries>

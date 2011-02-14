@@ -1,0 +1,43 @@
+{% load wall_tags %}
+{% load gcomments_tags global_tags %}
+
+<div class="wall_show" id="all_walls_container" _owner="{{user_profile.pk}}" _page="0" _type="1">
+{% if wall.count %}
+{% for object in wall %}
+	<div class="wall_box btm_grey_border cf">
+	    <div class="poster_cover photo_bg_69x65">
+	        <img src="{{object.poster.main_profile_pic.image40x40.url}}" alt="" />
+	    </div>
+	    <div class="post_detail">
+	        <h4>{{object.poster.nickname}}</h4>
+	        <h6>{{object.create_time|date:"Y/m/d"}}</h6>
+	        <p>{{object.content}}</p>
+	        <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+	        <div class="post_comment">
+	            <div class="comment_info">
+	                <span class="info_top"></span>
+	                <div class="info comment_bd">
+	                   <a href="#">Lily</a>, <a href="#">Marcus</a>, <a href="#">Emily lin</a> and 2 <a href="#">others</a> like this.
+	                </div>
+	                <span class="bottom"></span>
+	                {% if object.total_comment %}
+	                <span class="top"></span>
+	                <div class="comment_bd"><a href="#">View all</a> {{object.total_comment}} comments</div>
+	                <span class="bottom"></span>
+	                {% endif %}
+	            </div>
+				{#% wall_list wall %#}
+                <div class="comment_content">
+                {% comments_form object %}
+                </div>
+                {% if object.total_comment %}
+                {% endif %}
+	        </div>
+	    </div>
+	</div>
+{% endfor %}
+{% endif %}
+</div>
+{% if more_wall_button %}
+<button class="more_btn" value="" type="button" id="more_wall_btn" _all_walls_container="#all_walls_container"></button>
+{% endif %}

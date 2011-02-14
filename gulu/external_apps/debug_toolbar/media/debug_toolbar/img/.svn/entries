@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/debug_toolbar/media/debug_toolbar/img"
+   committed-rev="310"
+   kind="dir"
+   committed-date="2010-12-06T10:45:53.109947Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="back.png"
+   checksum="64efd4aff01ee220183867b295390dc9"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="back_hover.png"
+   checksum="2f40a29790969f1dc280740f2351cb34"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="close.png"
+   checksum="6c12b2e804cc3027942473db15a03f48"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="close_hover.png"
+   checksum="cc81bbd1cf1acb56325f590a55f88988"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="djdt_vertical.png"
+   checksum="5129e78e3bbcfb7b0c866cea7aaf1b64"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="indicator.png"
+   checksum="b5677e8869a359a8941fd2fc3b5553f4"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="panel_bg.png"
+   checksum="0eabad5fe24f2dab304977b924040b8d"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+</wc-entries>

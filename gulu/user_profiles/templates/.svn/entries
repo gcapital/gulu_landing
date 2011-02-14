@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/user_profiles/templates"
+   committed-rev="615"
+   kind="dir"
+   committed-date="2011-01-27T09:40:26.306284Z"/>
+<entry
+   name="inc_mygulu_activities.html"
+   checksum="fbf137f6853eae9c734d69a04d5587d9"
+   last-author="ben"
+   text-time="2011-01-27T03:45:09.000000Z"
+   committed-rev="580"
+   kind="file"
+   committed-date="2011-01-27T03:45:09.373455Z"/>
+<entry
+   name="mygulu_index_base.html"
+   checksum="d72dcdfc96c73d0a9500a133e8f5b8a7"
+   last-author="gage"
+   text-time="2010-12-24T07:24:09.000000Z"
+   committed-rev="484"
+   kind="file"
+   committed-date="2010-12-24T07:24:09.954898Z"/>
+<entry
+   name="mygulu_profile_index.html"
+   checksum="e1389ba51f0e3f7d3528d69253c800b6"
+   last-author="gage"
+   text-time="2011-01-27T09:40:26.000000Z"
+   committed-rev="615"
+   kind="file"
+   committed-date="2011-01-27T09:40:26.306284Z"/>
+</wc-entries>

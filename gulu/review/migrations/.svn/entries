@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/review/migrations"
+   committed-rev="570"
+   kind="dir"
+   committed-date="2011-01-26T07:39:21.975713Z"/>
+<entry
+   name="0001_initial.py"
+   checksum="361e6be51ed27d708b47c8ed4c4e6f65"
+   last-author="ben"
+   text-time="2011-01-12T06:17:55.000000Z"
+   committed-rev="541"
+   kind="file"
+   committed-date="2011-01-12T06:17:55.413323Z"/>
+<entry
+   name="0002_auto__del_field_review_time_stamp__add_field_review_created.py"
+   checksum="d75cabe2867b105f2ae8ea20d6601d0a"
+   last-author="gage"
+   text-time="2011-01-21T02:28:25.000000Z"
+   committed-rev="556"
+   kind="file"
+   committed-date="2011-01-21T02:28:25.827130Z"/>
+<entry
+   name="0003_auto__add_field_review_photo.py"
+   checksum="cc934fb923c539a522e1bae8bf5519e6"
+   last-author="gage"
+   text-time="2011-01-21T02:28:25.000000Z"
+   committed-rev="556"
+   kind="file"
+   committed-date="2011-01-21T02:28:25.827130Z"/>
+<entry
+   name="0004_auto__add_field_review_title.py"
+   checksum="98aa897b8eff36cc70f23ae74e4fae4f"
+   last-author="gage"
+   text-time="2011-01-26T07:39:21.000000Z"
+   committed-rev="570"
+   kind="file"
+   committed-date="2011-01-26T07:39:21.975713Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="ben"
+   text-time="2011-01-12T06:17:55.000000Z"
+   committed-rev="541"
+   kind="file"
+   committed-date="2011-01-12T06:17:55.413323Z"/>
+</wc-entries>

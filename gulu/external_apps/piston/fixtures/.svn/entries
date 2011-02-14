@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   repos="http://www.geniecapital.com/svn/gulu"
+   name=""
+   revision="626"
+   last-author="sean"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/piston/fixtures"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   committed-rev="621"
+   kind="dir"
+   committed-date="2011-01-31T01:52:54.241519Z"/>
+<entry
+   name="initial_data.json"
+   revision="627"
+   checksum="98f65a289f25c9e5d85283867114e242"
+   last-author="sean"
+   committed-rev="627"
+   text-time="2011-02-01T01:09:45.000000Z"
+   kind="file"
+   committed-date="2011-02-01T01:11:17.733000Z"/>
+</wc-entries>

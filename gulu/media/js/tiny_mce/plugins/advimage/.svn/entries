@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/media/js/tiny_mce/plugins/advimage"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="css"
+   kind="dir"/>
+<entry
+   name="editor_plugin.js"
+   checksum="6634dc710b837855baff6d4d3a4f290e"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="editor_plugin_src.js"
+   checksum="5134485db327459f7b10de273b50a5e8"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="image.htm"
+   checksum="6317ffa9f6c8c5e9b154c0afdafafd43"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="img"
+   kind="dir"/>
+<entry
+   name="js"
+   kind="dir"/>
+<entry
+   name="langs"
+   kind="dir"/>
+</wc-entries>

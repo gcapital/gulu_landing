@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/debug_toolbar/utils/sqlparse"
+   committed-rev="310"
+   kind="dir"
+   committed-date="2010-12-06T10:45:53.109947Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="__init__.py"
+   checksum="405927d7df7ce446ac83b8300412e984"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="engine"
+   kind="dir"/>
+<entry
+   name="filters.py"
+   checksum="5a9f3e44b7f9d0b41ec233d44c254beb"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="formatter.py"
+   checksum="163c084e06c55dfae560968e97fe9268"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="keywords.py"
+   checksum="22903d72fc2e4cb692928efaad0efbdd"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="lexer.py"
+   checksum="d16c1efc3d36eb872fa76c48f8f70e40"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="sql.py"
+   checksum="78c5b5d67677a9f86e847be51d8cdfb8"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="tokens.py"
+   checksum="b1731f20175371fe9e5bc5a97fecb622"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+</wc-entries>

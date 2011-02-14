@@ -1,0 +1,26 @@
+{% extends "review-base.html" %}
+{% load review_tags %}
+{% load gcomments_tags %}
+
+{% block content %}
+{#% show_review_summary review %#}
+<h2>Reviews</h2>
+<div class="pf review_line"></div>
+<div class="review_title"></div>
+<div class="review_date">{{review.time_stamp}}</div>
+<div class="review_photo"></div>
+<div class="review_text">{{review.content}}</div>
+<div class="review_comments">
+	{% comments_form review %}
+</div>
+{% endblock %}
+{% block bottom_script %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gcomments.js"></script>
+<script>
+$(document).ready(function(){
+	var comment = new GComments.Commenter({
+        container : $(".review_comments"),
+    });
+});
+</script>
+{% endblock %}

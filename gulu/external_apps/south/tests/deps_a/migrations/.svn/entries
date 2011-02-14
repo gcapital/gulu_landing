@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/south/tests/deps_a/migrations"
+   committed-rev="310"
+   kind="dir"
+   committed-date="2010-12-06T10:45:53.109947Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="0001_a.py"
+   checksum="65dd86056a3a2271342d865a93c347b1"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="0002_a.py"
+   checksum="65dd86056a3a2271342d865a93c347b1"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="0003_a.py"
+   checksum="65dd86056a3a2271342d865a93c347b1"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="0004_a.py"
+   checksum="f988dc73d03ca5d38c4c7133c155f2b6"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="0005_a.py"
+   checksum="65dd86056a3a2271342d865a93c347b1"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+</wc-entries>

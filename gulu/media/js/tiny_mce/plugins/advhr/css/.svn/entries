@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/media/js/tiny_mce/plugins/advhr/css"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="advhr.css"
+   checksum="15df80b2137bcc04d5455ffa3a51e0c5"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+</wc-entries>

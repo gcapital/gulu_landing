@@ -1,0 +1,28 @@
+{% extends "restaurant_base.html" %}
+
+{% block bodyclass %}menu_nav{% endblock %}
+
+{% block content %}
+
+{% block dish_header %}
+<div class="dish_menu_header tab_page_header">
+    <div class="title cf">
+        <h2 class="fleft">Dish</h2>
+        <div class="fright operate cf">
+            {% block dish_menu_operate %}{% endblock %}
+        </div>
+    </div>
+    {% block dish_menu_filter %}{% endblock %}
+    <div class="sp_hr_line"></div>
+</div>
+{% endblock %}
+
+{% block menu_content %}
+menu list
+{% endblock %}
+
+{% block dish_menu_footer %}
+dish menu footer
+{% endblock %}
+
+{% endblock %}

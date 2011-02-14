@@ -1,0 +1,23 @@
+{% extends "base_adbanner.html" %}
+
+{% block content %}
+<div class="divider1"></div><!-- .divider1 -->
+
+<div class="invite_content cf">
+	<div class="invite_left_col">
+		{% block left %}{% endblock %}
+	</div><!-- .invite_right_col -->
+	
+	<div class="invite_right_col">
+		<h1>{% block right_title %}Create a new invite{% endblock %}</h1>
+		
+		<div class="invite_right_top"></div><!-- .invite_right_top -->
+		
+		<div class="invite_right_content">
+			{% block right %}{% endblock %}
+		</div><!-- .invite_right_content -->
+		
+		<div class="invite_right_bottom"></div><!-- .invite_right_bottom -->
+	</div><!-- .invite_right_col -->
+</div>
+{% endblock %}

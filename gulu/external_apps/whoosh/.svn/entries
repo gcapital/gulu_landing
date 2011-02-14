@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="jason"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/whoosh"
+   committed-rev="563"
+   kind="dir"
+   committed-date="2011-01-24T09:39:17.799802Z"
+   prop-time="2011-01-31T09:15:54.000000Z"/>
+<entry
+   name="__init__.py"
+   checksum="384eb7fba05d72f6c84155fbde694f68"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="analysis.py"
+   checksum="beec6308c96b6f993ff02a07a303e806"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="classify.py"
+   checksum="f7c0fe523f53a5bc233a44a85c2e481b"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:54.000000Z"/>
+<entry
+   name="fields.py"
+   checksum="d276d8ee58fb57503f64f707e4941a5e"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="filedb"
+   kind="dir"/>
+<entry
+   name="formats.py"
+   checksum="96c41b37aeac4c81afc4028302730391"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="highlight.py"
+   checksum="e49d9dc334c665be45295135492f0a0c"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="index.py"
+   checksum="7729903dd79dfe178d1e4d432684a6ea"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="lang"
+   kind="dir"/>
+<entry
+   name="matching.py"
+   checksum="ec17fdef40ea29b6afb9bf1276cc39f4"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="qparser"
+   kind="dir"/>
+<entry
+   name="query.py"
+   checksum="905d059942b95772f1fda0f19e0e8179"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="ramdb"
+   kind="dir"/>
+<entry
+   name="reading.py"
+   checksum="ba2a4be217558bb881111b0248887788"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="scoring.py"
+   checksum="757a612da1b09e2eaebed371dc3fda49"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="searching.py"
+   checksum="4f7552bbd3dbe33dabdaf5f882b254b5"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="spans.py"
+   checksum="81313d4813d20ab472a86a412be20c71"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="spelling.py"
+   checksum="0efb861f3f69d51c23c4deba2015b4e5"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="store.py"
+   checksum="c8af551ef355f0feb26ae786c3ea313e"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="support"
+   kind="dir"/>
+<entry
+   name="system.py"
+   checksum="51f9362f7968618e282258a43c142c49"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="util.py"
+   checksum="8e2224e867a85ea469f90cb0850f6a86"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="writing.py"
+   checksum="9b8ead47e25f9b996e646e5178db780b"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+</wc-entries>

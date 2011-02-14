@@ -1,0 +1,12 @@
+<div class="comment_box">
+    <div class="comment_bd cf">
+        <div class="photo_bg_69x65">
+            <img src="{{ comment.commenter.main_profile_pic.image40x40.url }}" alt="" />
+        </div>
+        <div class="content">
+            <h4>{{ comment.user_name }}</h4>
+            <h6>{{ comment.submit_date|date:"Y/m/d" }}</h6>
+            <p>{{ comment.comment }}</p>
+        </div>
+    </div>
+</div>

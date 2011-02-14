@@ -1,0 +1,146 @@
+{% extends "mygulu_index_base.html" %}
+
+{% block bodyclass %}view_profile_nav{% endblock %}
+
+{% block profile_index_body_left %}
+<h2>Wall</h2>
+{% include "inc_wall_post_form.html" %}
+<div class="wall_show"  id="activity_stream">
+{% include "inc_mygulu_activities.html" %}
+</div>
+
+{% endblock %}
+
+{% block profile_index_body_right %}
+<div class="right_side_module trophy_case">
+    <h3>Trophy Case</h3>
+    <ul class="cf small_photos">
+        <li class="current"><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png" class="foot_t"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+    </ul>
+</div>
+<div class="right_side_module complete_missions">
+    <h4 class="sub">Complete</h4>
+    <h3>Missions</h3>
+    <ul>
+        <li class="gray"><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"><span class="title">Pizzeria TAVOLA </span></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"><span class="title">柬埔寨美食挑戰你的胃</span></a></li>
+    </ul>
+</div>
+
+<div class="right_side_module recent_post">
+    <h3>Recent Post</h3>
+    <div class="">
+        <img src="{{ request.content_object.main_profile_pic.image240x140.url }}">
+        <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+    </div>
+</div>
+
+<div class="right_side_module best_photo">
+    <h3>Best Photo</h3>
+    <ul class="cf">
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_86x58.png"></a></li>
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_86x58.png"></a></li>
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_86x58.png"></a></li>
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_86x58.png"></a></li>
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_86x58.png"></a></li>
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_86x58.png"></a></li>
+    </ul>
+</div>
+
+<div class="right_side_module best_video">
+    <h3>Best Video</h3>
+    <ul class="cf">
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_video_129x88.png"></a></li>
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_video_129x88.png"></a></li>
+    </ul>
+</div>
+
+<div class="right_side_module best_review">
+    <h3>Best Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+
+<div class="right_side_module favorite_review">
+    <h4 class="sub">Most Helpful</h4>
+    <h3>Favorite Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+
+<div class="right_side_module critical_review last">
+    <h4 class="sub">Most Helpful</h4>
+    <h3>Critical Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+{% endblock %}
+
+{% block bottom_script %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gcomments.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/wall.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gulu.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/fileuploader.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/photos.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/jquery.autogrow-textarea.js"></script>
+<script>
+$(document).ready(function(){
+
+    $('.comment_content').each(function(){
+        var comment = new GComments.Commenter({
+            container : $(this),
+        });
+    });
+    
+    var right_height = $('.profile_view .right_col').height();
+    var left_height = $('.profile_view .left_col').height();
+    if(right_height > left_height){
+        $('.profile_view .left_col').height(right_height);
+    }
+    var ajax_uploader = new Photos.AjaxUploader({
+        button: $("#btn_upload"),
+        imagespec: 'image186x119',
+        errors: $("#error_msg"),
+        preview: $("#img_placeholder"),
+        input: $("#id_photo_id"),
+        url_input: $("#id_photo_url"),
+    });
+    $('#id_content').val('comments');
+
+	var wall_poster = new Wall.Poster({
+		form: $("#wall_form"),
+		container: $("#activity_stream"),
+	});
+});
+</script>
+{% endblock %}

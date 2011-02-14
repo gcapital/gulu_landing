@@ -1,0 +1,20 @@
+{% extends "restaurant_base.html" %}
+
+{% block bodyclass %}menu_nav{% endblock %}
+
+{% load global_tags %}
+
+{% block content %}
+<p><a href="./add/">Add Photo</a></p>
+
+<h2>Best Photos</h2>
+{% for photo in dish.best_photos.all %}
+<a href="{% slugurl request.content_object photos-dish-view request.content_object.id dish.id photo.id %}"><img src="{{ photo.image185x185.url }}" /></a>
+{% endfor %}
+
+<h2>Photos</h2>
+{% for photo in photos %}
+<a href="{{ photo.get_absolute_url }}"><img src="{{ photo.image185x185.url }}" /></a>
+{% endfor %}
+
+{% endblock %}

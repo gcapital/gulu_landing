@@ -1,0 +1,17 @@
+K 10
+svn:ignore
+V 119
+*.kpf
+*.pyc
+*.sqlite
+*~
+.DS_Store
+.idea
+.project
+.pydevproject
+.settings
+photo_cache
+settings_dev.py
+settings_local.py
+
+END

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="sean"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/event/migrations"
+   committed-rev="612"
+   kind="dir"
+   committed-date="2011-01-27T09:31:05.645180Z"/>
+<entry
+   name="0001_initial.py"
+   checksum="c8feba86c3662c15347055b0a86eec78"
+   last-author="sean"
+   text-time="2011-01-27T09:31:05.000000Z"
+   committed-rev="612"
+   kind="file"
+   committed-date="2011-01-27T09:31:05.645180Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="sean"
+   text-time="2011-01-27T09:31:05.000000Z"
+   committed-rev="612"
+   kind="file"
+   committed-date="2011-01-27T09:31:05.645180Z"/>
+</wc-entries>

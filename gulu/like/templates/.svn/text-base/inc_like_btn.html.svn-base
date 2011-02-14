@@ -1,0 +1,13 @@
+{% load like_tags %}
+{% if not user.is_anonymous %}
+<div class="{{ user.pk }}_{{ content_type_id }}_{{ object_id }}_like">
+	<div class="{% if like_type == 'unlike' %}like_btn{% else %}{% if like_type == 'like' %}unlike_btn{% endif %}{% endif %}" onclick="Gulu.Like.likeit($(this), '{{ content_type_id }}', '{{ object_id }}', '{{ user.pk }}');"></div>
+	<div class="like_info_wrap">
+	{% include 'inc_like_info.html' %}
+	</div>
+</div>
+{% else %}
+<div class="0_{{ content_type_id }}_{{ object_id }}_like">
+    <div class="like_btn" onclick="location.href = '/login';"></div>
+</div>
+{% endif %}

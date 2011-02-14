@@ -1,0 +1,467 @@
+{% extends "base_slideshow.html" %}
+
+{% load global_tags %}
+
+{% block home_wrapper %}
+<div id="home_wrapper" class="cf">
+
+	<div class="home_left fleft">
+		<div class="home_feature_top"></div>
+		<div class="home_feature">
+		
+		    <div class="cf">
+			<div class="feature_left_top box fleft" style="overflow:hidden">
+				<h4>Feature</h4>
+				<h2>Restaurants</h2>
+				<div class="inner_box">
+					<ul class="menu">
+						<li class="expand">
+						   <h5>國宴主廚阿基師的廚師夢</h5>
+						   <div class="acitem description">
+							   <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+							   <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+							   <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+						   </div>
+						</li>
+						<li>
+						    <h5>{{ tmp_restaurant.name }}</h5>
+						    <div class="acitem description">
+                               <a href="{% slugurl tmp_restaurant restaurant-profile tmp_restaurant.id %}"><img alt="" src="{{ tmp_restaurant.logo.image284x157.url }}"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+						</li>
+						<li>
+						    <h5>月滿坊Full Moon</h5>
+						    <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+						</li>
+						<li>
+						    <h5>庄腳所在平價熱炒</h5>
+						    <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+						</li>
+						<li>
+						    <h5>金龍船魚翅海鮮酒家</h5>
+						    <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+						</li>
+					</ul>
+				</div>
+				<div class="box_more cf">
+	                <img alt="" src="{{ MEDIA_URL }}images/btn_more_arrow.png">
+				    <a href="#">more...</a>
+				</div>
+			</div>
+			
+			<div class="feature_right_top box fleft">
+				<h4>Feature</h4>
+				<h2>Dishes</h2>
+				<div class="inner_box">
+                    <ul class="menu">
+                        <li class="expand">
+                           <h5>國宴主廚阿基師的廚師夢</h5>
+                           <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                           </div>
+                        </li>
+                        <li>
+                            <h5>鼎泰豐 (天津店)</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>月滿坊Full Moon</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>庄腳所在平價熱炒</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>金龍船魚翅海鮮酒家</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+	            <div class="box_more cf">
+	                <img alt="" src="{{ MEDIA_URL }}images/btn_more_arrow.png">
+	                <a href="#">more...</a>
+	            </div>
+			</div>
+			</div>
+			
+			<div class="cf">
+			<div class="feature_left box fleft">
+				<h4>Feature</h4>
+				<h2>Critics</h2>
+				<div class="inner_box">
+                    <ul class="menu">
+                        <li class="expand">
+                           <h5>國宴主廚阿基師的廚師夢</h5>
+                           <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                           </div>
+                        </li>
+                        <li>
+                            <h5>鼎泰豐 (天津店)</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>月滿坊Full Moon</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>庄腳所在平價熱炒</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>金龍船魚翅海鮮酒家</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+	            <div class="box_more cf">
+	                <img alt="" src="{{ MEDIA_URL }}images/btn_more_arrow.png">
+	                <a href="#">more...</a>
+	            </div>
+			</div>
+			
+			<div class="feature_right box fleft">
+				<h4>Feature</h4>
+				<h2>Celebrities</h2>
+				<div class="inner_box">
+                    <ul class="menu">
+                        <li class="expand">
+                           <h5>國宴主廚阿基師的廚師夢</h5>
+                           <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                           </div>
+                        </li>
+                        <li>
+                            <h5>鼎泰豐 (天津店)</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>月滿坊Full Moon</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>庄腳所在平價熱炒</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                        <li>
+                            <h5>金龍船魚翅海鮮酒家</h5>
+                            <div class="acitem description">
+                               <a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_restaurant.png"></a>
+                               <p>掀起布簾，低頭緩緩地踏進這間充滿日式的小店，瞬間，熱絡的打招呼和此起彼落的談笑聲蜂擁般流竄進耳中，打從第一眼起，我就喜歡上這裡溫馨的氛圍。心想是誰將這些客人齊聚於此，打造出如此雅致的環境....</p>
+                               <span>Contributor <a href="#">胖嘟嘟技安妹</a> 2010年06月19日</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+	            <div class="box_more cf">
+	                <img alt="" src="{{ MEDIA_URL }}images/btn_more_arrow.png">
+	                <a href="#">more...</a>
+	            </div>
+			</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	
+	<div class="home_right fleft">
+	
+		<div class="home_r_rank_top"></div>
+		<div class="home_r_rank cf">
+			<h1>TOP20Restaurants</h1>
+			<h2>台北市東區 / 2010 年第1季</h2>
+			<ul>
+				<li class="rise odd cf">
+				    <span>1</span>
+				    <h3><a href="#">鼎泰豐 (天津店)</a></h3>
+				</li>
+				<li class="unchanged cf">
+					<span>2</span>
+					<h3><a href="#">月滿坊 Full Moon</a></h3>
+					<h4>-</h4>
+				</li>
+				<li class="fall odd cf">
+				    <span>3</span>
+				    <h3><a href="#">庄腳所在平價熱炒</a></h3>
+				</li>
+				<li class="new cf">
+				    <span>4</span>
+					<h3><a href="#">金龍船魚翅海鮮酒家</a></h3>
+					<h4>NEW</h4>
+				</li>
+				<li class="rise odd cf">
+				    <span>5</span>
+				    <h3><a href="#">虹橋人家</a></h3>
+				</li>
+				<li class="unchanged cf">
+				    <span>6</span>
+				    <h3><a href="#">首都大飯店-豫園</a></h3>
+				    <h4>-</h4>
+				</li>
+				<li class="fall odd cf">
+				    <span>7</span>
+				    <h3><a href="#">明月湖餐廳</a></h3>
+				</li>
+				<li class="new cf">
+				    <span>8</span>
+				    <h3><a href="#">喜記避風塘炒蟹 (總店)</a></h3>
+				    <h4>NEW</h4>
+				</li>
+				<li class="rise odd cf">
+				    <span>9</span>
+				    <h3><a href="#">武大郎蔥餅</a></h3>
+				</li>
+				<li class="unchanged cf">
+				    <span>10</span>
+				    <h3><a href="#">柚子哥</a></h3>
+				    <h4>-</h4>
+				</li>
+				<li class="fall odd cf">
+					<span>11</span>
+					<h3><a href="#">胡同燒肉夜食</a></h3>
+				</li>
+				<li class="new cf">
+					<span>12</span>
+					<h3><a href="#">達文士義大利咖啡餐廳</a></h3>
+					<h4>NEW</h4>
+				</li>
+				<li class="rise odd cf">
+					<span>13</span>
+					<h3><a href="#">TRUVA土耳其餐廳</a></h3>
+				</li>
+				<li class="unchanged cf">
+					<span>14</span>
+					<h3><a href="#">La Giara義大利餐廳</a></h3>
+					<h4>-</h4>
+				</li>
+				<li class="fall odd cf">
+					<span>15</span>
+					<h3><a href="#">店仔厝</a></h3>
+				</li>
+				<li class="new cf">
+					<span>16</span>
+					<h3><a href="#">台北陶園經典飯店</a></h3>
+					<h4>NEW</h4>
+				</li>
+				<li class="rise odd cf">
+					<span>17</span>
+					<h3><a href="#">明月湖餐廳</a></h3>
+				</li>
+				<li class="unchanged cf">
+					<span>18</span>
+					<h3><a href="#">喜記避風塘炒蟹 (總店)</a></h3>
+					<h4>-</h4>
+				</li>
+				<li class="fall odd cf">
+					<span>19</span>
+					<h3><a href="#">武大郎蔥餅</a></h3>
+				</li>
+				<li class="new cf">
+					<span>20</span>
+					<h3><a href="#">柚子哥</a></h3>
+					<h4>NEW</h4>
+				</li>
+			</ul>
+			<div class="more cf">
+                <img alt="" src="{{ MEDIA_URL }}images/btn_more_arrow.png">
+			    <a href="#">more...</a>
+			</div>
+		</div>
+		<div class="home_r_rank_bottom"></div>
+		
+		
+		<div class="home_d_rank_top"></div>
+        <div class="home_d_rank cf">
+            <h1>TOP20Dishes</h1>
+            <h2>台北市東區 / 2010 年第1季</h2>
+            <ul>
+                <li class="rise odd cf">
+                    <span>1</span>
+                    <h3><a href="#">鼎泰豐 (天津店)</a></h3>
+                </li>
+                <li class="unchanged cf">
+                    <span>2</span>
+                    <h3><a href="#">月滿坊 Full Moon</a></h3>
+                    <h4>-</h4>
+                </li>
+                <li class="fall odd cf">
+                    <span>3</span>
+                    <h3><a href="#">庄腳所在平價熱炒</a></h3>
+                </li>
+                <li class="new cf">
+                    <span>4</span>
+                    <h3><a href="#">金龍船魚翅海鮮酒家</a></h3>
+                    <h4>NEW</h4>
+                </li>
+                <li class="rise odd cf">
+                    <span>5</span>
+                    <h3><a href="#">虹橋人家</a></h3>
+                </li>
+                <li class="unchanged cf">
+                    <span>6</span>
+                    <h3><a href="#">首都大飯店-豫園</a></h3>
+                    <h4>-</h4>
+                </li>
+                <li class="fall odd cf">
+                    <span>7</span>
+                    <h3><a href="#">明月湖餐廳</a></h3>
+                </li>
+                <li class="new cf">
+                    <span>8</span>
+                    <h3><a href="#">喜記避風塘炒蟹 (總店)</a></h3>
+                    <h4>NEW</h4>
+                </li>
+                <li class="rise odd cf">
+                    <span>9</span>
+                    <h3><a href="#">武大郎蔥餅</a></h3>
+                </li>
+                <li class="unchanged cf">
+                    <span>10</span>
+                    <h3><a href="#">柚子哥</a></h3>
+                    <h4>-</h4>
+                </li>
+                <li class="fall odd cf">
+                    <span>11</span>
+                    <h3><a href="#">胡同燒肉夜食</a></h3>
+                </li>
+                <li class="new cf">
+                    <span>12</span>
+                    <h3><a href="#">達文士義大利咖啡餐廳</a></h3>
+                    <h4>NEW</h4>
+                </li>
+                <li class="rise odd cf">
+                    <span>13</span>
+                    <h3><a href="#">TRUVA土耳其餐廳</a></h3>
+                </li>
+                <li class="unchanged cf">
+                    <span>14</span>
+                    <h3><a href="#">La Giara義大利餐廳</a></h3>
+                    <h4>-</h4>
+                </li>
+                <li class="fall odd cf">
+                    <span>15</span>
+                    <h3><a href="#">店仔厝</a></h3>
+                </li>
+                <li class="new cf">
+                    <span>16</span>
+                    <h3><a href="#">台北陶園經典飯店</a></h3>
+                    <h4>NEW</h4>
+                </li>
+                <li class="rise odd cf">
+                    <span>17</span>
+                    <h3><a href="#">明月湖餐廳</a></h3>
+                </li>
+                <li class="unchanged cf">
+                    <span>18</span>
+                    <h3><a href="#">喜記避風塘炒蟹 (總店)</a></h3>
+                    <h4>-</h4>
+                </li>
+                <li class="fall odd cf">
+                    <span>19</span>
+                    <h3><a href="#">武大郎蔥餅</a></h3>
+                </li>
+                <li class="new cf">
+                    <span>20</span>
+                    <h3><a href="#">柚子哥</a></h3>
+                    <h4>NEW</h4>
+                </li>
+            </ul>
+            <div class="more cf">
+                <img alt="" src="{{ MEDIA_URL }}images/btn_more_arrow.png">
+                <a href="#">more...</a>
+            </div>
+        </div>
+        <div class="home_d_rank_bottom"></div>
+		
+		
+	</div>
+</div>
+{% endblock %}
+
+{% block bottom_script %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/jquery.accordion.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/jquery.cycle.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    
+    $('.menu').initMenu();
+    
+    $('#slideshow').cycle({ 
+        fx: 'fade',
+        speed: 2000,
+        timeout: 5000,
+        pager: '#slideshow_pager',
+        pagerEvent: 'click',
+        pauseOnPagerHover: 1,
+        pagerAnchorBuilder: function(idx,element){
+        	return '<a href="#">&nbsp;&nbsp;&nbsp;</a>';
+        }
+    });
+});
+</script>
+{% endblock %}

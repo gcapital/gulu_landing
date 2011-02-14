@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/recommend"
+   committed-rev="548"
+   kind="dir"
+   committed-date="2011-01-19T03:54:58.923616Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="de"
+   text-time="2010-12-25T09:23:21.000000Z"
+   committed-rev="494"
+   kind="file"
+   committed-date="2010-12-25T09:23:21.297859Z"/>
+<entry
+   name="admin.py"
+   checksum="6350966dcdd148d12abc18a7707f56c7"
+   last-author="de"
+   text-time="2010-12-25T09:23:21.000000Z"
+   committed-rev="494"
+   kind="file"
+   committed-date="2010-12-25T09:23:21.297859Z"/>
+<entry
+   name="ajax.py"
+   checksum="966d5b06e77757508f1f488dd08eaa51"
+   last-author="de"
+   text-time="2010-12-26T07:05:32.000000Z"
+   committed-rev="495"
+   kind="file"
+   committed-date="2010-12-26T07:05:32.550901Z"/>
+<entry
+   name="fixtures"
+   kind="dir"/>
+<entry
+   name="migrations"
+   kind="dir"/>
+<entry
+   name="models.py"
+   checksum="f482fc486f121eec2ec5e462d33e3a65"
+   last-author="gage"
+   text-time="2011-01-18T03:32:49.000000Z"
+   committed-rev="546"
+   kind="file"
+   committed-date="2011-01-18T03:32:49.072191Z"/>
+<entry
+   name="templates"
+   kind="dir"/>
+<entry
+   name="tests.py"
+   checksum="869671b38719cf9873b414453ac6cf22"
+   last-author="de"
+   text-time="2010-12-25T09:23:21.000000Z"
+   committed-rev="494"
+   kind="file"
+   committed-date="2010-12-25T09:23:21.297859Z"/>
+<entry
+   name="urls.py"
+   checksum="26bbabbffa5b5b574290067df76ed0c0"
+   last-author="gage"
+   text-time="2011-01-18T03:32:49.000000Z"
+   committed-rev="546"
+   kind="file"
+   committed-date="2011-01-18T03:32:49.072191Z"/>
+<entry
+   name="views.py"
+   checksum="3efcf10d92a68276069983342bca2aae"
+   last-author="gage"
+   text-time="2011-01-18T03:32:49.000000Z"
+   committed-rev="546"
+   kind="file"
+   committed-date="2011-01-18T03:32:49.072191Z"/>
+</wc-entries>

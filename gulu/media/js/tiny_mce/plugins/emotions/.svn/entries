@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/media/js/tiny_mce/plugins/emotions"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="editor_plugin.js"
+   checksum="98cba02e33fc108024f3e993be0b0b62"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="editor_plugin_src.js"
+   checksum="4cbc6e9b083a810ab0d3768af8f8f864"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="emotions.htm"
+   checksum="66948a60092333144d8095f194b1bdd7"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="img"
+   kind="dir"/>
+<entry
+   name="js"
+   kind="dir"/>
+<entry
+   name="langs"
+   kind="dir"/>
+</wc-entries>
