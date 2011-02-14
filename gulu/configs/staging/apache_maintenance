@@ -1,0 +1,24 @@
+<VirtualHost *:80>
+    ServerName beta.gulu.com
+    
+    Redirect permanent /favicon.ico http://media-beta.gulu.com/static/favicon.ico
+    
+    Alias /robots.txt /home/gulu/sites/gulu/repository/gulu/assets/robots.txt
+     
+    ErrorLog /home/gulu/logs/gulu.error.log
+    LogLevel warn
+
+    CustomLog /home/gulu/logs/gulu.access.log combined
+    
+    ServerSignature Off
+    
+    RewriteEngine on
+    # canonical hostname
+    #RewriteCond %{HTTP_HOST} ^www [NC] 
+    #RewriteRule ^/(.*)  http://gulu.ec2-122-248-196-115.ap-southeast-1.compute.amazonaws.com/$1 [L,R]
+    
+    DocumentRoot /home/gulu/sites/gulu/repository/gulu/assets/
+    
+    RewriteCond %{REQUEST_URI} !/maintenance.html$ 
+    RewriteRule $ /maintenance.html [R=302,L]
+</VirtualHost>
