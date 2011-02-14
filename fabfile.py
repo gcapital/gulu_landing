@@ -27,18 +27,18 @@ def production():
     Work on production environment
     """
     env.settings = 'production'
-    env.hosts = ['ec2-122-248-195-7.ap-southeast-1.compute.amazonaws.com']
+    env.hosts = ['gulu.com']
     env.user = 'gulu'
     env.s3_bucket = 'media.gulu.com'
 
-def staging():
-    """
-    Work on staging environment
-    """
-    env.settings = 'staging'
-    env.hosts = ['beta.gulu.com'] 
-    env.user = 'gulu'
-    env.s3_bucket = 'media-beta.gulu.com'
+#def staging():
+#    """
+#    Work on staging environment
+#    """
+#    env.settings = 'staging'
+#    env.hosts = ['beta.gulu.com'] 
+#    env.user = 'gulu'
+#    env.s3_bucket = 'media-beta.gulu.com'
     
 """
 Branches
