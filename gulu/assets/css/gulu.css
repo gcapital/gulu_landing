@@ -1,0 +1,363 @@
+/* CSS Document */
+
+/* base */
+html {
+    margin: 0px;
+    padding: 0px;
+    background: url(../images/bg_wood.jpg) repeat left top;
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Courier New", "Courier", serif;
+    font-size: 12px;
+}
+
+h1, h2, h3, h4, h5, h6, h7, p, form, input, ul, li {
+    padding: 0px;
+    margin: 0px;
+    font-weight: normal;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: "Courier New", "Courier", serif;
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+h3, h4, h5 {
+    font-size: 21px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+p {
+    line-height: 16px
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+input, select, textarea {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #000;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    outline: none;
+}
+
+a:hover {
+    /*text-decoration: underline;*/
+    color: #000000;
+    outline: none;
+}
+
+a img {
+    border: 0px;
+    outline: none;
+}
+
+:link, visited, ins {
+    text-decoration: none;
+}
+
+.fleft {
+    float: left;
+}
+
+.fright {
+    float: right;
+}
+
+.overflow {
+    overflow: auto;
+}
+
+.overflow_h {
+    overflow: hidden;
+}
+
+.display_none {
+    display: none;
+}
+
+.display_block {
+    display: block;
+}
+
+.cf:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.cf {display: inline-block;}
+
+* html .cf {height: 1%;} /* Hides from IE-mac \*/
+
+.cf {display: block;} /* End hide from IE-mac */
+
+/* main */
+
+.main {
+	background: url(../images/bg_note_paper.png) no-repeat;
+	width: 1128px;
+	height: 664px;
+	margin: 0 auto;
+	position: relative;
+	top:-1px;
+}
+
+.gradient_top{
+	background: url(../images/bg_header_gradient.png) repeat-x;
+	width: 1128px;
+	height: 664px;
+	margin: 0 auto;
+	position: relative;
+	top:-1px;
+}
+
+.newsletter_banner {
+	background: url(../images/bg_title_bar.png) no-repeat;
+	width: 762px;
+	height: 75px;
+	margin: 0 auto;
+	padding: 0 0 0 0;
+	position: relative;
+	left: 65px;
+	top: 10px;
+}
+
+.banner_content{
+	padding: 9px 0 0 63px;
+}
+
+.banner_text{
+	padding: 2px 0px 2px 5px;
+}
+
+.url_title{
+	font-weight:bold;
+	color:#3b5998;
+}
+
+.fb_icon {
+	background: url(../images/img_fb_logo.png) no-repeat;
+	width: 84px;
+	height: 18px;
+	position: relative;
+	top: 6px;
+	left:-28px;
+}
+
+.fb_like_btn {
+  height: 18px;
+  position: relative;
+  top: 32px;
+}
+
+.bulletin {
+	background: url(../images/bg_feature_board.png) no-repeat;
+	width: 829px;
+	height: 330px;
+	position: relative;
+	left: -10px;
+	top: 13px;
+	margin: 0 auto;
+	z-index:10;
+}
+
+.slide_container{
+	width: 610px;
+	height: 165px;
+	position: absolute;
+	top:160px;
+	left:235px;
+	overflow:hidden;
+}
+
+.slide{
+	position: absolute;
+	top: -8px;
+	left: -14px;
+	z-index: 5;
+}
+
+#slideshow_pager a{
+	height: 15px;
+	left: 514px;
+	position: relative;
+	top: 272px;
+	width: 200px;
+}
+
+#slideshow_pager a {
+  background: url("../images/btn_slide_empty.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  float: left;
+  width: 26px;
+}
+
+#slideshow_pager a.activeSlide{
+	background: url(../images/btn_slide_selected.png) no-repeat;
+}
+
+.logo {
+	position:absolute;
+	top:-22px;
+	left:64px;
+	z-index:11;
+}
+
+.newsletter_note {
+	background: url(../images/bg_newsletter_note.png) no-repeat;
+	width: 469px;
+	height: 266px;
+	position: absolute;
+	left: 68px;
+	top: 350px;
+	z-index:12;
+}
+
+.text {
+	font-size:30px;
+	font-weight: bold;
+	width:800px;
+	margin:55px 0 0 173px;
+	float:left;
+	line-height:45px;
+}
+
+.box {
+	width: 560px;
+    height: 120px;
+    margin: 110px 0 0 145px;
+    float: left;
+}
+
+.form {
+  line-height: 6px;
+  margin-right: 60px;
+  padding: 56px 75px 0 20px;
+  width:460px;
+}
+
+.form label {
+	font-size: 18px;
+    font-weight: bold;
+    float:right;
+    margin-right: 10px;
+    word-spacing: -5px;
+}
+
+.form input[type="submit"] {
+	background: url(../images/btn_send2.png) no-repeat left top;
+	width:103px;
+	height:32px;
+	border:0px;
+	float:right;
+	margin: 10px 30px 0 0;
+	cursor:pointer;
+}
+
+.msg {
+	color: #FFFFFF;
+	line-height: 6px;
+	margin: 90px 0 0;
+	padding: 0 75px 0 20px;
+	width: 455px;
+}
+
+.msg p {
+	font-family: "Courier New", "Courier", serif;
+	font-size: 36px;
+	line-height: 30px;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 4px 4px 10px #666;
+}
+
+.apps {
+	width:332px;
+	margin:140px 0 0 25px;
+	border:0px;
+}
+
+.apps a {
+	float: left;
+	display: block;
+	display: inline-block;
+}
+
+.copyright {
+	color: #FFFFFF;
+	height: 30px;
+	padding-top: 5px;
+	text-align: center;
+	font-weight: bold;
+}
+
+/* form */
+.newsletter_form {
+	height: 200px;
+}
+
+.username, .email{
+	background:url(../images/bg_input6.png) no-repeat left top; padding:5px 0 5px 10px; width:326px; height:21px; border:0px;
+}
+
+.username{
+	margin:0 0 5px 0;
+}
+
+.label_username{
+	background: url(../images/bg_username_tw.png) no-repeat;
+	width: 93px;
+	height: 20px;
+}
+
+.label_username_underline {
+	background: url("../images/bg_username_underline_tw.png") no-repeat scroll 0 0 transparent;
+	height: 13px;
+	margin-left: -92px;
+	margin-top: 14px;
+	width: 93px;
+}
+
+.label_email{
+	background: url(../images/bg_email_tw.png) no-repeat;
+	width: 110px;
+	height: 20px;
+}
+
+.label_email_underline {
+	background: url("../images/bg_email_underline_tw.png") no-repeat scroll 0 0 transparent;
+	height: 13px;
+	margin-left: -111px;
+	margin-top: 14px;
+	width: 114px;
+}
+
+.email{
+	
+}
+
+.errorlist{
+	float:right;
+	color:red;
+}
