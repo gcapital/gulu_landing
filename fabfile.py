@@ -31,14 +31,15 @@ def production():
     env.user = 'gulu'
     env.s3_bucket = 'media.gulu.com'
 
-#def staging():
-#    """
-#    Work on staging environment
-#    """
-#    env.settings = 'staging'
-#    env.hosts = ['beta.gulu.com'] 
-#    env.user = 'gulu'
-#    env.s3_bucket = 'media-beta.gulu.com'
+# Don't use this for landing page
+def staging():
+    """
+    Work on staging environment
+    """
+    env.settings = 'staging'
+    env.hosts = ['beta.gulu.com'] 
+    env.user = 'gulu'
+    env.s3_bucket = 'media-beta.gulu.com'
     
 """
 Branches
