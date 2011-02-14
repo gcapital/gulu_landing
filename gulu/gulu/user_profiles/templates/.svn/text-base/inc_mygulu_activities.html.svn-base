@@ -1,4 +1,0 @@
-{% load activity_tags %}
-{% for activity in activities %}
-{% display_action activity %}
-{% endfor %}

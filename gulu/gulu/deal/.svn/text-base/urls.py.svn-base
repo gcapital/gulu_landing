@@ -1,1 +1,0 @@
-""" Gulu deal module URLs """__author__ = "Jason Ke <jason.ke@geniecapital.com>"__version__ = "$Id: urls.py 518 2011-01-06 05:14:31Z jason $"from django.conf.urls.defaults import *urlpatterns = patterns('deal.ajax',	url(r'^ajax/deal_view_single$', 'deal_view_single', name="deal-view-single"),)

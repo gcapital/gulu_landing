@@ -1,6 +1,0 @@
-<div class='content' style='{%if error_msg%}visibility:hidden{% endif %}'>
-	Site--{{site_name}}: Complete oauth <br>
-</div>
-<div class='content' style='{%if not error_msg%}visibility:hidden{% endif %}'>
-	Error occurred: {{error_msg}}
-</div>
