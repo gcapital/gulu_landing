@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/guardian/templates"
+   committed-rev="551"
+   kind="dir"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="admin"
+   kind="dir"/>
+</wc-entries>

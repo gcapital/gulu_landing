@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/south/tests"
+   committed-rev="310"
+   kind="dir"
+   committed-date="2010-12-06T10:45:53.109947Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="__init__.py"
+   checksum="c931cd033b673889ce884ee0be7f3329"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="autodetection.py"
+   checksum="cc658e6f51f6672deb4f39192f828527"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="brokenapp"
+   kind="dir"/>
+<entry
+   name="circular_a"
+   kind="dir"/>
+<entry
+   name="circular_b"
+   kind="dir"/>
+<entry
+   name="db.py"
+   checksum="454ecf7699842e3d25c6f6565dd2d804"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="deps_a"
+   kind="dir"/>
+<entry
+   name="deps_b"
+   kind="dir"/>
+<entry
+   name="deps_c"
+   kind="dir"/>
+<entry
+   name="emptyapp"
+   kind="dir"/>
+<entry
+   name="fakeapp"
+   kind="dir"/>
+<entry
+   name="inspector.py"
+   checksum="dd1d4fc4188e06079150982afce1a064"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="logger.py"
+   checksum="942dee57858a916d71c4885601318915"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="logic.py"
+   checksum="b625beaf21ff5680171b4d69c6c43c1e"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="otherfakeapp"
+   kind="dir"/>
+</wc-entries>

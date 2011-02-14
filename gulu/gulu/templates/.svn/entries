@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="jason"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/templates"
+   committed-rev="596"
+   kind="dir"
+   committed-date="2011-01-27T07:05:10.903251Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="403.html"
+   checksum="d2287af5cf42e20d82b36741ad1b1560"
+   last-author="ben"
+   text-time="2011-01-20T09:44:15.000000Z"
+   committed-rev="554"
+   kind="file"
+   committed-date="2011-01-20T09:44:15.572811Z"/>
+<entry
+   name="404.html"
+   checksum="bff9c7d933d651d1dc6f3e2deec4d77b"
+   last-author="jason"
+   text-time="2011-01-04T05:51:14.000000Z"
+   committed-rev="506"
+   kind="file"
+   committed-date="2011-01-04T05:51:14.712536Z"/>
+<entry
+   name="500.html"
+   checksum="bff9c7d933d651d1dc6f3e2deec4d77b"
+   last-author="jason"
+   text-time="2011-01-04T05:51:14.000000Z"
+   committed-rev="506"
+   kind="file"
+   committed-date="2011-01-04T05:51:14.712536Z"/>
+<entry
+   name="base.html"
+   checksum="ba799e905de8c71514c5c1cb6fcbc17c"
+   last-author="gage"
+   committed-rev="542"
+   text-time="2011-01-12T08:40:05.000000Z"
+   kind="file"
+   committed-date="2011-01-12T08:40:05.645738Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="base_adbanner.html"
+   checksum="da146732566217e1948c5677fc56a558"
+   last-author="gage"
+   committed-rev="542"
+   text-time="2011-01-12T08:40:05.000000Z"
+   kind="file"
+   committed-date="2011-01-12T08:40:05.645738Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="base_profile.html"
+   checksum="b65e59e8b14533faeb420005f04e331b"
+   last-author="gage"
+   committed-rev="542"
+   text-time="2011-01-12T08:40:05.000000Z"
+   kind="file"
+   committed-date="2011-01-12T08:40:05.645738Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="base_slideshow.html"
+   checksum="985788bf1f04e9e657cb183bad0eeed9"
+   last-author="gage"
+   committed-rev="542"
+   text-time="2011-01-12T08:40:05.000000Z"
+   kind="file"
+   committed-date="2011-01-12T08:40:05.645738Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="mygulu_base.html"
+   checksum="04a7e2162ebb4b8ad03f721aceef8798"
+   last-author="jason"
+   committed-rev="596"
+   text-time="2011-01-27T07:05:10.000000Z"
+   kind="file"
+   committed-date="2011-01-27T07:05:10.903251Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="restaurant_base.html"
+   checksum="f7887cbd011188faf8c03789e85f22bc"
+   last-author="sean"
+   committed-rev="592"
+   text-time="2011-01-27T06:45:38.000000Z"
+   kind="file"
+   committed-date="2011-01-27T06:45:38.449648Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="search"
+   kind="dir"/>
+<entry
+   name="test.html"
+   checksum="4ca3a5c5d004d0876cf194d59dec468d"
+   last-author="ben"
+   committed-rev="415"
+   text-time="2010-12-21T03:48:33.000000Z"
+   kind="file"
+   committed-date="2010-12-21T03:48:33.274722Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+</wc-entries>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/wall/templates/activity/posted_on"
+   committed-rev="609"
+   kind="dir"
+   committed-date="2011-01-27T08:49:57.098474Z"/>
+<entry
+   name="action.html"
+   checksum="2e3b94220a940d4df625000866cf3bb3"
+   last-author="ben"
+   text-time="2011-01-27T08:49:57.000000Z"
+   committed-rev="609"
+   kind="file"
+   committed-date="2011-01-27T08:49:57.098474Z"/>
+</wc-entries>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/debug_toolbar/media/debug_toolbar"
+   committed-rev="310"
+   kind="dir"
+   committed-date="2010-12-06T10:45:53.109947Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="Makefile"
+   checksum="fe23e9ab267aca07fcbe9811c7c3af28"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:55.000000Z"/>
+<entry
+   name="css"
+   kind="dir"/>
+<entry
+   name="img"
+   kind="dir"/>
+<entry
+   name="js"
+   kind="dir"/>
+</wc-entries>

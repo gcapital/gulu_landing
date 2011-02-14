@@ -1,0 +1,13 @@
+*.kpf
+*.pyc
+*~
+.DS_Store
+settings_dev.py
+settings_local.py
+*.sqlite
+.idea
+photo_cache
+.project
+.pydevproject
+.settings
+

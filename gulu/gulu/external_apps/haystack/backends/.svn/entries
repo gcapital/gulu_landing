@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/haystack/backends"
+   committed-rev="562"
+   kind="dir"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="__init__.py"
+   checksum="0598b58594857cffe5572d0d37d8cb57"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+<entry
+   name="dummy_backend.py"
+   checksum="f50afcefd3795678126d12c9527b5082"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+<entry
+   name="simple_backend.py"
+   checksum="7acb71c02e6ab697a68a47d9a7e1352f"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+<entry
+   name="solr_backend.py"
+   checksum="cc1715291549d6b64892ba37fee44b1a"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+<entry
+   name="whoosh_backend.py"
+   checksum="17c9c24cd66898ca5dc826da39a4facd"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+</wc-entries>

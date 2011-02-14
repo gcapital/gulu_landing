@@ -1,0 +1,37 @@
+{% extends "restaurant_base.html" %}
+
+{% block bodyclass %}blog_nav{% endblock %}
+
+{% load global_tags bbcode %}
+
+{% block content %}
+<div class="restaurant_blog">
+<div class="blog_menu_header">
+	<div class="blog_menu_title cf">
+		<h2 class="fleft">Blog</h2>
+		<div class="fright blog_menu_operate cf">
+			<a class="btn6 fleft" href="{% slugurl restaurant restaurant-add-post restaurant.id %}">Create a Post</a>
+		</div>
+	</div>
+</div>
+</div>
+
+{% for post in restaurant.posts.all %}
+<div class="sp_hr_line"></div>
+
+<div class="restaurant_blog">
+	<div class="restaurant_blog_title cf">
+		{{ post.title }}
+	</div>
+	<div class="restaurant_blog_date cf">
+		{{ post.created }}
+	</div>
+
+	<div class="restaurant_blog_content cf">
+		{% bbcode post.content %}
+	</div>
+
+</div>
+{% endfor %}
+
+{% endblock %}

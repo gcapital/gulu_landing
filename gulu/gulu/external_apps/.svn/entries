@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps"
+   committed-rev="623"
+   kind="dir"
+   committed-date="2011-01-31T02:03:36.332381Z"
+   prop-time="2011-01-31T09:15:57.000000Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:52.000000Z"/>
+<entry
+   name="bbcode"
+   kind="dir"/>
+<entry
+   name="debug_toolbar"
+   kind="dir"/>
+<entry
+   name="guardian"
+   kind="dir"/>
+<entry
+   name="haystack"
+   kind="dir"/>
+<entry
+   name="imagekit"
+   kind="dir"/>
+<entry
+   name="oauth2"
+   kind="dir"/>
+<entry
+   name="piston"
+   kind="dir"/>
+<entry
+   name="south"
+   kind="dir"/>
+<entry
+   name="whoosh"
+   kind="dir"/>
+</wc-entries>

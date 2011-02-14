@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/media/js/tiny_mce/plugins/xhtmlxtras/js"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="abbr.js"
+   checksum="d91ae7d986336de4ecb977d19dcfab19"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="acronym.js"
+   checksum="0a19f79bdc9222d3273712fe37a8051c"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="attributes.js"
+   checksum="c2627256b3039e49983ff53d0fcb5c27"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="cite.js"
+   checksum="ba39487ce6a625538b838c21502bbaa7"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="del.js"
+   checksum="a0f78a357ef08838b1c3ea677260e071"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="element_common.js"
+   checksum="ac65011064cf320b7eb4e3451c848a54"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="ins.js"
+   checksum="482bdcf564f171f510d3ccb2db25915a"
+   last-author="ben"
+   text-time="2010-12-20T06:11:05.000000Z"
+   committed-rev="407"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+</wc-entries>

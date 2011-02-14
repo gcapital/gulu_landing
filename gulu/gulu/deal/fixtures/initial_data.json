@@ -1,0 +1,104 @@
+[
+    {
+        "pk": 1, 
+        "model": "deal.deal", 
+        "fields": {
+            "start_datetime": "2011-01-21", 
+            "title": "Super awesome deal!", 
+            "conditions": "You must be awesome.", 
+            "restaurant": 1, 
+            "cover": null, 
+            "amount": "30", 
+            "ongoing": true, 
+            "user": 3, 
+            "dish": 7, 
+            "type": 3, 
+            "end_datetime": "2011-01-21"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "deal.deal", 
+        "fields": {
+            "start_datetime": "2011-01-21", 
+            "title": "Less awesome deal", 
+            "conditions": "Must spend at least $1000.  And must be awesome.", 
+            "restaurant": 1, 
+            "cover": null, 
+            "amount": "1000", 
+            "ongoing": false, 
+            "user": 3, 
+            "dish": null, 
+            "type": 2, 
+            "end_datetime": "2011-01-21"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "deal.deal", 
+        "fields": {
+            "start_datetime": "2011-01-21", 
+            "title": "Splendid Deal", 
+            "conditions": "", 
+            "restaurant": 1, 
+            "cover": null, 
+            "amount": "20", 
+            "ongoing": true, 
+            "user": 6, 
+            "dish": null, 
+            "type": 1, 
+            "end_datetime": "2011-01-21"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "deal.deal", 
+        "fields": {
+            "start_datetime": "2011-01-21", 
+            "title": "Extreme Deal", 
+            "conditions": "", 
+            "restaurant": 1, 
+            "cover": null, 
+            "amount": "13", 
+            "ongoing": true, 
+            "user": 6, 
+            "dish": 4, 
+            "type": 1, 
+            "end_datetime": "2011-01-21"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "deal.deal", 
+        "fields": {
+            "start_datetime": "2011-01-21", 
+            "title": "Bravo Deak", 
+            "conditions": "You must yelp bravo 100 times in a row", 
+            "restaurant": 1, 
+            "cover": null, 
+            "amount": "22", 
+            "ongoing": true, 
+            "user": 6, 
+            "dish": null, 
+            "type": 1, 
+            "end_datetime": "2011-01-21"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "deal.deal", 
+        "fields": {
+            "start_datetime": "2011-01-21", 
+            "title": "Spectacular Deal", 
+            "conditions": "test", 
+            "restaurant": 1, 
+            "cover": null, 
+            "amount": "11", 
+            "ongoing": true, 
+            "user": 6, 
+            "dish": 1, 
+            "type": 1, 
+            "end_datetime": "2011-01-21"
+        }
+    }
+]

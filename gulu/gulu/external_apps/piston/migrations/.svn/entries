@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="sean"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/piston/migrations"
+   committed-rev="622"
+   kind="dir"
+   committed-date="2011-01-31T01:55:14.346987Z"/>
+<entry
+   name="0001_initial.py"
+   checksum="a238450954aac03295d05fef86fed8ea"
+   last-author="sean"
+   text-time="2011-01-31T01:55:14.000000Z"
+   committed-rev="622"
+   kind="file"
+   committed-date="2011-01-31T01:55:14.346987Z"/>
+<entry
+   name="0002_auto__add_field_site_api_key.py"
+   revision="627"
+   checksum="9247fc0af26de7af3bb0f57f835abfa4"
+   last-author="sean"
+   text-time="2011-01-31T02:48:10.000000Z"
+   committed-rev="627"
+   kind="file"
+   committed-date="2011-02-01T01:11:17.733000Z"/>
+<entry
+   name="0003_auto__chg_field_nonce_token_key__chg_field_nonce_consumer_key__chg_fie.py"
+   revision="627"
+   checksum="fa1e586377a3443fa261b0af63cb4803"
+   last-author="sean"
+   text-time="2011-01-31T03:26:34.000000Z"
+   committed-rev="627"
+   kind="file"
+   committed-date="2011-02-01T01:11:17.733000Z"/>
+<entry
+   name="0004_auto__chg_field_nonce_token_key__chg_field_nonce_consumer_key__chg_fie.py"
+   revision="627"
+   checksum="fb5981f8f31b036f78c8fe3011b2b222"
+   last-author="sean"
+   text-time="2011-01-31T03:33:51.000000Z"
+   committed-rev="627"
+   kind="file"
+   committed-date="2011-02-01T01:11:17.733000Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="sean"
+   text-time="2011-01-27T09:31:05.000000Z"
+   committed-rev="612"
+   kind="file"
+   committed-date="2011-01-27T09:31:05.645180Z"/>
+</wc-entries>

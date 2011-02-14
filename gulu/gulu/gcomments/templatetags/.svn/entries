@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/gcomments/templatetags"
+   committed-rev="388"
+   kind="dir"
+   committed-date="2010-12-16T06:59:01.364581Z"/>
+<entry
+   name="__init__.py"
+   checksum="4a9d876b2b4d566abc1d6c5a695cec7d"
+   last-author="ben"
+   committed-rev="388"
+   text-time="2010-12-16T06:59:01.000000Z"
+   kind="file"
+   committed-date="2010-12-16T06:59:01.364581Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="gcomments_tags.py"
+   checksum="5dd64a88883c254b2621b96bb9cd34f6"
+   last-author="ben"
+   committed-rev="388"
+   text-time="2010-12-16T06:59:01.000000Z"
+   kind="file"
+   committed-date="2010-12-16T06:59:01.364581Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+</wc-entries>

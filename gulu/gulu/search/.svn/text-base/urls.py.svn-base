@@ -1,0 +1,1 @@
+""" Gulu search module URLs """__author__ = "Gage Tseng <gage.tseng@geniecapital.com>"__version__ = "$Id:$"from django.conf.urls.defaults import *urlpatterns = patterns('search.ajax',	#url(r'^ajax/restaurant_search$', 'restaurant_search', name="restaurant-search"),)urlpatterns = patterns('',	url(r'^$', include('haystack.urls')),)

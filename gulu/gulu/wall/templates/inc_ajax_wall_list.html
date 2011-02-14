@@ -1,0 +1,40 @@
+{% load wall_tags %}
+{% load gcomments_tags global_tags %}
+{% for post in wall %}
+<div class="wall_box btm_grey_border cf">
+    <div class="poster_cover photo_bg_69x65">
+        <img src="{{ post.poster.main_profile_pic.image40x40.url }}" alt="" />
+    </div>
+    <div class="post_detail">
+        <h4>{{post.poster.nickname}}</h4>
+        <h6>{{post.create_time|date:"Y/m/d"}}</h6>
+        <div>
+            {% if post.photo %}
+            <div class="photo_css_frame"><img src="{{ post.photo.image121x90.url }}"></div>
+            {% endif %}
+            <p>{{post.content}}</p>
+        </div>
+        <div class="share_buttons"><a href="#"><img src="http://localhost:8000/media/images/tmp_all_icons.png" alt=""></a></div>
+        <div class="post_comment">
+            <div class="comment_info">
+                <span class="info_top"></span>
+                <div class="info comment_bd">
+                   <a href="#">Lily</a>, <a href="#">Marcus</a>, <a href="#">Emily lin</a> and 2 <a href="#">others</a> like this.
+                </div>
+                <span class="bottom"></span>
+                {% if post.total_comment %}
+                <span class="top"></span>
+                <div class="comment_bd"><a href="#">View all</a> {{post.total_comment}} comments</div>
+                <span class="bottom"></span>
+                {% endif %}
+            </div>
+			{#% wall_list wall %#}
+               <div class="comment_content">
+               {% comments_form post %}
+               </div>
+               {% if post.total_comment %}
+               {% endif %}
+        </div>
+    </div>
+</div>
+{% endfor %}

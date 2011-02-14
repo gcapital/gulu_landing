@@ -1,0 +1,17 @@
+{% if like_count > 0 %}
+<div class="like_info">
+	<span class="fleft arrow_up"></span>
+	{% if like_type == 'like' %}
+	    <a href="">You</a>{% if like_items|length > 1 %},{% endif %}{% if like_items|length == 1 %} and {% endif %}
+	{% endif %}
+	
+	{% for like_item in like_items %}
+	    {% if forloop.last and others == 0 and like_items|length != 1 and like_type == 'like' %}and {% endif %}<a href="#">{{ like_item.user }}</a>{% if not forloop.last %},{% endif %}
+	{% endfor %}
+	
+	{% if others > 0 %}
+	and {{ others }} <a href="#">others</a>
+	{% endif %}
+	like this.
+</div>
+{% endif %}

@@ -1,0 +1,212 @@
+{% extends "base_profile.html" %}
+
+{% load global_tags %}
+
+{% block profile_photo %}
+{{ request.content_object.main_profile_pic.image185x185.url }}
+{% endblock %}
+
+{% block profile_header %}
+<div class="restaurant_title cf">
+    <h3 class="fleft">
+       <a href="#">{{ request.content_object.name|default:"restaurant title"|title }}</a>
+       <img alt="" src="{{ MEDIA_URL }}images/tmp_points_srtar.png">               
+    </h3>
+    <ul class="restaurant_operates_menus fright cf">
+        <li><a class="btn2" href="#">Invite</a></li>
+        <li><a class="btn3" href="#">Reserve</a></li>
+        <li><a class="btn3" href="#">Take Out</a></li>
+        <li><a class="btn3" href="#">Delivery</a></li>
+        <li><a class="btn1" href="#"><img alt="" src="{{ MEDIA_URL }}images/icon_printer.png"></a></li>
+    </ul>
+</div>
+<div class="restaurant_introduction">
+    <p>{{ request.content_object.description }}</p>
+</div>
+{% endblock %}
+
+{% block profile_nav %}
+<ul>
+	<li id="nav_restaurant_profile"><a href="{% slugurl request.content_object restaurant-profile request.content_object.id %}">Profile</a></li>
+	<li id="nav_restaurant_reviews"><a href="{% slugurl request.content_object restaurant-reviews request.content_object.id %}">Reviews</a></li>
+	<li id="nav_restaurant_photos"><a href="{% slugurl request.content_object photos-restaurant-list request.content_object.id %}">Photos</a></li>
+	<li id="nav_restaurant_menu"><a href="{% slugurl request.content_object restaurant-menu request.content_object.id %}">Menu</a></li>
+	<li id="nav_restaurant_blogs"><a href="{% slugurl request.content_object restaurant-posts request.content_object.id %}">Blog</a></li>
+	<li id="nav_restaurant_other_l"><a href="{% slugurl request.content_object restaurant-other-locations request.content_object.id %}">Other Location</a></li>
+	<li id="nav_restaurant_missions"><a href="">Missions</a></li>
+	<li id="nav_restaurant_deals"><a href="{% slugurl request.content_object deal-deals request.content_object.id %}">Deals</a></li>
+	<li id="nav_restaurant_chef"><a href="{% slugurl request.content_object restaurant-chef request.content_object.id %}">Chef</a></li>	
+</ul>
+{% endblock %}
+
+{% block profile_left_col %}
+
+<div class="restaurant_detials module">
+	<ul class="restaurant_counter cf">
+	    <li class="delicious_count"><a href="#">美味<span class="number">{{ request.content_object.rating_food }}</span></a></li>
+	    <li class="environment_count"><a href="#">環境<span class="number">{{ request.content_object.rating_atmosphere }}</span></a></li>
+	    <li class="services_count"><a href="#">服務<span class="number">{{ request.content_object.rating_service }}</span></a></li>
+	    <li class="price_count"><a href="#">價格<span class="number">{{ request.content_object.rating_price }}</span></a></li>
+	</ul>
+	<ul class="restaurant_points">
+	    <li class="cf">Total Score<span class="number">{{ requerst.content_object.score }}</span></li>
+	    <li class="cf">Favorite<span class="number favorite">{{ request.content_objects.follower_count }}</span></li>
+	    <li class="cf">
+	       <input type="submit" value="Review" class="btn4">
+	       <input type="submit" value="Favorite" class="btn4">
+	    </li>
+	</ul>
+	<ul class="restaurant_operate">
+        <li><a href="#">．Add to my to do list</a></li>
+        <li><a href="#">．Add to my passport</a></li>
+        <li><a href="#">．Suggest to my friends</a></li>
+        <li><a href="#">．Send Message</a></li>
+    </ul>
+    <div class="restaurant_profile_notice">
+        <div class="notice_top"></div>
+        <div class="notice_body">
+            <h4><a href="#">Recent Post</a></h4>
+            <div><a href="#">裝修了兩星期，終於開業啦，大家快快來捧場</a></div>
+        </div>
+        <div class="notice_bottom"></div>
+    </div>
+</div>
+
+
+<div class="module restaurant_badges">
+    <h3>Badges</h3>
+    <a href="#"><img alt="" src="{{ MEDIA_URL }}images/img_badges_o.png"></a>
+    <a href="#"><img alt="" src="{{ MEDIA_URL }}images/img_badges_t.png"></a>
+    <a href="#"><img alt="" src="{{ MEDIA_URL }}images/img_badges_g.png"></a>
+    <a href="#"><img alt="" src="{{ MEDIA_URL }}images/img_badges_f.png"></a>
+</div>
+
+
+<div class="module restaurant_info">
+    <ul>
+        <li class="types cf">
+            <img class="fleft" alt="" src="{{ MEDIA_URL }}images/icon_r_type_pizza.png">
+	        <ul class="fleft">
+	            <li>類型：{{ request.content_object.type }}</li>
+	            <li>地區：{{ request.content_object.contry|default:"台灣" }}/{{ request.content_object.city|default:"台北" }}/{{ request.content_object.region|default:"大安區" }}</li>
+	        </ul>
+        </li>
+        <li class="address">{{ request.content_object.address }}</li>
+        <li class="tell">{{ request.content_object.phone }}</li>
+    </ul>
+</div>
+
+
+<div class="module restaurant_dealbox">
+    <div class="box">
+        <h3>Deal Box</h3>
+        <h4>跨年五人同行一人免費</h4>
+        <p>跨年五人同行一人免費跨年五人同行一人免費跨年五人同行一人免費跨年五人同行一人免費</p>
+        <div class="operates">
+            <a href="#">詳細咨詢</a>
+            <a href="#">更多活動</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="module opening_hours">
+    <h3>Opining Hours</h3>
+    {{ request.content_object.business_hours|default:"24hr"|linebreaks }}
+    {% comment %}
+    <ul>
+        <li>午餐11:30-14:00</li>
+        <li>午茶14:30-16:30</li>
+        <li>晚餐17:30-21:00</li>
+        <li>(週末營業至晚上22:30)</li>
+    </ul>
+    {% endcomment %}
+</div>
+
+
+<div class="module restaurant_service_info">
+    <h3>Services {{ request.content_object.service_info }}</h3>
+    <ul>
+        {% for service in services %}
+        <li class="{% if service in request.content_object.services.all %}allowed{% endif %}">{{service.name}}</li>
+        {% endfor %}
+        {% comment %}
+        <li>刷卡</li>
+        <li class="allowed">國名旅遊卡</li>
+        <li>攜帶寵物</li>
+        <li class="allowed">停車位</li>
+        <li>最低消費</li>
+        <li>包廂</li>
+        <li>無障礙</li>
+        {% endcomment %}
+    </ul>
+</div>
+
+
+<div class="module restaurant_chef">
+    <h3>Chef</h3>
+    <div class="chef_detials">
+        <p><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png">                 
+        <span class="title">主府大名大名</span>
+        米其林飯店主府米其林飯店主府，擅長個食材混搭創意料理擅長個食材混搭創意料理</a></p>
+    </div>
+</div>
+
+
+<div class="module restaurant_vip">
+    <h3>VIP</h3>
+    <div class="vip_area">
+        <h4>成為VIP會員享有更多優惠</h4>
+        <p>更多屬於VIP會員的活動更多屬於VIP會員的活動更多屬於</p>
+        <a href="#" class="btn2">Join</a>
+    </div>
+</div>
+
+
+<div class="module restaurant_giftcard">
+    <div class="giftcard">              
+        <h4>My Gift Card</h4>
+        <p>買餐券給朋友買餐券給朋友買餐券給朋友朋友</p>
+        <a href="#" class="btn2">More</a>
+    </div>
+</div>
+
+
+<div class="module restaurant_followers">
+    <h3>Followers</h3>
+    <ul class="cf">
+        <li class="current"><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png" class="foot_t"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"></a></li>
+    </ul>
+</div>
+
+
+<div class="module restaurant_missions">
+    <h3>Missions</h3>
+    <ul>
+        <li class="gray"><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"><span class="mission_title">Pizzeria TAVOLA </span></a></li>
+        <li><a href="#"><img alt="" src="{{ MEDIA_URL }}images/tmp_chef_photo.png"><span class="mission_title">柬埔寨美食挑戰你的胃</span></a></li>
+    </ul>
+</div>
+
+
+<div class="restaurant_report">
+    <h5>Report</h5>
+    <div class="check">
+        <label for="misleading"><input type="checkbox" class="checkbox" value="" name="" id="misleading">Misleading</label>
+        <label class="repetitive" for="repetitive"><input type="checkbox" class="checkbox" value="" name="" id="repetitive">Repetitive</label>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+This is content
+{% endblock %}

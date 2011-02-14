@@ -1,0 +1,58 @@
+{% extends request.base_template %}
+
+{% block bodyclass %}photos_nav{% endblock %}
+
+{% load gcomments_tags %}
+{% load global_tags %}
+
+{% block content %}
+<div class="restaurant_view_photo">
+    <div class="header cf">
+        <a name="title"></a>
+        <h2 class="fleft">View Photo</h2>
+        <div class="operates fright cf">
+            <a class="btn6 fleft" href="../">Back to List</a>
+            <a class="btn4 fleft" href="./edit/">Edit</a>
+            <a class="btn4 fleft" href="./edit/">Delete</a>
+        </div>
+    </div>
+    
+	<div class="sp_hr_line"></div>
+	
+	<div class="photo_view_wrapper">
+	    <div class="title cf">
+		    <h3 class="fleft">
+		        {% if object.restaurant %}
+		            {% if object.dish %}
+		                {{ object.user.nickname }} {{ object.dish.name }} @ {{ object.restaurant.name }}
+		            {% else %}
+		                {{ object.user.nickname }} @ {{ object.restaurant.name }}
+		            {% endif %}
+		        {% else %}
+		        {% endif %}
+		    </h3>
+		    <div class="fright share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+		</div>
+		<div class="show_photo">
+		    <img src="{{ photo.image622x417.url }}" />
+		    <span class="photo_frame"></span>
+		</div>
+		<p>{{ object.content }}</p>
+	</div>
+
+	<div class="photo_comments">
+	{% comments_form photo %}
+	</div>
+</div>
+{% endblock %}
+
+{% block bottom_script %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gcomments.js"></script>
+<script>
+$(document).ready(function(){
+    var comment = new GComments.Commenter({
+        container : $(".photo_comments"),
+    });
+});
+</script>
+{% endblock %}

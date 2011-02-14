@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/media/js/tiny_mce/plugins/emotions/img"
+   committed-rev="407"
+   kind="dir"
+   committed-date="2010-12-20T06:11:05.429858Z"/>
+<entry
+   name="smiley-cool.gif"
+   checksum="e26e97a318f82ec144b0818e5a8f8edb"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-cry.gif"
+   checksum="e72bf995ceca9230273ed9909c5db9c8"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-embarassed.gif"
+   checksum="d59171236e6b0b96091eeda1f7b57ce3"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-foot-in-mouth.gif"
+   checksum="905294088277f201be5a8e0285fb7998"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-frown.gif"
+   checksum="59930208822fe755f651a67ef4b70530"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-innocent.gif"
+   checksum="ec0477c8a206ff250782e40f9bae4b4c"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-kiss.gif"
+   checksum="4ae8945f3960751b5d294f18242e144d"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-laughing.gif"
+   checksum="b691cfd07d8181059f8a4b041d534cc4"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-money-mouth.gif"
+   checksum="11c14bd1496afd0e21df115d25b68e96"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-sealed.gif"
+   checksum="28b9401b59fb7ad10b96f57aaa2630c4"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-smile.gif"
+   checksum="c676407db519bdf42481870746f097d8"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-surprised.gif"
+   checksum="eff5a6fbfb80ca2d3ae929b0a1c15638"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-tongue-out.gif"
+   checksum="5ec3bb4781c8e43a51d3a1a948b98fc0"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-undecided.gif"
+   checksum="3c0c011d16b1a2331385ed97e160a42a"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-wink.gif"
+   checksum="4ae6aa98aa63363c16ea74f927696bd9"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+<entry
+   name="smiley-yell.gif"
+   checksum="19bb8ebfe3c2f5ef3ffb9aa4a027900d"
+   last-author="ben"
+   committed-rev="407"
+   text-time="2010-12-20T06:11:05.000000Z"
+   kind="file"
+   committed-date="2010-12-20T06:11:05.429858Z"
+   prop-time="2011-01-31T09:15:35.000000Z"/>
+</wc-entries>

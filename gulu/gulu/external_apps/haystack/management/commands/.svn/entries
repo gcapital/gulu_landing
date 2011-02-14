@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/haystack/management/commands"
+   committed-rev="562"
+   kind="dir"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+<entry
+   name="build_solr_schema.py"
+   checksum="90aa209d9eca36add3edcaa9aa0b6319"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+<entry
+   name="clear_index.py"
+   checksum="82502af6b6ee2c1c3a8fdcdf744b123a"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+<entry
+   name="haystack_info.py"
+   checksum="4093192a0a098d520638e2199011a40b"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+<entry
+   name="rebuild_index.py"
+   checksum="690ed36e741ed8ed876660e0e5a5239e"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+<entry
+   name="update_index.py"
+   checksum="6c43fb8f10b198593aa6f67126ea90c5"
+   last-author="gage"
+   committed-rev="562"
+   text-time="2011-01-24T09:26:06.000000Z"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"
+   prop-time="2011-01-31T09:15:53.000000Z"/>
+</wc-entries>

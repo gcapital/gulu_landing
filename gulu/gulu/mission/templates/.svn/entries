@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="de"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/mission/templates"
+   committed-rev="403"
+   kind="dir"
+   committed-date="2010-12-17T03:31:54.689980Z"/>
+<entry
+   name="mission_base.html"
+   checksum="a47221536dc9842c7b6e42a9e1ff2fc9"
+   last-author="de"
+   committed-rev="403"
+   text-time="2010-12-17T03:31:54.000000Z"
+   kind="file"
+   committed-date="2010-12-17T03:31:54.689980Z"
+   prop-time="2011-01-31T09:15:50.000000Z"/>
+<entry
+   name="mission_index.html"
+   checksum="39c3c2ef97a2fe7ba871e870e2c29d57"
+   last-author="de"
+   committed-rev="403"
+   text-time="2010-12-17T03:31:54.000000Z"
+   kind="file"
+   committed-date="2010-12-17T03:31:54.689980Z"
+   prop-time="2011-01-31T09:15:50.000000Z"/>
+</wc-entries>

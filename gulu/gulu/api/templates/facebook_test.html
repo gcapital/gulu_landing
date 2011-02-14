@@ -1,0 +1,56 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{% block title %}Gulu{% endblock %}</title>
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/gulu.css" type="text/css" />
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/jquery-ui/jquery-ui-1.8.6.custom.css" type="text/css" />	
+</head>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/fileuploader.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/photos.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/jquery.autogrow-textarea.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gulu.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+{% load global_tags %}
+<div class="p1 cf">
+	<form class="cf" enctype="multipart/form-data" method="post" action="/api/facebook_postwall/">
+        {% csrf_token %}
+        <div class="pud">
+        	<h4>Facebook Message:</h4>
+        	{{ form.message }}
+		</div>
+		
+		<div class="tool_box">
+	        <div class="tools cf">
+		        <div id="btn_upload" class="upload_photo fleft"></div>		        
+                </div>
+	        <div class="show_result">
+	            <div id="error_msg"></div>
+	            <div id="img_placeholder" class="photo"></div>
+	        </div>
+	    </div>
+	    {{ form.photo_id }}
+	    {{ form.photo_url }}
+	    {{ form.file }}
+	    				
+		<div class="cf">        	
+        	<input class="btn4 fleft" type="submit" name="submit" value="Done" />
+        </div>
+		
+	</form>
+</div>
+
+
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gcomments.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/review.js"></script>
+<script>
+$(document).ready(function(){	
+	var ajax_uploader = new Photos.AjaxUploader({
+        button: $("#btn_upload"),
+        imagespec: 'image186x119',
+        errors: $("#error_msg"),
+        preview: $("#img_placeholder"),
+        input: $("#id_photo_id"),
+        url_input: $("#id_photo_url"),
+    });
+});
+</script>

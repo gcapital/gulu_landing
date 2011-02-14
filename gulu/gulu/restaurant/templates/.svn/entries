@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/restaurant/templates"
+   committed-rev="625"
+   kind="dir"
+   committed-date="2011-01-31T03:04:10.827156Z"/>
+<entry
+   name="inc_restaurant_details.html"
+   checksum="349140adcf9c75220c7713b094a2edac"
+   last-author="jason"
+   committed-rev="561"
+   text-time="2011-01-24T06:37:24.000000Z"
+   kind="file"
+   committed-date="2011-01-24T06:37:24.925429Z"
+   prop-time="2011-01-31T09:15:50.000000Z"/>
+<entry
+   name="restaurant_index.html"
+   checksum="9f2ad4be6d462a06ea9af583c1d16c17"
+   last-author="gage"
+   text-time="2011-01-31T03:04:10.000000Z"
+   committed-rev="625"
+   kind="file"
+   committed-date="2011-01-31T03:04:10.827156Z"/>
+<entry
+   name="restaurant_index_base.html"
+   checksum="67b9784a7b3863ce9c7f2584dcd34918"
+   last-author="gage"
+   text-time="2010-12-21T15:40:17.000000Z"
+   committed-rev="425"
+   kind="file"
+   committed-date="2010-12-21T15:40:17.422851Z"/>
+</wc-entries>

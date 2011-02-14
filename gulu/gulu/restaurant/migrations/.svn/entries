@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/restaurant/migrations"
+   committed-rev="610"
+   kind="dir"
+   committed-date="2011-01-27T08:50:16.168813Z"/>
+<entry
+   name="0001_initial.py"
+   checksum="2728efa9430bef012d6539ac77148571"
+   last-author="ben"
+   text-time="2011-01-12T06:17:55.000000Z"
+   committed-rev="541"
+   kind="file"
+   committed-date="2011-01-12T06:17:55.413323Z"/>
+<entry
+   name="0002_auto__add_field_restaurant_main_profile_pic.py"
+   checksum="168def236f08d1b3f762c60668c6cdcb"
+   last-author="gage"
+   text-time="2011-01-19T05:37:26.000000Z"
+   committed-rev="549"
+   kind="file"
+   committed-date="2011-01-19T05:37:26.450318Z"/>
+<entry
+   name="0003_add_manage_permission.py"
+   checksum="4a46cbf14ca626973d157b6e44a4d7b8"
+   last-author="ben"
+   text-time="2011-01-27T08:50:16.000000Z"
+   committed-rev="610"
+   kind="file"
+   committed-date="2011-01-27T08:50:16.168813Z"/>
+<entry
+   name="0004_auto__add_field_restaurant_location_group_id.py"
+   checksum="896a2750a358e33530cfe51d1f4a1360"
+   last-author="jason"
+   text-time="2011-01-26T01:35:07.000000Z"
+   committed-rev="566"
+   kind="file"
+   committed-date="2011-01-26T01:35:07.889250Z"/>
+<entry
+   name="0005_auto.py"
+   checksum="c4e4c4437acb4b616d41c3a091ca19b9"
+   last-author="gage"
+   text-time="2011-01-26T07:52:01.000000Z"
+   committed-rev="573"
+   kind="file"
+   committed-date="2011-01-26T07:52:01.826428Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="ben"
+   text-time="2011-01-12T06:17:55.000000Z"
+   committed-rev="541"
+   kind="file"
+   committed-date="2011-01-12T06:17:55.413323Z"/>
+</wc-entries>

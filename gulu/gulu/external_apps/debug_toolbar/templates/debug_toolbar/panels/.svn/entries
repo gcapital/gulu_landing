@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/debug_toolbar/templates/debug_toolbar/panels"
+   committed-rev="310"
+   kind="dir"
+   committed-date="2010-12-06T10:45:53.109947Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="cache.html"
+   checksum="75b0b45c6ce5059681e2db21b83672e4"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="headers.html"
+   checksum="40cc083b87aa26532d4ac9fc9a9e4e7e"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="logger.html"
+   checksum="9f244509b03266cbf0d90de68faf14ec"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="request_vars.html"
+   checksum="d691a58102155158c955f8c725d5bb81"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="settings_vars.html"
+   checksum="de6aad17a034576120444f9f1d05639d"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="signals.html"
+   checksum="5417d7ee96e1b6c94e1f80a54fb73bd1"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="sql.html"
+   checksum="abfcd04297da0599da481762a0a7ba1c"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="sql_explain.html"
+   checksum="651a5e0862c564aee7df9cd7eee9ee60"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="sql_profile.html"
+   checksum="34db7771874a5c50cbb7b4408fbaa125"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="sql_select.html"
+   checksum="3f9f68a57771257290452f3a60ab69e0"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="template_source.html"
+   checksum="7a4da74c59786ca24269b695545a5e35"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="templates.html"
+   checksum="62f54a18602414a2c00ee64eab45a355"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="timer.html"
+   checksum="35f3b9b1a314aea13f585c6e6813c2b0"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+<entry
+   name="versions.html"
+   checksum="f550fcd7cf0c39dac8df6650d876936c"
+   last-author="ben"
+   committed-rev="293"
+   text-time="2010-11-30T10:20:04.000000Z"
+   kind="file"
+   committed-date="2010-11-30T10:20:04.584196Z"
+   prop-time="2011-01-31T09:15:56.000000Z"/>
+</wc-entries>

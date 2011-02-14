@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="jason"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/deal/migrations"
+   committed-rev="582"
+   kind="dir"
+   committed-date="2011-01-27T03:59:18.600502Z"/>
+<entry
+   name="0001_initial.py"
+   checksum="b98f30c6edcee3bdd685911db8e31d25"
+   last-author="ben"
+   text-time="2011-01-12T06:17:55.000000Z"
+   committed-rev="541"
+   kind="file"
+   committed-date="2011-01-12T06:17:55.413323Z"/>
+<entry
+   name="0002_auto__add_field_deal_cover.py"
+   checksum="17bd8129fe54d1b38905ebb56856678d"
+   last-author="jason"
+   text-time="2011-01-21T11:06:58.000000Z"
+   committed-rev="558"
+   kind="file"
+   committed-date="2011-01-21T11:06:58.388084Z"/>
+<entry
+   name="0003_auto__del_field_deal_end_date__del_field_deal_start_date__add_field_de.py"
+   checksum="b2b3e2e66be69c0e4d73f5789c9c5365"
+   last-author="jason"
+   text-time="2011-01-21T11:06:58.000000Z"
+   committed-rev="558"
+   kind="file"
+   committed-date="2011-01-21T11:06:58.388084Z"/>
+<entry
+   name="0004_auto.py"
+   checksum="97ef98a0da02f96366b71c77c157ee47"
+   last-author="jason"
+   text-time="2011-01-27T03:59:18.000000Z"
+   committed-rev="582"
+   kind="file"
+   committed-date="2011-01-27T03:59:18.600502Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="ben"
+   text-time="2011-01-12T06:17:55.000000Z"
+   committed-rev="541"
+   kind="file"
+   committed-date="2011-01-12T06:17:55.413323Z"/>
+</wc-entries>

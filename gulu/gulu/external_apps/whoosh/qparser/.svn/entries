@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/whoosh/qparser"
+   committed-rev="562"
+   kind="dir"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="__init__.py"
+   checksum="9769266c3679078fc386fdad43678a7c"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="common.py"
+   checksum="eeccfe32964824979e6d93f3b3958bf8"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="dateparse.py"
+   checksum="4a2228292d12c4b60975644ec7f67f25"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="default.py"
+   checksum="43432397188ab95df2249129aaf48031"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="plugins.py"
+   checksum="5d933bc2460da828344f4648f8d0c92a"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+<entry
+   name="syntax.py"
+   checksum="950d500669fbdebca4dbe366639b6f69"
+   last-author="gage"
+   text-time="2011-01-24T09:26:06.000000Z"
+   committed-rev="562"
+   kind="file"
+   committed-date="2011-01-24T09:26:06.420229Z"/>
+</wc-entries>

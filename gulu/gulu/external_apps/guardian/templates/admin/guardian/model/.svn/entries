@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/guardian/templates/admin/guardian/model"
+   committed-rev="551"
+   kind="dir"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="change_form.html"
+   checksum="3e30e9d720332d27ed26da756cbbc634"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="field.html"
+   checksum="213d01e98808fe2d7c28217b2b15ecf4"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="obj_perms_manage.html"
+   checksum="75517c4fdae1672d41d42d2157464f3e"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="obj_perms_manage_group.html"
+   checksum="081c64582a296f1032c4984fc5c82e02"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+<entry
+   name="obj_perms_manage_user.html"
+   checksum="b5a4bd08f3dd6d3899406b6d82b5fd0e"
+   last-author="ben"
+   text-time="2011-01-20T07:25:27.000000Z"
+   committed-rev="551"
+   kind="file"
+   committed-date="2011-01-20T07:25:27.939470Z"/>
+</wc-entries>

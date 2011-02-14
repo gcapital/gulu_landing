@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="jason"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/locations/templates"
+   committed-rev="565"
+   kind="dir"
+   committed-date="2011-01-25T10:03:26.219505Z"/>
+<entry
+   name="locations_restaurant_add_other_location.html"
+   checksum="796b283e07a6e9b8012ed2aacc050de3"
+   last-author="ben"
+   text-time="2010-12-16T08:52:05.000000Z"
+   committed-rev="392"
+   kind="file"
+   committed-date="2010-12-16T08:52:05.018538Z"/>
+<entry
+   name="locations_restaurant_other_locations.html"
+   checksum="819ee94a9439f85d72c5745f2511ec06"
+   last-author="jason"
+   text-time="2011-01-25T10:03:26.000000Z"
+   committed-rev="565"
+   kind="file"
+   committed-date="2011-01-25T10:03:26.219505Z"/>
+</wc-entries>

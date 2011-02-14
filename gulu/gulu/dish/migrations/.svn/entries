@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/dish/migrations"
+   committed-rev="549"
+   kind="dir"
+   committed-date="2011-01-19T05:37:26.450318Z"/>
+<entry
+   name="0001_initial.py"
+   checksum="e5ef9a5bfa0ffe493807b24b18871283"
+   last-author="ben"
+   text-time="2011-01-12T06:17:55.000000Z"
+   committed-rev="541"
+   kind="file"
+   committed-date="2011-01-12T06:17:55.413323Z"/>
+<entry
+   name="0002_auto__add_field_dish_mian_pic.py"
+   checksum="e80e6fa47b86b7094ded386b9de3f912"
+   last-author="gage"
+   text-time="2011-01-19T05:37:26.000000Z"
+   committed-rev="549"
+   kind="file"
+   committed-date="2011-01-19T05:37:26.450318Z"/>
+<entry
+   name="0003_auto__del_field_dish_mian_pic__add_field_dish_main_pic.py"
+   checksum="67b2ee4649d9fb6ed0aa825aa7b52a08"
+   last-author="gage"
+   text-time="2011-01-19T05:37:26.000000Z"
+   committed-rev="549"
+   kind="file"
+   committed-date="2011-01-19T05:37:26.450318Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="ben"
+   text-time="2011-01-12T06:17:55.000000Z"
+   committed-rev="541"
+   kind="file"
+   committed-date="2011-01-12T06:17:55.413323Z"/>
+</wc-entries>

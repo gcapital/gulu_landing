@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/like/templatetags"
+   committed-rev="607"
+   kind="dir"
+   committed-date="2011-01-27T08:29:59.040578Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="ben"
+   text-time="2011-01-13T08:54:20.000000Z"
+   committed-rev="545"
+   kind="file"
+   committed-date="2011-01-13T08:54:20.619467Z"/>
+<entry
+   name="like_tags.py"
+   checksum="f219b9aa269ee3d8bfc3c258289f2a6b"
+   last-author="gage"
+   text-time="2011-01-27T08:29:59.000000Z"
+   committed-rev="607"
+   kind="file"
+   committed-date="2011-01-27T08:29:59.040578Z"/>
+</wc-entries>

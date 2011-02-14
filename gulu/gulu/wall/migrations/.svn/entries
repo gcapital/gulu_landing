@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/wall/migrations"
+   committed-rev="580"
+   kind="dir"
+   committed-date="2011-01-27T03:45:09.373455Z"/>
+<entry
+   name="0001_initial.py"
+   checksum="90609e144824e856a5c74d923b802a90"
+   last-author="ben"
+   text-time="2011-01-12T06:17:55.000000Z"
+   committed-rev="541"
+   kind="file"
+   committed-date="2011-01-12T06:17:55.413323Z"/>
+<entry
+   name="0002_auto__add_field_restaurantwall_photo__add_field_userwall_photo.py"
+   checksum="d3aee931ffded7f62f026d8454b8b5a3"
+   last-author="gage"
+   text-time="2011-01-26T07:39:21.000000Z"
+   committed-rev="570"
+   kind="file"
+   committed-date="2011-01-26T07:39:21.975713Z"/>
+<entry
+   name="0003_auto__del_restaurantwall__del_userwall__add_wallpost.py"
+   checksum="f0850129c032d2fab4e34b0d39b56d3d"
+   last-author="ben"
+   text-time="2011-01-27T03:45:09.000000Z"
+   committed-rev="580"
+   kind="file"
+   committed-date="2011-01-27T03:45:09.373455Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="ben"
+   text-time="2011-01-12T06:17:55.000000Z"
+   committed-rev="541"
+   kind="file"
+   committed-date="2011-01-12T06:17:55.413323Z"/>
+</wc-entries>

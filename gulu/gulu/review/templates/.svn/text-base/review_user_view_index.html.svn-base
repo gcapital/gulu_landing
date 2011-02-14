@@ -1,0 +1,39 @@
+{% extends "mygulu_base.html" %}
+{% block extrahead %}
+{% endblock %}
+{% load global_tags %}
+{% block bodyclass %}reviews_nav{% endblock %}
+{% block content %}
+
+<div class="user_reviews">
+    
+    <div class="tab_page_header">
+	    <div class="title cf">
+	        <h2 class="fleft">My Reviews</h2>
+	    </div>
+	    <div class="sp_hr_line"></div>
+	</div>
+    <div class="all_reviews_container">
+    {% for review in all_reviews %}
+        {% include 'inc_review_single.html'  %}
+    {% endfor %}
+    </div>
+
+</div>
+{% endblock %}
+
+{% block bottom_script %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gcomments.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/review.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gulu.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/jquery.autogrow-textarea.js"></script>
+<script>
+$(document).ready(function(){
+    $('.review_comments').each(function(){
+        var comment = new GComments.Commenter({
+            container : $(this),
+        });
+    });
+});
+</script>
+{% endblock %}

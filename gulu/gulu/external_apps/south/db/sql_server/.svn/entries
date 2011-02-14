@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="ben"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/external_apps/south/db/sql_server"
+   committed-rev="310"
+   kind="dir"
+   committed-date="2010-12-06T10:45:53.109947Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="__init__.py"
+   checksum="d41d8cd98f00b204e9800998ecf8427e"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+<entry
+   name="pyodbc.py"
+   checksum="8ce13877acbf8b1282b57462830d6aad"
+   last-author="ben"
+   committed-rev="306"
+   text-time="2010-12-06T07:49:46.000000Z"
+   kind="file"
+   committed-date="2010-12-06T07:49:46.309665Z"
+   prop-time="2011-01-31T09:15:51.000000Z"/>
+</wc-entries>

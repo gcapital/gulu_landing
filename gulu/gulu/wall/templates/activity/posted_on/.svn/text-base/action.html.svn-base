@@ -1,0 +1,24 @@
+{% load gcomments_tags global_tags like_tags %}
+
+<div class="wall_box btm_grey_border cf">
+    <div class="poster_cover photo_bg_69x65">
+        <img src="{{ action.actor.main_profile_pic.image40x40.url }}" alt="" />
+    </div>
+    <div class="post_detail">
+        <h4>{% if action.actor.get_absolute_url %}<a href="{{ action.actor.get_absolute_url }}">{{ action.actor }}</a>
+{% else %}<a href="{{ action.actor_url }}">{{ action.actor }}</a>{% endif %}</h4>
+        <h6>posted {{ action.timestamp|timesince }} ago</h6>
+        <div>
+            {% if action.action_object.photo %}
+            <div class="photo_css_frame"><img src="{{ action.action_object.photo.image121x90.url }}"></div>
+            {% endif %}
+            <p>{{action.action_object.content}}</p>
+        </div>
+        <div class="share_buttons">{% if request %}{% like action %}{% endif %}</div>
+        <div class="post_comment">
+            <div class="comment_content">
+            {% comments_form action %}
+            </div>
+        </div>
+    </div>
+</div>

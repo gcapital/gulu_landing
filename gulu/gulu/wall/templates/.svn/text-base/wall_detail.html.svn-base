@@ -1,0 +1,161 @@
+{% extends "restaurant_index_base.html" %}
+
+{% load global_tags %}
+{% load wall_tags %}
+{% load gcomments_tags global_tags %}
+
+{% block bodyclass %}view_profile_nav{% endblock %}
+
+{% block profile_index_body_left %}
+<h2>Wall</h2>
+<div class="wall_show" id="all_walls_container">
+	<div class="wall_box btm_grey_border cf">
+	    <div class="poster_cover photo_bg_69x65">
+	        <img src="{{wall.poster.main_profile_pic.image40x40.url}}" alt="" />
+	    </div>
+	    <div class="post_detail">
+	        <h4>{{wall.poster.nickname}}</h4>
+	        <h6>{{wall.create_time|date:"Y/m/d"}}</h6>
+	        <p>{{wall.content}}</p>
+	        <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+	        
+	        <div class="post_comment">
+	            <div class="comment_info">
+	                <span class="info_top"></span>
+	                <div class="info comment_bd">
+	                   <a href="#">Lily</a>, <a href="#">Marcus</a>, <a href="#">Emily lin</a> and 2 <a href="#">others</a> like this.
+	                </div>
+	                <span class="bottom"></span>
+	                {% if wall.total_comment %}
+	                <span class="top"></span>
+	                <div class="comment_bd"><a href="#">View all</a> {{wall.total_comment}} comments</div>
+	                <span class="bottom"></span>
+	                {% endif %}
+	            </div>
+				{#% wall_list wall %#}
+                <div class="comment_content">
+                {% comments_form wall %}
+                </div>
+                {% if wall.total_comment %}
+                {% endif %}
+	        </div>
+	    </div>
+	</div>
+</div>
+{% endblock %}
+
+{% block profile_index_body_right %}
+<div class="right_side_module transportation">
+    <h3>Transportation Options</h3>
+    <p>{{ restaurant.transportation|default:'交通資訊' }}</p>
+</div>
+
+<div class="right_side_module notes">
+    <h3>Notes</h3>
+    <p>{{ restaurant.note|default:'其他資訊' }}</p>
+</div>
+
+<div class="right_side_module best_photo">
+    <h3>Best Photo</h3>
+    <ul class="cf">
+    {% for photo in restaurant.best_photos.all %}
+    {% if forloop.counter <= 6 %}
+        <li>
+            <a href="{% slugurl restaurant restaurant-view-photo restaurant.id photo.id %}">
+                <img src="{{ photo.image86x58.url }}" alt="{{ photo.title }}">
+            </a>
+        </li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+</div>
+
+<div class="right_side_module best_video">
+    <h3>Best Video</h3>
+    <ul class="cf">
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_video_129x88.png"></a></li>
+        <li><a href=""><img src="{{ MEDIA_URL }}images/tmp_video_129x88.png"></a></li>
+    </ul>
+</div>
+
+<div class="right_side_module best_review">
+    <h3>Best Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+
+<div class="right_side_module favorite_review">
+    <h4 class="sub">Most Helpful</h4>
+    <h3>Favorite Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+
+<div class="right_side_module critical_review last">
+    <h4 class="sub">Most Helpful</h4>
+    <h3>Critical Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+{% endblock %}
+
+{% block bottom_script %}
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/google-map.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gcomments.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/wall.js"></script>
+<script>
+$(document).ready(function(){
+    var RMap = GMap.GetMapByAddress('{{ restaurant.address }}','restaurant_map');
+
+    $('.comment_content').each(function(){
+        var comment = new GComments.Commenter({
+            container : $(this),
+        });
+    });
+});
+$(window).load(function() {
+    // Initialize the wall updater
+    var config = {
+        'all_walls_container': '#all_walls_container',
+        'wall_content_input': '#wall_content_input',
+        'wall_submit': '#wall_submit',
+        'wall_form': '#wall_form',
+        'waller_pic': '#waller_pic',
+        'wall_content_input': '#wall_content_input',
+        'user_name': '#user_name',
+        'owner': '#owner',
+        'poster': '#poster',
+        'media_url': '#media_url',
+    };  
+    Wall.init(config);
+});
+</script>
+{% endblock %}

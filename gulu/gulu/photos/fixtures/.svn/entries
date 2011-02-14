@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wc-entries
+   xmlns="svn:">
+<entry
+   name=""
+   repos="http://www.geniecapital.com/svn/gulu"
+   revision="626"
+   last-author="gage"
+   uuid="34076f41-eacf-4200-8171-6e8b04ca5d93"
+   url="http://www.geniecapital.com/svn/gulu/photos/fixtures"
+   committed-rev="550"
+   kind="dir"
+   committed-date="2011-01-19T06:04:20.365759Z"
+   prop-time="2011-01-31T09:15:50.000000Z"/>
+<entry
+   name="initial_data.json"
+   checksum="59aba463fa22b91e0ee445bc9d204a0e"
+   last-author="gage"
+   committed-rev="550"
+   text-time="2011-01-19T06:04:20.000000Z"
+   kind="file"
+   committed-date="2011-01-19T06:04:20.365759Z"
+   prop-time="2011-01-31T09:15:50.000000Z"/>
+</wc-entries>
