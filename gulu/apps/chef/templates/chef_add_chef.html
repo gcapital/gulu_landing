@@ -1,0 +1,52 @@
+{% extends "restaurant_base.html" %}
+{% load gcomments_tags global_tags %}
+
+{% block bodyclass %}chef_nav{% endblock %}
+{% block index_base_class %}chef_view{% endblock %}
+
+{% block content %}
+
+<div class="dish_menu_header tab_page_header">    
+    <div class="header cf">        
+        <h2 class="fleft">Add a chef</h2>        
+        <div class="fright operate cf">
+        	<a class="btn5" href="{% slugurl restaurant restaurant-chef restaurant.id %}">Cancel</a>
+        </div>
+    </div>
+    <div class="sp_hr_line"></div>
+</div>
+
+<div class="p1 cf">
+	<form class="cf" enctype="multipart/form-data" method="post" action="{% slugurl restaurant restaurant-add-chef restaurant.id %}">
+        {% csrf_token %}
+        <div class="pud">
+        	<h4>Chef Name:</h4>
+        	{{ form.name }}
+		</div>
+		<div class="sp_hr_line"></div>
+		<div class="pud">		
+			<h4>Description:</h4>	
+			{{ form.description }}
+		</div>
+		<div class="sp_hr_line"></div>
+		<div class="pud">		
+			<h4>Point:</h4>	
+			{{ form.points }}
+		</div>
+		
+		<div class="sp_hr_line"></div>				
+		
+		<div class="cf">        	
+        	<input class="btn4 fleft" type="submit" name="submit" value="Done" />
+        	<div class="fleft operate cf">
+        		<a class="btn5" href="{% slugurl restaurant restaurant-chef restaurant.id %}">Cancel</a>
+        	</div>
+        </div>
+		
+	</form>
+
+
+</div>
+
+
+{% endblock %}

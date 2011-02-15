@@ -1,0 +1,31 @@
+[
+    {
+        "pk": 1, 
+        "model": "locations.otherlocation", 
+        "fields": {
+            "added": "2010-12-16", 
+            "from_restaurant": 4, 
+            "to_restaurant": 1
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "locations.otherlocationinvitation", 
+        "fields": {
+            "status": 2, 
+            "sent": "2010-12-16", 
+            "from_restaurant": 4, 
+            "to_restaurant": 1
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "locations.otherlocationinvitation", 
+        "fields": {
+            "status": 1, 
+            "sent": "2010-12-16", 
+            "from_restaurant": 3, 
+            "to_restaurant": 1
+        }
+    }
+]

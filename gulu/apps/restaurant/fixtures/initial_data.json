@@ -1,0 +1,286 @@
+[
+    {
+        "pk": 1, 
+        "model": "restaurant.restaurant", 
+        "fields": {
+            "best_reviews": [], 
+            "main_profile_pic": 10, 
+            "managers": [
+                3, 
+                4
+            ], 
+            "city": "\u53f0\u5317", 
+            "best_photos": [], 
+            "note": "restaurant note", 
+            "score": 60.0, 
+            "can_upload_dish": true, 
+            "latitude": 0.0, 
+            "rating_service": 89, 
+            "type": 2, 
+            "rating_food": 90, 
+            "transportation": "restaurant transportation info", 
+            "description": "restaurant description", 
+            "profile_pics": [], 
+            "rating_price": 40, 
+            "phone": "02-1234-5678", 
+            "address": "\u4fe1\u7fa9\u8def\u4e8c\u6bb5194\u865f", 
+            "services": [
+                1, 
+                2, 
+                7
+            ], 
+            "location_group_id": 0, 
+            "slug": "din-tai-fung", 
+            "count_recommend": 1, 
+            "business_hours": "restaurant business hours", 
+            "name": "\u9f0e\u6cf0\u8c50\u4fe1\u7fa9\u5e97", 
+            "rating_atmosphere": 65, 
+            "region": "\u5927\u5b89", 
+            "created": "2010-12-07 15:37:50", 
+            "longitude": 0.0, 
+            "follower_count": 0
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "restaurant.restaurant", 
+        "fields": {
+            "best_reviews": [], 
+            "main_profile_pic": null, 
+            "managers": [
+                4, 
+                5, 
+                7
+            ], 
+            "city": "\u53f0\u5317", 
+            "best_photos": [], 
+            "note": "The Diner note", 
+            "score": 80.0, 
+            "can_upload_dish": true, 
+            "latitude": 0.0, 
+            "rating_service": 37, 
+            "type": 3, 
+            "rating_food": 100, 
+            "transportation": "The Diner transportation info", 
+            "description": "The Diner description", 
+            "profile_pics": [], 
+            "rating_price": 50, 
+            "phone": "02-9876-5432", 
+            "address": "\u6566\u5316\u5357\u8def\u4e8c\u6bb5103\u5df76\u865f", 
+            "services": [
+                1, 
+                2, 
+                7
+            ], 
+            "location_group_id": 0, 
+            "slug": "", 
+            "count_recommend": 1, 
+            "business_hours": "The Diner business hours", 
+            "name": "The Diner", 
+            "rating_atmosphere": 95, 
+            "region": "\u5927\u5b89", 
+            "created": "2010-12-07 15:52:20", 
+            "longitude": 0.0, 
+            "follower_count": 0
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "restaurant.restaurant", 
+        "fields": {
+            "best_reviews": [], 
+            "main_profile_pic": null, 
+            "managers": [
+                3, 
+                6
+            ], 
+            "city": "\u53f0\u5317", 
+            "best_photos": [], 
+            "note": "Dozo note", 
+            "score": 100.0, 
+            "can_upload_dish": true, 
+            "latitude": 0.0, 
+            "rating_service": 100, 
+            "type": 1, 
+            "rating_food": 100, 
+            "transportation": "Dozo transportation info", 
+            "description": "Dozo description", 
+            "profile_pics": [], 
+            "rating_price": 3, 
+            "phone": "02-1234-5678", 
+            "address": "\u5149\u5fa9\u5357\u8def2\u865f", 
+            "services": [
+                1, 
+                4, 
+                5, 
+                6
+            ], 
+            "location_group_id": 0, 
+            "slug": "dozo", 
+            "count_recommend": 1, 
+            "business_hours": "Dozo business hours", 
+            "name": "Dozo", 
+            "rating_atmosphere": 100, 
+            "region": "\u5927\u5b89", 
+            "created": "2010-12-07 16:06:54", 
+            "longitude": 0.0, 
+            "follower_count": 0
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "restaurant.restaurant", 
+        "fields": {
+            "best_reviews": [], 
+            "main_profile_pic": 12, 
+            "managers": [], 
+            "city": "\u53f0\u5317", 
+            "best_photos": [], 
+            "note": "", 
+            "score": null, 
+            "can_upload_dish": true, 
+            "latitude": 0.0, 
+            "rating_service": 0, 
+            "type": 2, 
+            "rating_food": 0, 
+            "transportation": "", 
+            "description": "\u9f0e\u6cf0\u8c50", 
+            "profile_pics": [], 
+            "rating_price": 0, 
+            "phone": "02-1234-5678", 
+            "address": "\u5fe0\u5b5d\u6771\u8def\u56db\u6bb5218\u865f", 
+            "services": [], 
+            "location_group_id": 0, 
+            "slug": "din-tai-fung2", 
+            "count_recommend": -1, 
+            "business_hours": "", 
+            "name": "\u9f0e\u6cf0\u8c50\u5fe0\u5b5d\u5e97", 
+            "rating_atmosphere": 0, 
+            "region": "\u5927\u5b89", 
+            "created": "2010-12-16 15:18:49", 
+            "longitude": 0.0, 
+            "follower_count": 0
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "restaurant.restaurant", 
+        "fields": {
+            "best_reviews": [], 
+            "main_profile_pic": 35, 
+            "managers": [
+                5
+            ], 
+            "city": "\u53f0\u5317", 
+            "best_photos": [], 
+            "note": "", 
+            "score": null, 
+            "can_upload_dish": true, 
+            "latitude": 0.0, 
+            "rating_service": 0, 
+            "type": 2, 
+            "rating_food": 0, 
+            "transportation": "", 
+            "description": "\u9f0e\u6cf0\u8c50\u5929\u6bcd\u5e97", 
+            "profile_pics": [], 
+            "rating_price": 0, 
+            "phone": "02-1234-5678", 
+            "address": "\u58eb\u6797\u5340\u4e2d\u5c71\u5317\u8def\u516d\u6bb577\u865f", 
+            "services": [], 
+            "location_group_id": 0, 
+            "slug": "din-tai-fung3", 
+            "count_recommend": 0, 
+            "business_hours": "", 
+            "name": "\u9f0e\u6cf0\u8c50\u5929\u6bcd\u5e97", 
+            "rating_atmosphere": 0, 
+            "region": "\u58eb\u6797", 
+            "created": "2011-01-25 13:49:14", 
+            "longitude": 0.0, 
+            "follower_count": 0
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "restaurant.restaurantservice", 
+        "fields": {
+            "name": "credit_card"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "restaurant.restaurantservice", 
+        "fields": {
+            "name": "national_travel_card"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "restaurant.restaurantservice", 
+        "fields": {
+            "name": "pets"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "restaurant.restaurantservice", 
+        "fields": {
+            "name": "parking"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "restaurant.restaurantservice", 
+        "fields": {
+            "name": "minimum_charge"
+        }
+    }, 
+    {
+        "pk": 6, 
+        "model": "restaurant.restaurantservice", 
+        "fields": {
+            "name": "box"
+        }
+    }, 
+    {
+        "pk": 7, 
+        "model": "restaurant.restaurantservice", 
+        "fields": {
+            "name": "accessibility"
+        }
+    }, 
+    {
+        "pk": 1, 
+        "model": "restaurant.restauranttype", 
+        "fields": {
+            "name": "Japanese"
+        }
+    }, 
+    {
+        "pk": 2, 
+        "model": "restaurant.restauranttype", 
+        "fields": {
+            "name": "Xiaolong Bao"
+        }
+    }, 
+    {
+        "pk": 3, 
+        "model": "restaurant.restauranttype", 
+        "fields": {
+            "name": "American"
+        }
+    }, 
+    {
+        "pk": 4, 
+        "model": "restaurant.restauranttype", 
+        "fields": {
+            "name": "coffee"
+        }
+    }, 
+    {
+        "pk": 5, 
+        "model": "restaurant.restauranttype", 
+        "fields": {
+            "name": "\u725b\u8089\u9eb5"
+        }
+    }
+]

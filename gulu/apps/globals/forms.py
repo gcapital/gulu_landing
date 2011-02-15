@@ -1,24 +1,50 @@
-""" Gulu globals module forms """
+""" Gulu global forms """
 
-__author__ = "Jason Ke <jason.ke@geniecapital.com>"
-__version__ = "$Id: forms.py 388 2010-12-16 06:59:01Z jason $"
+__author__ = "Ben Homnick <bhomnick@gmail.com>"
+__version__ = "$Id: forms.py 422 2010-12-21 08:36:10Z ben $"
 
 from django import forms
-from django.db import models
+from django.db.models import Q
 
-from globals.models import NewsletterUser
+from user_profiles.models import UserProfile
 
-class CreateNewsletterForm(forms.ModelForm):
-	""" Form used for creating newsletter input fields """
+class SignupForm(forms.ModelForm):
+	""" User signup form """
 	
-
+	email_confirm = forms.EmailField()
+	password = forms.CharField(min_length=7, widget=forms.PasswordInput())
+	password_confirm = forms.CharField(widget=forms.PasswordInput())
+	
 	class Meta:
-		model = NewsletterUser
-		fields = ('username', 'email')
-		username 	= models.CharField()
-		email 		= models.EmailField()
+		model = UserProfile
+		fields = (
+			'email', 
+			'email_confirm',
+			'password',
+			'password_confirm',
+		)
 
-		widgets = {
-			'username': forms.TextInput(attrs={'class': 'username'}),
-			'email': forms.TextInput(attrs={'class': 'email'}),
-		}
+	def clean(self):
+		data = self.cleaned_data
+		
+		email = data.get("email")
+		email_confirm = data.get("email_confirm")
+		password = data.get("password")
+		password_confirm = data.get("password_confirm")
+		
+		# check for users with the same username or email
+		users = UserProfile.objects.filter(
+			Q(email=email) | Q(username=email)
+		)
+		if len(users) > 0:
+			raise forms.ValidationError("This email is already in use.")
+		
+		if email and email != email_confirm:
+			raise forms.ValidationError("Email addresses don't match.")
+		
+		if password and password != password_confirm:
+			raise forms.ValidationError("Passwords don't match.")
+		
+		return data
+	
+	

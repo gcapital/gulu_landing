@@ -1,0 +1,19 @@
+<style>
+.activity a {
+	text-decoration: underline;
+	color: #0000FF;
+}
+</style>
+<div class="activity" style="margin: 20px 0px; padding: 10px; border: 1px solid #FF0000;">
+<p><strong>This is an example of a custom action template.  Edit this template
+in /review/templates/activity/posted_a_review/action.html</strong></p>
+{% if action.actor.get_absolute_url %}<a href="{{ action.actor.get_absolute_url }}">{{ action.actor }}</a>
+{% else %}<a href="{{ action.actor_url }}">{{ action.actor }}</a>{% endif %}
+{{ action.verb }}
+{% if action.target %}
+    {% if action.target.get_absolute_url %}<a href="{{ action.target.get_absolute_url }}">{{ action.target }}</a>
+    {% else %}<a href="{{ action.target_url }}">{{ action.target }}</a>{% endif %}
+{% endif %}
+{{ action.timestamp|timesince }} ago<br /><br />
+<img src="{{ action.target.photo.image50x50.url }}" />
+</div>

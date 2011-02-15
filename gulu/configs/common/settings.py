@@ -10,7 +10,7 @@ DJANGO_ROOT = os.path.dirname(os.path.realpath(django.__file__))
 SITE_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__))))
 
 # Debugging
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -84,18 +84,23 @@ TEMPLATE_LOADERS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = ( 
 	'django.core.context_processors.request',
+    'django.core.context_processors.auth',
 	'django.core.context_processors.i18n',
 	'django.core.context_processors.debug',
 	'django.core.context_processors.media',
-	#'django.contrib.messages.context_processors.messages',
+	'django.contrib.messages.context_processors.messages',
  )
 
 MIDDLEWARE_CLASSES = (
-    'django.middleware.gzip.GZipMiddleware',
-    #'django.middleware.cache.UpdateCacheMiddleware',
-    'localeurl.middleware.LocaleURLMiddleware',
+    #'django.middleware.gzip.GZipMiddleware',
     'django.middleware.common.CommonMiddleware',
-    #'django.middleware.cache.FetchFromCacheMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'globals.middleware.SlugURLMiddleware',
+    'globals.middleware.Django403Middleware',
 )
 
 APPEND_SLASH = True
@@ -107,9 +112,47 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
-    #'django.contrib.contenttypes',
-    #'django.contrib.sites',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.admin',
+    #'django.contrib.admindocs',
+    'django.contrib.comments',
+    'debug_toolbar',
+    'south',
+    'bbcode',
+    'guardian',
+    'haystack',
+    'whoosh',
+
+    # Gulu modules
+    'actstream',
+    'blog',
+    'deal',
+    'dish',
+    'gcomments',
     'globals',
+    'invite',
+    'like',
+    'locations',
+    'mission',
+    'photos',
+    'ranking',
+    'recommend',
+    'restaurant',
+    'review',
+    'search',
+    #'todo',
+    'user_profiles',
+    'wall',
+    'chef',
+    'event',
+    'sync',
+    'piston',
+    'api',
+
 )
 
 # Predefined domain
@@ -133,6 +176,30 @@ logging.basicConfig(
 )
 
 MAILSNAKE_API_KEY = '2770d86d0d2ef3b5daf38b2749cd4304-us2'
+
+COMMENTS_APP = 'gcomments'
+
+AUTHENTICATION_BACKENDS = ( 
+    'user_profiles.auth_backends.UserProfileBackend',
+    'guardian.backends.ObjectPermissionBackend',
+    #'django.contrib.auth.backends.ModelBackend',
+)
+ANONYMOUS_USER_ID = -1
+CUSTOM_USER_MODEL = 'user_profiles.UserProfile'
+LOGIN_URL = "/login"
+LOGIN_REDIRECT_URL = "/logged_in"
+
+# HAYSTACK
+HAYSTACK_SITECONF = 'search_sites'
+#HAYSTACK_SEARCH_ENGINE = 'solr'
+HAYSTACK_SOLR_URL = "http://127.0.0.1:8983/solr"
+
+HAYSTACK_SEARCH_ENGINE = 'whoosh'
+HAYSTACK_WHOOSH_PATH = './external_apps/whoosh/index'
+HAYSTACK_INCLUDE_SPELLING = True
+
+
+
 
 
 # Allow for local (per-user) override

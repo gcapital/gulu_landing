@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="gulu_sign_up">
+	<div class="banner">
+	</div>
+	<div class="content cf">
+	    <div class="social_network fleft">
+	       <h2>Social Networks</h2>
+	       <ul class="cf">
+	           <li class="facebook fleft"><a href="#"><img src="{{ MEDIA_URL }}images/bg_facebook.png"></a></li>
+	           <li class="twitter fleft"><a href="#"><img src="{{ MEDIA_URL }}images/bg_twitter.png"></a></li>
+	           <li class="yahoo fleft"><a href="#"><img src="{{ MEDIA_URL }}images/bg_yahoo.png"></a></li>
+	           <li class="google fleft"><a href="#"><img src="{{ MEDIA_URL }}images/bg_google.png"></a></li>
+	           <li class="mixi fleft"><a href="#"><img src="{{ MEDIA_URL }}images/bg_mixi.png"></a></li>
+	           <li class="ranran fleft"><a href="#"><img src="{{ MEDIA_URL }}images/bg_ranran.png"></a></li>
+	       </ul>
+	    </div>
+	    <span class="or fleft">or</span>
+	    <div class="sign_up_form fleft">
+	        <h2>Sign up</h2>
+		    <form method="post" action="{% url globals-signup %}">
+			    {% csrf_token %}
+			    <div class="email_error">{{ form.email.errors }}</div>
+			    <p class="email">{{ form.email }}</p>
+			    <div class="email_confirm_error">{{ form.email_confirm.errors }}</div>
+			    <p class="email_confirm">{{ form.email_confirm }}</p>
+			    <div class="password_error">{{ form.password.errors }}</div>
+			    <p class="password_text"><input type="text" value="New Password"></p>
+	            <p class="password" style="display:none">{{ form.password }}</p>
+	            <div class="password_confirm_error">{{ form.password_confirm.errors }}</div>
+	            <p class="password_confirm_text"><input type="text" value="Password Confirm"></p>
+	            <p class="password_confirm" style="display:none">{{ form.password_confirm }}</p>
+	            <p class="cf">
+		            <input class="policy_check fleft" type="checkbox" id="id_policy">
+		            <label style="display:table-cell" for="id_policy">By clicking the button below, I agree to the <a href="#">GULU User Agreement</a> and <a href="#">Privacy Policy</a>.</label>
+	            </p>
+			    <input id="id_submit" class="btn3" type="submit" name="submit" value="Sign Up">
+		    </form>
+	    </div>
+	</div>
+</div>
+{% endblock %}
+
+{% block bottom_script %}
+<script>
+$(document).ready(function(){
+	
+	// initial input value
+    $('.email input').val('Email');
+    $('.email_confirm input').val('Email Confirm');
+    $('.password_text input').val('New Password');
+    $('.password_confirm_text input').val('Password Confirm');
+    
+    // 
+    $('.email input').click(function(){
+        var v = $(this).val();
+        $(this).val((v=='Email')?'':v);
+        $('.email_error').hide();
+    });
+    $('.email input').focus(function(){
+        var v = $(this).val();
+        $(this).val((v=='Email')?'':v);
+        $('.email_error').hide();
+    });
+    $('.email input').blur(function(){
+        if($(this).val()==''){
+            $(this).val('Email');
+            $('.email_error').show();
+        }
+    });
+    
+    // 
+    $('.email_confirm input').click(function(){
+        var v = $(this).val();
+        $(this).val((v=='Email Confirm')?'':v);
+        $('.email_confirm_error').hide();
+    });
+    $('.email_confirm input').focus(function(){
+        var v = $(this).val();
+        $(this).val((v=='Email Confirm')?'':v);
+        $('.email_confirm_error').hide();
+    });
+    $('.email_confirm input').blur(function(){
+        if($(this).val()==''){
+        	$(this).val('Email Confirm');
+        	$('.email_confirm_error').show();
+        }
+            
+    });
+    
+    //
+    $('.password_text input').click(function(){
+        $('.password_text').hide();
+        $('.password input').val('');
+        $('.password').show();
+        $('.password input').focus();
+        $('.password_error').hide();
+    });
+    $('.password_text input').focus(function(){
+        $('.password_text').hide();
+        $('.password input').val('');
+        $('.password').show();
+        $('.password input').focus();
+        $('.password_error').hide();
+    });
+    $('.password input').blur(function(){
+        var v = $(this).val();
+        if(v==''){
+            $('.password').hide();
+            $('.password_text input').val('New Password');
+            $('.password_text').show();
+            $('.password_error').show();
+        }
+    });
+    
+    //
+    $('.password_confirm_text input').click(function(){
+        $('.password_confirm_text').hide();
+        $('.password_confirm input').val('');
+        $('.password_confirm').show();
+        $('.password_confirm input').focus();
+        $('.password_confirm_error').hide();
+    });
+    $('.password_confirm_text input').focus(function(){
+        $('.password_confirm_text').hide();
+        $('.password_confirm input').val('');
+        $('.password_confirm').show();
+        $('.password_confirm input').focus();
+        $('.password_confirm_error').hide();
+    });
+    $('.password_confirm input').blur(function(){
+        var v = $(this).val();
+        if(v==''){
+            $('.password_confirm').hide();
+            $('.password_confirm_text input').val('Password Confirm');
+            $('.password_confirm_text').show()
+            $('.password_confirm_error').show();
+        }
+    });
+    
+});
+</script>
+{% endblock %}

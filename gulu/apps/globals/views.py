@@ -1,43 +1,74 @@
 """ Gulu globals module views """
 
-import json
-import logging
+__author__ = "Gage Tseng <gage.tseng@geniecapital.com>"
+__version__ = "$Id: views.py 554 2011-01-20 09:44:15Z ben $"
 
-from django import http
-from django.conf import settings
-from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext, loader
-from django.utils.translation import ugettext as _
-from django.utils.translation.trans_real import parse_accept_lang_header
+from django.shortcuts import render_to_response, redirect, get_object_or_404
+from django.conf import settings
+from django.http import HttpResponseRedirect
+from django import http
+from django.contrib.auth.decorators import login_required
 
-from globals.forms import CreateNewsletterForm
+from globals.forms import SignupForm
+from globals.utils import slugreverse
+from user_profiles.models import UserProfile
 
-from mailsnake.mailsnake import MailSnake
+from restaurant.models import Restaurant
 
-logger = logging.getLogger("gulu")
 
-def redirect404(request):
-	return redirect("globals-home")
-
-def home(request):	  
-	""" Temp landing page """
+def handler403(request):
+	""" 403 handler """
+	t = loader.get_template('403.html')
+	return http.HttpResponseForbidden(t.render(RequestContext(request)))
 	
-	if request.method == 'POST':
-		form = CreateNewsletterForm(request.POST)
+def handler404(request):
+    """ gulu home page """
+
+    t = loader.get_template('404.html')
+    return http.HttpResponseNotFound(t.render(RequestContext(request, 
+      {'request_path': request.path,})))
+
+def handler500(request):
+    """ gulu home page """
+
+    t = loader.get_template('500.html')
+    return http.HttpResponseServerError(t.render(RequestContext(request, 
+      {'request_path': request.path,})))
+
+def home(request):
+    """ gulu home page """
+    slidephotos = []
+    #slidephotos = DishPhoto.objects.filter(dish__restaurant=1)[:4]
+    tmp_restaurant = Restaurant.objects.get(pk=1)
+    return render_to_response('home_index.html', { 'slidephotos':slidephotos, 'tmp_restaurant':tmp_restaurant }, context_instance = RequestContext(request))
+    
+def signup(request):
+	
+	if request.method == "POST":
+		form = SignupForm(request.POST)
 		if form.is_valid():
-			ms = MailSnake(settings.MAILSNAKE_API_KEY)
-			post = form.save(commit=False)
-			subscribed = ms.listSubscribe(id='279790dbdc', email_address=post.email, 
-				double_optin=False, merge_vars=post.username)
-
-			if subscribed == True or subscribed['code'] == 214:
-				post.save()
-			else:
-				form._errors['username'] = form.error_class([_(u"Could not subscribe.  Please try again later.")])
-				logger.error("Subscription failed for %s: %s" % (post.email, subscribed['error']))
+			data = form.save(commit = False)
+			new_user = UserProfile.objects.create_user(data.email, data.email, data.password)
+			new_user.save()
+			return redirect("globals-login")
 	else:
-		form = CreateNewsletterForm()
-
-	return render_to_response("index.html", {
+		form = SignupForm()
+	
+	return render_to_response("globals_signup.html", {
 		'form': form,
-	}, context_instance = RequestContext(request))
+	}, context_instance=RequestContext(request))
+
+@login_required
+def logged_in(request):
+	next = request.GET.get('next')
+	if next:
+		return HttpResponseRedirect(next)
+	
+	return HttpResponseRedirect(slugreverse(request.user, "user-profile", args=[request.user.id]))
+	
+def logout(request):
+	pass
+	
+def forgot_password(request):
+	pass

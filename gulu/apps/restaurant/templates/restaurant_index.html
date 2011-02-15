@@ -1,0 +1,129 @@
+{% extends "restaurant_index_base.html" %}
+{% block extrahead %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/fileuploader.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/photos.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gulu.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/jquery.autogrow-textarea.js"></script>
+{% endblock %}
+{% load global_tags %}
+
+{% block bodyclass %}view_profile_nav{% endblock %}
+
+{% block profile_index_head %}
+<h2>Map</h2>
+<div id="restaurant_map" class="show_map"></div>
+{% endblock %}
+
+{% block profile_index_body_left %}
+<h2>Wall</h2>
+{% include "inc_wall_post_form.html" %}
+<div class="wall_show" id="activity_stream">
+{% include "inc_mygulu_activities.html" %}
+</div>
+{% endblock %}
+
+{% block profile_index_body_right %}
+<div class="right_side_module transportation">
+    <h3>Transportation Options</h3>
+    <p>{{ request.content_object.transportation|default:'交通資訊' }}</p>
+</div>
+
+<div class="right_side_module notes">
+    <h3>Notes</h3>
+    <p>{{ request.content_object.note|default:'其他資訊' }}</p>
+</div>
+
+<div class="right_side_module best_photo">
+    <h3>Best Photo</h3>
+    <ul class="cf">
+    {% for photo in request.content_object.best_photos.all %}
+    {% if forloop.counter <= 6 %}
+        <li>
+            <a href="{% slugurl request.content_object photos-restaurant-view request.content_object.id photo.id %}">
+                <img src="{{ photo.image86x58.url }}" alt="{{ photo.title }}">
+            </a>
+        </li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+</div>
+
+<div class="right_side_module best_review">
+    <h3>Best Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+
+<div class="right_side_module favorite_review">
+    <h4 class="sub">Most Helpful</h4>
+    <h3>Favorite Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+
+<div class="right_side_module critical_review last">
+    <h4 class="sub">Most Helpful</h4>
+    <h3>Critical Review</h3>
+    <div class="review_small_box cf">
+        <div class="photo_bg_69x65 fleft">
+            <img src="{{ MEDIA_URL }}images/tmp_chef_photo.png" alt="" />
+        </div>
+        <div class="fleft content">
+            <h4>Pizzeria TAVOLA</h4>
+            <h6>2001/09/20</h6>
+            <p>蘋果公司只要推出新產品，往往可以造成廣大的排隊人潮，攻佔各大媒體版面。</p>
+        </div>
+    </div>
+    <div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+</div>
+{% endblock %}
+
+{% block bottom_script %}
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/lib/google-map.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gcomments.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}js/wall.js"></script>
+<script>
+$(document).ready(function(){
+    var RMap = GMap.GetMapByAddress('{{ request.content_object.address }}','restaurant_map');
+
+    $('.comment_content').each(function(){
+        var comment = new GComments.Commenter({
+            container : $(this),
+        });
+    });
+    var ajax_uploader = new Photos.AjaxUploader({
+        button: $("#btn_upload"),
+        imagespec: 'image186x119',
+        errors: $("#error_msg"),
+        preview: $("#img_placeholder"),
+        input: $("#id_photo_id"),
+        url_input: $("#id_photo_url"),
+    });
+    $('#id_content').val('comments');
+
+	var wall_poster = new Wall.Poster({
+		form: $("#wall_form"),
+		container: $("#activity_stream"),
+	});
+});
+</script>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends "mygulu_base.html" %}
+
+{% block bodyclass %}photos_nav{% endblock %}
+
+{% load global_tags %}
+
+{% block content %}
+<div class="restaurant_photos">
+    
+    <div class="header cf">
+        <h2 class="fleft">My Photos</h2>
+    </div>
+    <div class="sp_hr_line"></div>
+    <div class="photos_list">
+        <ul class="cf">
+        {% for photo in photos %}
+            {% if not photo.best_photo_restaurant.all %}
+                {% include "inc_photo_item.html" %}
+            {% endif %}
+        {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+{% endblock %}

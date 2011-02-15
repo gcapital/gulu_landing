@@ -1,0 +1,19 @@
+{% extends "restaurant_base.html" %}
+{% block bodyclass %}reviews_nav{% endblock %}
+{% block content %}
+
+<div class="review-left-col">
+	{% block left %}{% endblock %}
+</div><!-- .review-left-col -->
+
+<div class="review-right-col">
+	
+	<div class="review-right-top"></div><!-- .review-right-top -->
+	
+	<div class="review-right-content">
+		{% block right %}{% endblock %}
+	</div><!-- .review-right-content -->
+	
+	<div class="review-right-bottom"></div><!-- .review-right-bottom -->
+</div><!-- .review-right-col -->
+{% endblock %}

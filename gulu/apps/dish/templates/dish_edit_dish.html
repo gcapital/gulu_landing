@@ -1,0 +1,27 @@
+{% extends "restaurant_index_base.html" %}
+
+{% load global_tags %}
+
+{% block bodyclass %}menu_nav{% endblock %}
+{% block index_base_class %}dish_edit{% endblock %}
+
+{% block profile_index_head %}
+<div class="dish_menu_header">
+    <div class="dish_menu_title cf">
+        <h2 class="fleft">Menu - Dish</h2>
+        <div class="fright dish_menu_operate cf">
+            <a class="btn5" href="{% slugurl request.content_object restaurant-menu request.content_object.id %}">Back to List</a>
+            <a class="btn4" href="{% slugurl request.content_object photos-dish-list request.content_object.id dish.id %}">Dish Photos</a>
+        </div>
+    </div>
+    <div class="sp_hr_line"></div>
+</div>
+
+<div class="dish_edit_form">
+    <p><img src="{{ dish.main_pic.image600x400.url }}" /></p>
+    <form method="post" action="{% slugurl request.content_object restaurant-edit-dish request.content_object.id dish.id %}">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" name="submit" value="Submit" />
+</div>
+{% endblock %}

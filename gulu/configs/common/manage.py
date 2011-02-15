@@ -24,6 +24,7 @@ lib_path = os.path.join(
 sys.path.insert(0, python_path)
 sys.path.insert(0, apps_path)
 sys.path.insert(0, lib_path)
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../apps/external_apps"))
 
 try:
     import settings # Assumed to be in the same directory.

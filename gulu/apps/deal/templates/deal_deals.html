@@ -1,0 +1,77 @@
+{% extends "restaurant_base.html" %}
+
+{% load gcomments_tags global_tags %}
+
+{% block bodyclass %}deal_nav{% endblock %}
+
+{% load global_tags %}
+
+{% block content %}
+
+<div class="view_deal_header tab_page_header">
+    <div class="title cf">
+        <h2 class="fleft">Deals</h2>
+        <div class="fright operate cf">
+            <a class="btn6 fright" href="{% slugurl restaurant deal-add-deal restaurant.id %}">Create a Deal</a>
+        </div>
+    </div>
+    <div class="sp_hr_line"></div>
+</div>
+
+<ul class="deals">
+{% for deal in deals %}
+	<li class="deal_item cf">
+	    <div class="cf">
+		    <div class="photo fleft">
+		        <div class="photo_item cf fleft {% get_random photos_frame_l photos_frame_h photos_frame_r %}">
+	               <a href="{% slugurl restaurant deal-view-deal restaurant.id deal.id %}">
+	                  <span class="photo_frame"></span>
+	                  <div class="photo_item_bd">
+	                      <img src="{{ deal.cover.image190x125.url }}" />
+	                  </div>
+	               </a>
+	            </div>
+		    </div>
+		    
+			<div class="title fleft">
+				<h2><a href="{% slugurl restaurant deal-view-deal restaurant.id deal.id %}">{{ deal.title }}</a></h2>
+				<table class="deal_detail">
+					<tr>
+						<th>Deal: </th><td>{{ deal.get_description }}</td>
+					</tr>
+					<tr>	
+						<th>Availability: </th><td>{{ deal.get_time_range }}</td>
+					</tr>
+					<tr>
+						<th>Conditions: </th><td>{{ deal.conditions }}</td>
+					</tr>
+				</table>
+				<div class="cf deal_btn_container">
+					<a class="btn4 fright" href="{% slugurl restaurant deal-edit-deal restaurant.id deal.id %}">Edit Deal</a>
+		            <a class="btn4 fright" href="">Suggest</a>
+		            <a class="btn4 fright" href="{# slugurl restaurant todo-add-deal restaurant.id deal.id #}">Add to Todo</a>
+	            </div>
+			</div>
+		</div>
+		
+		<div class="share_buttons"><a href="#"><img src="{{ MEDIA_URL }}images/tmp_all_icons.png" alt="" /></a></div>
+
+		<div class="sp_hr_line {% if forloop.last %}last{% endif %}"></div>
+	</li>
+{% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block bottom_script %}
+<script type="text/javascript" src="{{ MEDIA_URL }}js/gcomments.js"></script>
+<script>
+$(document).ready(function(){
+	$('.deal_comments').each(function(){
+		var comment = new GComments.Commenter({
+			container : $(this),
+	    });
+	});
+});
+</script>
+{% endblock %}
