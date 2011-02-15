@@ -7,7 +7,8 @@ TEMPLATE_DEBUG = DEBUG
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = 'https://s3-ap-southeast-1.amazonaws.com/media-api2.gulu.com/static/'
+#MEDIA_URL = 'https://s3-ap-southeast-1.amazonaws.com/media-api2.gulu.com/static/'
+MEDIA_URL = 'http://api.gulu.com/media/'
 
 # Predefined domain
 MY_SITE_DOMAIN = 'api.gulu.com'
