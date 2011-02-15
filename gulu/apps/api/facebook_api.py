@@ -34,7 +34,9 @@ def oauth_facebook_request(request):
     site_o = get_object_or_404(Site, name = 'facebook')
     sync_list = Sync.objects.filter(site=site_o, user = request.user)
     if sync_list:
-        return HttpResponseRedirect("http://localhost:8000/api/facebook_error")
+        return render_to_response('facebook_cancel.html', {
+        'site_name' : 'facebook',
+        }, context_instance = RequestContext(request))
     facebook_url = "https://www.facebook.com/dialog/oauth?"    
     data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS, 
             'scope':'publish_stream,read_stream,user_status,user_videos,user_events,user_photos,email,user_groups,offline_access'}
@@ -99,9 +101,7 @@ def facebook_postwall(request):
     return render_to_response('facebook_test.html', {
     'form' : form,
     }, context_instance = RequestContext(request))
-    
-    
-    
+        
     
 class oauth_facebook_finish(BaseHandler):    
     #fields = ('id', 'username','email','about_me',('main_profile_pic',('image600x400','id')))
@@ -110,3 +110,4 @@ class oauth_facebook_finish(BaseHandler):
     
     def create (self, request):
         pass
+    
