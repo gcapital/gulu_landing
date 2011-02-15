@@ -20,6 +20,8 @@ from django.contrib.auth import authenticate, login
 
 from api.handlers import user_handler
 
+DEFAULT_USER_PHOTO_ID = 41
+
 PTEST = False
 
 """
@@ -99,7 +101,7 @@ class signup(user_handler):
         password = request.POST.get('password')
         username = request.POST.get('username')
         phone = request.POST.get('phone')
-        main_profile_pic = Photo.objects.get(id=41)
+        main_profile_pic = Photo.objects.get(id=DEFAULT_USER_PHOTO_ID)
         facebook_site = Site.objects.get(name='facebook')
         sync_o = Sync(site=facebook_site)        
         if phone and email and password and username:            
