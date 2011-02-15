@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django import forms
 from piston.models import Sync, Site
 import cgi
-import external_apps.oauth2 as oauth
+import oauth2 as oauth
 
 
 class MessageForm(forms.Form):

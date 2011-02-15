@@ -9,7 +9,7 @@ from piston.models import Sync, Site
 from photos.models import Photo
 from urllib import urlencode
 import httplib2, cgi, urllib2, json
-import external_apps.oauth2 as oauth
+import oauth2 as oauth
 from poster.encode import multipart_encode
 from poster.streaminghttp import register_openers
 

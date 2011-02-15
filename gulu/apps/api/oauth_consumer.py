@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from piston.models import Sync, Site
 from urllib import urlencode
 import cgi
-import external_apps.oauth2 as oauth
+import oauth2 as oauth
 
 
 @login_required
