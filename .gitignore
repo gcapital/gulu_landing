@@ -9,3 +9,4 @@ settings_local.py
 .project
 .pydevproject
 .gitignore
+photo_cache
