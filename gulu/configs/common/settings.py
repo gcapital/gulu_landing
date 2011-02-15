@@ -190,7 +190,7 @@ LOGIN_URL = "/login"
 LOGIN_REDIRECT_URL = "/logged_in"
 
 # HAYSTACK
-HAYSTACK_SITECONF = 'search_sites'
+HAYSTACK_SITECONF = 'gulu.configs.common.search_sites'
 #HAYSTACK_SEARCH_ENGINE = 'solr'
 HAYSTACK_SOLR_URL = "http://127.0.0.1:8983/solr"
 
