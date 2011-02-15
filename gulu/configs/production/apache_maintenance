@@ -1,6 +1,5 @@
 <VirtualHost *:80>
-    ServerName gulu.com
-    ServerAlias www.gulu.com
+    ServerName api.gulu.com
     
     #SetEnvIf X-Forwarded-For "^163\.192\..*\..*" trib
     #<Location /> # until launch
@@ -9,7 +8,7 @@
     #     # Allow from env=trib
     #</Location>
     
-    Redirect permanent /favicon.ico http://media.gulu.com/static/favicon.ico
+    Redirect permanent /favicon.ico http://media-api.gulu.com/static/favicon.ico
     
     Alias /robots.txt /home/gulu/sites/gulu/repository/gulu/assets/robots.txt
 
@@ -26,8 +25,8 @@
     
     RewriteEngine on
     # canonical hostname
-    RewriteCond %{HTTP_HOST} !^gulu.com [NC] 
-    RewriteRule ^/(.*)  http://www.gulu.com/$1 [L,R]
+    #RewriteCond %{HTTP_HOST} !^gulu.com [NC] 
+    #RewriteRule ^/(.*)  http://www.gulu.com/$1 [L,R]
     
     DocumentRoot /home/gulu/sites/gulu/repository/gulu/assets/
     

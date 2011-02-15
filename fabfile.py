@@ -27,9 +27,9 @@ def production():
     Work on production environment
     """
     env.settings = 'production'
-    env.hosts = ['ec2-122-248-195-7.ap-southeast-1.compute.amazonaws.com']
+    env.hosts = ['api.gulu.com']
     env.user = 'gulu'
-    env.s3_bucket = 'media.gulu.com'
+    env.s3_bucket = 'media-api.gulu.com'
 
 def staging():
     """
