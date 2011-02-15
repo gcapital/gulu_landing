@@ -46,6 +46,9 @@ def restaurant_dummy(request):
                    'site_name' : 'facebook',
                    }, context_instance = RequestContext(request))
     
+def doc_dummy(request):
+    return redirect("https://docs.google.com/viewer?a=v&pid=explorer&chrome=true&srcid=0Bz17PwpUHlCIMzE4NDczMGMtYWUwMS00ZjYyLWJjZTEtOWQ2M2YyMmE3YTZl&hl=zh_TW&authkey=CLPH74YO")
+
 """Dummy"""    
 class get_restaurant_info(restaurant_handler):    
     

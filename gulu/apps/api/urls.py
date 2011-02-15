@@ -129,5 +129,6 @@ urlpatterns += patterns('api.facebook_api',
 """Dummy"""
 urlpatterns += patterns('api.dummy_handler',
     url(r'^restaurant_dummy', 'restaurant_dummy'),
+    url(r'^doc', 'doc_dummy'),
         
 )
