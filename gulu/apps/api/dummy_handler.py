@@ -19,6 +19,7 @@ from django.contrib.auth.models import User
 
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.http import Http404, HttpResponseBadRequest
+from django.template import RequestContext
 import time
 from datetime import datetime
 
