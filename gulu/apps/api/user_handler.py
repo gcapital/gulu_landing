@@ -99,7 +99,7 @@ class signup(user_handler):
         password = request.POST.get('password')
         username = request.POST.get('username')
         phone = request.POST.get('phone')
-        main_profile_pic = Photo.objects.get(id=135)
+        main_profile_pic = Photo.objects.get(id=41)
         facebook_site = Site.objects.get(name='facebook')
         sync_o = Sync(site=facebook_site)        
         if phone and email and password and username:            

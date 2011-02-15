@@ -109,9 +109,37 @@ class get_restaurant_search(restaurant_handler):
         
 """Dummy Function"""
 class create_review(review_handler):
-    #fields = ('id', 'dish','user','content','created',('photo',(IMAGE_SMALL,IMAGE_MEDIUM,IMAGE_LARGE,'id')))    
+    #fields = ('id', 'dish','user','content','created',('photo',(IMAGE_SMALL,IMAGE_MEDIUM,IMAGE_LARGE,'id')))
+    """ 
+    16.taste 
+    17.value 
+    18.quality 
+    19.presentation """    
     def read (self, request):
         uid = request.GET.get('uid')
+        dish_name = request.GET.get('dish_name')
+        
+        rid = request.GET.get('rid')
+        restaurant_name = request.GET.get('restaurant_name')
+        latitude = request.GET.get('latitude')
+        longitude = request.GET.get('longitude')
+        address = request.GET.get('address')
+        phone = request.GET.get('phone')
+        city = request.GET.get('city')        
+        region = request.GET.get('region')
+        
+        photo_name = request.GET.get('photo_name')
+        review_content = request.GET.get('review_content')        
+        photo_id = request.GET.get('photo_id')        
+        taste = request.GET.get('taste')
+        value = request.GET.get('value')
+        quality = request.GET.get('quality')
+        presentation = request.GET.get('presentation')
+        #41
+        if rid == -1:
+            restaurant_o = Restaurant(name=restaurant_name,address=address,city=city,region=region,phone=phone,
+                                      longitude=longitude,latitude=latitude)
+        
         if PTEST:
             uid = 4
             review = Review.objects.filter(user=uid)[0]

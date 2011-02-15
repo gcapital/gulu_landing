@@ -22,7 +22,7 @@ class MessageForm(forms.Form):
     photo_id = forms.IntegerField(widget=forms.HiddenInput(), required=False)
     photo_url = forms.CharField(widget=forms.HiddenInput(), required=False)    
 
-
+PTEST=True
 
 REDIRECT_URI_ACCESS = 'http://api.gulu.com/api/oauth_facebook_access'
 """
@@ -31,7 +31,9 @@ REDIRECT_URI_ACCESS = 'http://api.gulu.com/api/oauth_facebook_access'
 """
 def oauth_facebook_request(request):
     site_o = get_object_or_404(Site, name = 'facebook')
-    uid = request.GET.get('uid')
+    uid = request.POST.get('uid')
+    if PTEST:
+        uid = request.GET.get('uid')
     user_o = get_object_or_404(UserProfile, id=uid)
     sync_list = Sync.objects.filter(site=site_o, user = user_o)
     if sync_list:
