@@ -1,3 +1,6 @@
+from piston.handler import BaseHandler, AnonymousBaseHandler
+from piston.utils import rc, require_mime, require_extended
+
 from django.template import RequestContext
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.conf import settings
@@ -19,6 +22,9 @@ class MessageForm(forms.Form):
     photo_url = forms.CharField(widget=forms.HiddenInput(), required=False)    
 
 
+
+REDIRECT_URI_ACCESS = 'http://api.gulu.com/api/oauth_facebook_access'
+REDIRECT_URI_FINISH = 'http://api.gulu.com/api/oauth_facebook_finish'
 """
 1. http://localhost:8000/api/oauth_facebook_request
 2. http://localhost:8000/api/oauth_facebook_access
@@ -30,7 +36,7 @@ def oauth_facebook_request(request):
     if sync_list:
         return HttpResponseRedirect("http://localhost:8000/api/facebook_error")
     facebook_url = "https://www.facebook.com/dialog/oauth?"    
-    data = {'client_id':site_o.key,'redirect_uri':'http://gulu.com/', 
+    data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS, 
             'scope':'publish_stream,read_stream,user_status,user_videos,user_events,user_photos,email,user_groups,offline_access'}
     parameter = urlencode(data)
     url = facebook_url+parameter
@@ -45,7 +51,7 @@ def oauth_facebook_access(request):
     site_o = get_object_or_404(Site, name = 'facebook')
     sync_o = Sync(user=request.user, site = site_o, verifier = code)
     facebook_url = 'https://graph.facebook.com/oauth/access_token?'
-    data = {'client_id':site_o.key,'redirect_uri':'http://gulu.com/',
+    data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_FINISH,
             'client_secret':site_o.secret,'code':code}
     parameter = urlencode(data)
     
@@ -94,3 +100,13 @@ def facebook_postwall(request):
     'form' : form,
     }, context_instance = RequestContext(request))
     
+    
+    
+    
+class oauth_facebook_finish(BaseHandler):    
+    #fields = ('id', 'username','email','about_me',('main_profile_pic',('image600x400','id')))
+    def read (self, request):
+        pass 
+    
+    def create (self, request):
+        pass

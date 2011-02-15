@@ -10,11 +10,12 @@ from api.event_handler import *
 from api.user_handler import *
 from api.wall_comment_handler import *
 from api.dummy_handler import *
+from api.facebook_api import oauth_facebook_finish
  
 
 auth = HttpBasicAuthentication(realm="Test Realm")
 
-"""gulu.api.handlers"""
+"""api.handlers"""
 dishes_rid = Resource(handler=get_dish_by_rid)
 dishes_term = Resource(get_dish_by_term)#fake
 dish_rid_term_type = Resource(get_dish_by_rid_term_type)#fake
@@ -37,17 +38,19 @@ wall_comment_delete = Resource(handler=delete_wall_post_comment)#fake
 
 
 
-"""gulu.api.event_handler"""
+"""api.event_handler"""
 events_uid = Resource(handler=get_event_by_uid)
 event_new = Resource(handler=create_event)
 event_update = Resource(handler=update_event)
-"""gulu.api.user_handler"""
+"""api.user_handler"""
 user_uid = Resource(handler=get_user_info)
 check_username = Resource(handler=signup_checkusername)
 check_email = Resource(handler=signup_checkemail)
 signup = Resource(handler=signup)
 signin = Resource(handler=signin)
 upload_user_info = Resource(handler=upload_user_info)
+"""api.facebook_api"""
+oauth_facebook_finish = Resource(handler=oauth_facebook_finish)
 
 
 
@@ -118,5 +121,6 @@ urlpatterns += patterns(
 urlpatterns += patterns('api.facebook_api',
     url(r'^oauth_facebook_request', 'oauth_facebook_request'),
     url(r'^oauth_facebook_access', 'oauth_facebook_access'),  
-    url(r'^facebook_postwall', 'facebook_postwall'),  
+    url(r'^facebook_postwall', 'facebook_postwall'),
+    url(r'^oauth_facebook_finish', oauth_facebook_finish),
 )
