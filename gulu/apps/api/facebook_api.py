@@ -55,7 +55,7 @@ def oauth_facebook_access(request):
     site_o = get_object_or_404(Site, name = 'facebook')
     sync_o = Sync(user=request.user, site = site_o, verifier = code)
     facebook_url = 'https://graph.facebook.com/oauth/access_token?'
-    data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_FINISH,
+    data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS,
             'client_secret':site_o.secret,'code':code}
     parameter = urlencode(data)
     
