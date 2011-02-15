@@ -1,7 +1,7 @@
 from piston.handler import BaseHandler, AnonymousBaseHandler
 from piston.utils import rc, require_mime, require_extended
 
-from dish.models import Dish
+from dish.models import Dish, DishType
 from review.models import Review
 from deal.models import Deal
 from restaurant.models import Restaurant
@@ -37,6 +37,7 @@ ACTION_TYPE = ContentType.objects.get_for_model(Action)
 
 DEFAULT_DISH_PHOTO_ID = 41
 DEFAULT_RESTAURANT_PHOTO_ID = 41
+DEFAULT_DISH_TYPE_ID = 1
 
 def restaurant_dummy(request):
     r_o = Restaurant.objects.get(id=1)
@@ -150,7 +151,8 @@ class create_review(review_handler):
             restaurant_o = get_object_or_404(Restaurant, id=rid)
         if did == '-1':
             main_pic = Photo.objects.get(id=DEFAULT_DISH_PHOTO_ID)
-            dish_o = Dish(main_pic=main_pic,restaurant=restaurant_o,name=dish_name,description='New gulu dish',user=user_o)
+            dish_type = DishType.objects.get(id=DEFAULT_DISH_TYPE_ID)
+            dish_o = Dish(main_pic=main_pic,restaurant=restaurant_o,name=dish_name,description='New gulu dish',user=user_o,type=dish_type)
             dish_o.save()
         else:
             dish_o = get_object_or_404(Dish,id=did)
@@ -192,7 +194,8 @@ class create_review(review_handler):
             restaurant_o = get_object_or_404(Restaurant, id=rid)
         if did == '-1':
             main_pic = Photo.objects.get(id=DEFAULT_DISH_PHOTO_ID)
-            dish_o = Dish(main_pic=main_pic,restaurant=restaurant_o,name=dish_name,description='New gulu dish',user=user_o)
+            dish_type = DishType.objects.get(id=DEFAULT_DISH_TYPE_ID)
+            dish_o = Dish(main_pic=main_pic,restaurant=restaurant_o,name=dish_name,description='New gulu dish',user=user_o,type=dish_type)
             dish_o.save()
         else:
             dish_o = get_object_or_404(Dish,id=did)
