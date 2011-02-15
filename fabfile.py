@@ -29,7 +29,7 @@ def production():
     env.settings = 'production'
     env.hosts = ['api.gulu.com']
     env.user = 'gulu'
-    env.s3_bucket = 'media-api.gulu.com'
+    env.s3_bucket = 'media-api2.gulu.com'
 
 def staging():
     """
