@@ -1,7 +1,7 @@
 from gulu.configs.common.settings import *
 
 # Debugging
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
