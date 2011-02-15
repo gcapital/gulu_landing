@@ -123,4 +123,6 @@ urlpatterns += patterns('api.facebook_api',
     url(r'^oauth_facebook_access', 'oauth_facebook_access'),  
     url(r'^facebook_postwall', 'facebook_postwall'),
     url(r'^oauth_facebook_finish', oauth_facebook_finish),
+    
+    url(r'^restaurant_dummy', 'restaurant_dummy'),
 )

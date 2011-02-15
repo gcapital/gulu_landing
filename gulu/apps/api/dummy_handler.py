@@ -17,7 +17,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django.contrib.auth.models import User
 
-from django.shortcuts import get_object_or_404
+from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.http import Http404, HttpResponseBadRequest
 import time
 from datetime import datetime
@@ -34,6 +34,16 @@ WALL_TYPE = ContentType.objects.get_for_model(WallPost)
 USERPROFILE_TYPE = ContentType.objects.get_for_model(UserProfile)
 ACTION_TYPE = ContentType.objects.get_for_model(Action)
 
+
+
+def restaurant_dummy(request):
+    r_o = Restaurant.objects.get(id=1)
+    r_o.latitude = 25.021708
+    r_o.longitude = 121.548179
+    r_o.save()
+    return render_to_response('facebook_cancel.html', {
+                   'site_name' : 'facebook',
+                   }, context_instance = RequestContext(request))
     
 """Dummy"""    
 class get_restaurant_info(restaurant_handler):    
