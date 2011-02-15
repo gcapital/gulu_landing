@@ -34,9 +34,11 @@ def oauth_facebook_request(request):
     site_o = get_object_or_404(Site, name = 'facebook')
     sync_list = Sync.objects.filter(site=site_o, user = request.user)
     if sync_list:
-        return render_to_response('facebook_cancel.html', {
-        'site_name' : 'facebook',
-        }, context_instance = RequestContext(request))
+        if sync_list[0].is_access:            
+            return render_to_response('facebook_cancel.html', {
+                   'site_name' : 'facebook',
+                   }, context_instance = RequestContext(request))
+            
     facebook_url = "https://www.facebook.com/dialog/oauth?"    
     data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS, 
             'scope':'publish_stream,read_stream,user_status,user_videos,user_events,user_photos,email,user_groups,offline_access'}
@@ -58,7 +60,8 @@ def oauth_facebook_access(request):
     parameter = urlencode(data)
     
     url = facebook_url+parameter
-    h = httplib2.Http(".cache")
+    #h = httplib2.Http(".cache")
+    h = httplib2.Http()
     resp, content = h.request(url, "GET")
     resp_dict = dict(cgi.parse_qsl(content))
     sync_o.is_access = True
@@ -66,7 +69,8 @@ def oauth_facebook_access(request):
 
     #Get user id
     url = 'https://graph.facebook.com/me?access_token=%s'%resp_dict['access_token']
-    h = httplib2.Http(".cache")
+    #h = httplib2.Http(".cache")
+    h = httplib2.Http()
     resp, content = h.request(url, "GET")
     user_pro = json.loads(content)
     sync_o.type_id = user_pro['id']
