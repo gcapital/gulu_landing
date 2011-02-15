@@ -121,7 +121,7 @@ INSTALLED_APPS = (
     #'django.contrib.admindocs',
     'django.contrib.comments',
     'debug_toolbar',
-    'south',
+    #'south',
     'bbcode',
     'guardian',
     'haystack',
