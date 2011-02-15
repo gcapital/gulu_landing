@@ -10,7 +10,6 @@ from api.event_handler import *
 from api.user_handler import *
 from api.wall_comment_handler import *
 from api.dummy_handler import *
-from api.facebook_api import oauth_facebook_finish
  
 
 auth = HttpBasicAuthentication(realm="Test Realm")
@@ -50,7 +49,7 @@ signup = Resource(handler=signup)
 signin = Resource(handler=signin)
 upload_user_info = Resource(handler=upload_user_info)
 """api.facebook_api"""
-oauth_facebook_finish = Resource(handler=oauth_facebook_finish)
+
 
 
 
@@ -119,10 +118,9 @@ urlpatterns += patterns(
 
 """Facebook"""
 urlpatterns += patterns('api.facebook_api',
-    url(r'^oauth_facebook_request', 'oauth_facebook_request'),
+    url(r'^sync_fb', 'oauth_facebook_request'),
     url(r'^oauth_facebook_access', 'oauth_facebook_access'),  
     url(r'^facebook_postwall', 'facebook_postwall'),
-    url(r'^oauth_facebook_finish', oauth_facebook_finish),
         
 )
 

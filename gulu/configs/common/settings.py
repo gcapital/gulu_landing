@@ -71,7 +71,7 @@ MEDIA_URL = 'http://localhost.local:8000/media/'
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
 #ADMIN_MEDIA_PREFIX = '/admin_media/'
-ADMIN_MEDIA_PREFIX = '/media/admin/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'g!@h6(n*45*u2(!2jhbrhc0o@%c249cf$ohz0gkhwr-o_eo&&)'

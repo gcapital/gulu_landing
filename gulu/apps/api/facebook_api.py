@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django import forms
 from django.db.models import FileField
 from piston.models import Sync, Site
+from user_profiles.models import UserProfile
 from photos.models import Photo
 from urllib import urlencode
 import httplib2, cgi, urllib2, json
@@ -24,15 +25,15 @@ class MessageForm(forms.Form):
 
 
 REDIRECT_URI_ACCESS = 'http://api.gulu.com/api/oauth_facebook_access'
-REDIRECT_URI_FINISH = 'http://api.gulu.com/api/oauth_facebook_finish'
 """
 1. http://localhost:8000/api/oauth_facebook_request
 2. http://localhost:8000/api/oauth_facebook_access
 """
-@login_required
 def oauth_facebook_request(request):
     site_o = get_object_or_404(Site, name = 'facebook')
-    sync_list = Sync.objects.filter(site=site_o, user = request.user)
+    uid = request.GET.get('uid')
+    user_o = get_object_or_404(UserProfile, id=uid)
+    sync_list = Sync.objects.filter(site=site_o, user = user_o)
     if sync_list:
         if sync_list[0].is_access:            
             return render_to_response('facebook_cancel.html', {
@@ -40,22 +41,23 @@ def oauth_facebook_request(request):
                    }, context_instance = RequestContext(request))
             
     facebook_url = "https://www.facebook.com/dialog/oauth?"    
-    data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS, 
+    data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS+'?uid=%s'%uid, 
             'scope':'publish_stream,read_stream,user_status,user_videos,user_events,user_photos,email,user_groups,offline_access'}
     parameter = urlencode(data)
     url = facebook_url+parameter
     return HttpResponseRedirect(url)
-
-@login_required    
+  
 def oauth_facebook_access(request):
     if request.GET.get('code'):
         code = request.GET.get('code')
     else: 
         raise Http404
+    uid = request.GET.get('uid')
+    user_o = get_object_or_404(UserProfile, id=uid)
     site_o = get_object_or_404(Site, name = 'facebook')
-    sync_o = Sync(user=request.user, site = site_o, verifier = code)
+    sync_o = Sync(user=user_o, site = site_o, verifier = code)
     facebook_url = 'https://graph.facebook.com/oauth/access_token?'
-    data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS,
+    data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS+'?uid=%s'%uid,
             'client_secret':site_o.secret,'code':code}
     parameter = urlencode(data)
     
@@ -84,7 +86,7 @@ def oauth_facebook_access(request):
     }, context_instance = RequestContext(request))
 
 #http://localhost:8000/api/facebook_postwall
-@login_required    
+
 def facebook_postwall(request):
     if request.method == 'POST':
         site_o = get_object_or_404(Site, name = 'facebook')
@@ -106,12 +108,4 @@ def facebook_postwall(request):
     'form' : form,
     }, context_instance = RequestContext(request))
         
-    
-class oauth_facebook_finish(BaseHandler):    
-    #fields = ('id', 'username','email','about_me',('main_profile_pic',('image600x400','id')))
-    def read (self, request):
-        pass 
-    
-    def create (self, request):
-        pass
     
