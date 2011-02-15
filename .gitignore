@@ -2,3 +2,10 @@
 local_settings.py
 *.pyc
 .DS_Store
+.svn
+settings_local.py
+.settings
+
+.project
+.pydevproject
+.gitignore
