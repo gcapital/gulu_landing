@@ -9,6 +9,7 @@ from django.utils.encoding import force_unicode
 from django.utils.translation import ungettext
 from haystack import site
 from haystack.query import SearchQuerySet
+
 try:
     from django.contrib.admin.options import csrf_protect_m
 except ImportError:
