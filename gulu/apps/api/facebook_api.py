@@ -1,6 +1,11 @@
+"""PISTON LIB"""
 from piston.handler import BaseHandler, AnonymousBaseHandler
 from piston.utils import rc, require_mime, require_extended
-
+from piston.models import Sync, Site
+"""GULU LIB"""
+from user_profiles.models import UserProfile
+from photos.models import Photo
+"""DJANGO LIB"""
 from django.template import RequestContext
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.conf import settings
@@ -8,15 +13,14 @@ from django.http import HttpResponseRedirect, Http404
 from django.contrib.auth.decorators import login_required
 from django import forms
 from django.db.models import FileField
-from piston.models import Sync, Site
-from user_profiles.models import UserProfile
-from photos.models import Photo
+""""PYTHON LIB"""
 from urllib import urlencode
 import httplib2, cgi, urllib2, json
 import oauth2 as oauth
 from poster.encode import multipart_encode
 from poster.streaminghttp import register_openers
 
+"""GLOBAL VARIATION"""
 class MessageForm(forms.Form):
     message = forms.CharField(max_length=100)
     photo_id = forms.IntegerField(widget=forms.HiddenInput(), required=False)
@@ -25,10 +29,9 @@ class MessageForm(forms.Form):
 PTEST=True
 
 REDIRECT_URI_ACCESS = 'http://api.gulu.com/api/oauth_facebook_access'
-"""
-1. http://localhost:8000/api/oauth_facebook_request
-2. http://localhost:8000/api/oauth_facebook_access
-"""
+FACEBOOK_SCOPE = 'publish_stream,read_stream,user_status,user_videos,user_events,user_photos,email,user_groups,offline_access'
+
+#ask facebook auth
 def oauth_facebook_request(request):
     site_o = get_object_or_404(Site, name = 'facebook')
     uid = request.POST.get('uid')
@@ -44,7 +47,7 @@ def oauth_facebook_request(request):
             
     facebook_url = "https://www.facebook.com/dialog/oauth?"    
     data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS+'?uid=%s'%uid, 
-            'scope':'publish_stream,read_stream,user_status,user_videos,user_events,user_photos,email,user_groups,offline_access'}
+            'scope':FACEBOOK_SCOPE}
     parameter = urlencode(data)
     url = facebook_url+parameter
     return HttpResponseRedirect(url)
@@ -64,16 +67,14 @@ def oauth_facebook_access(request):
     parameter = urlencode(data)
     
     url = facebook_url+parameter
-    #h = httplib2.Http(".cache")
     h = httplib2.Http()
     resp, content = h.request(url, "GET")
     resp_dict = dict(cgi.parse_qsl(content))
     sync_o.is_access = True
     sync_o.token = resp_dict['access_token']    
 
-    #Get user id
+    #Get user facebook id for further usage
     url = 'https://graph.facebook.com/me?access_token=%s'%resp_dict['access_token']
-    #h = httplib2.Http(".cache")
     h = httplib2.Http()
     resp, content = h.request(url, "GET")
     user_pro = json.loads(content)

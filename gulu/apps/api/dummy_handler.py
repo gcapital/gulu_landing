@@ -1,6 +1,7 @@
+"""PISTON LIB"""
 from piston.handler import BaseHandler, AnonymousBaseHandler
-from piston.utils import rc, require_mime, require_extended
-
+from piston.utils import rc, require_mime, require_extended, throttle
+"""GULU LIB"""
 from dish.models import Dish, DishType
 from review.models import Review
 from deal.models import Deal
@@ -14,32 +15,24 @@ from gcomments.models import GComment
 from actstream import action
 from actstream.models import Action
 from piston.models import Sync, Site
+"""DJANGO LIB"""
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django.contrib.auth.models import User
-
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.http import Http404, HttpResponseBadRequest
 from django.template import RequestContext
-
+""""PYTHON LIB"""
 from poster.encode import multipart_encode
 from poster.streaminghttp import register_openers
 import httplib2, cgi, urllib2, json
-
 import time
 from datetime import datetime
 
 from api.handlers import restaurant_handler, dish_handler, review_handler
 
-
+"""GLOBAL VARIATION"""
 PTEST = True
-IMAGE_LARGE = 'image600x400'
-IMAGE_MEDIUM = 'image185x185'
-IMAGE_SMALL = 'image50x50'
-
-WALL_TYPE = ContentType.objects.get_for_model(WallPost)
-USERPROFILE_TYPE = ContentType.objects.get_for_model(UserProfile)
-ACTION_TYPE = ContentType.objects.get_for_model(Action)
 
 DEFAULT_DISH_PHOTO_ID = 41
 DEFAULT_RESTAURANT_PHOTO_ID = 41
@@ -57,9 +50,10 @@ def restaurant_dummy(request):
 def doc_dummy(request):
     return redirect("https://docs.google.com/viewer?a=v&pid=explorer&chrome=true&srcid=0Bz17PwpUHlCIMzE4NDczMGMtYWUwMS00ZjYyLWJjZTEtOWQ2M2YyMmE3YTZl&hl=zh_TW&authkey=CLPH74YO")
 
-"""Dummy"""    
+"""Dummy"""
+
 class get_restaurant_info(restaurant_handler):    
-    
+    #@throttle(5, 10*60)
     def read (self, request): 
         rid = request.GET.get('rid')
         if PTEST:
@@ -117,9 +111,9 @@ class get_restaurant_search(restaurant_handler):
         
 """Dummy Function"""
 class create_review(review_handler):
-    #fields = ('id', 'dish','user','content','created',('photo',(IMAGE_SMALL,IMAGE_MEDIUM,IMAGE_LARGE,'id')))
     #curl -d 'uid=4' -d 'dish_name=perfect test' -d 'did=-1' -d 'rid=1' -d 'review_content=how are you' -d 'photo_id=28' http://localhost:8000/api/create_review
     """ 
+    photo name?
     16.taste 
     17.value 
     18.quality 
@@ -142,7 +136,7 @@ class create_review(review_handler):
         city = request.POST.get('city')        
         region = request.POST.get('region')
         
-        #photo_name = request.POST.get('photo_name')
+        photo_name = request.POST.get('photo_name')
         review_content = request.POST.get('review_content')        
         photo_id = request.POST.get('photo_id')        
         taste = request.POST.get('taste')

@@ -184,13 +184,16 @@ class Emitter(object):
                     if f.serialize and not any([ p in met_fields for p in [ f.attname, f.name ]]):
                         if not f.rel:
                             """Sean: handle normal attributes"""
-                            if f.attname in get_fields:                                
+                            if f.attname in get_fields:                                                                
                                 ret[f.attname] = _any(v(f))                                                  
                                 get_fields.remove(f.attname)                        
                         else:
                             """Sean: handle the object, net structure"""
-                            if f.attname[:-3] in get_fields:
-                                ret[f.name] = _fk(data, f)
+                            if f.attname[:-3] in get_fields:                                
+                                if f.attname[:-3] == 'main_profile_pic' or f.attname[:-3] =='cover':
+                                    ret['photo'] = _fk(data, f)
+                                else:
+                                    ret[f.name] = _fk(data, f)
                                 get_fields.remove(f.name)
                                 
                 

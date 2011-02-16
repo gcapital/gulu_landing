@@ -1,6 +1,7 @@
+"""PISTON LIB"""
 from piston.handler import BaseHandler, AnonymousBaseHandler
 from piston.utils import rc, require_mime, require_extended
-
+"""GULU LIB"""
 from dish.models import Dish
 from review.models import Review
 from deal.models import Deal
@@ -10,18 +11,16 @@ from event.models import Event
 from globals.forms import SignupForm
 from photos.models import Photo
 from piston.models import Sync, Site
-
+"""DJANGO LIB"""
 from django.shortcuts import get_object_or_404
 from django.http import Http404, HttpResponseBadRequest
-
 from django.core.validators import email_re
-
 from django.contrib.auth import authenticate, login
 
 from api.handlers import user_handler
 
+"""GLOBAL VARIATION"""
 DEFAULT_USER_PHOTO_ID = 41
-
 PTEST = False
 
 """
@@ -31,7 +30,6 @@ PTEST = False
                 (favorate, dish@place, place)
 """    
 class get_user_info(user_handler):    
-    #fields = ('id', 'username','email','about_me',('main_profile_pic',('image600x400','id')))
     def read (self, request):
         uid = request.GET.get('uid')
         if PTEST:
@@ -45,7 +43,7 @@ class get_user_info(user_handler):
             uid = 3
         user=get_object_or_404(UserProfile,id=uid)
         return user
-# Check objects
+    
 class signup_checkusername(BaseHandler):
     def read (self, request):
         username = request.GET.get('username')
@@ -93,7 +91,6 @@ class signup_checkemail(BaseHandler):
 """Profile photo need to modify, and sync_o need to modify too, and slug need to modify...."""
 #curl -d 'username=pp' -d 'password=pp' -d 'email=pp@hmail.com' -d 'phone=0099000' http://192.168.11.2:8000/api/signup
 class signup(user_handler):
-    #fields = ('id', 'username','email','phone')
     def read (self, request):
         return HttpResponseBadRequest({ 'errorMessage':1 }) #error
     def create (self, request):
@@ -117,13 +114,11 @@ class signup(user_handler):
             sync_o.save()
             return new_user
         else:
-            #form = SignupForm()
             return HttpResponseBadRequest({ 'errorMessage':1 }) #error
         
 
 class signin(user_handler):
     #curl -d 'name_email=gage' -d 'password=gage' -d 'date=123' -d 'eid=1' http://192.168.11.2:8000/api/signin
-    #fields = ('id', 'username','email','phone')
     def read (self, request):
         return HttpResponseBadRequest({ 'errorMessage':1 }) #error    
     def create (self, request):
