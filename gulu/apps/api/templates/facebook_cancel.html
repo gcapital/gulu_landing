@@ -13,6 +13,7 @@
 		<form enctype="multipart/form-data" method="post" action="/api/cancel_facebook_account/">
 	        {% csrf_token %}
 			<div class="option cf">
+				<input type="hidden" name="uid" value="{{uid}}" />
 				<div class="fleft operate cf button">
 	        		<input class="btn4 fleft" type="submit" name="submit" value="YES" />
 	        	</div>

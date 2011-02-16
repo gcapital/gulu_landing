@@ -44,6 +44,7 @@ def oauth_facebook_request(request):
     if sync_list:
         if sync_list[0].is_access:            
             return render_to_response('facebook_cancel.html', {
+                   'uid':uid,
                    'site_name' : 'facebook',
                    }, context_instance = RequestContext(request))
             
