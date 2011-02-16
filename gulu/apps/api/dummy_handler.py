@@ -216,7 +216,8 @@ class create_review(review_handler):
         url = 'https://graph.facebook.com/%s/photos?access_token=%s'%(sync_o.verifier,sync_o.token)
         datagen, headers = multipart_encode({"source": open(photo_o.image.path, "rb"),
                                              'message':review_content.encode('utf-8')})
-        req = urllib2.Request(url, datagen, headers)                    
+        req = urllib2.Request(url, datagen, headers)
+        urllib2.urlopen(req)                    
         return review_o
     
 
