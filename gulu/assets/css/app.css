@@ -1,0 +1,43 @@
+div{
+	border:black 0px solid;
+}
+
+
+body {
+	background: none;
+}
+
+p{
+	border:green 0px solid;
+}
+
+.comfirm_box{     
+	 border:black 3px solid;
+     width:320px;
+     height:480px;     
+     padding:15px;  
+}
+
+.head_box{
+	height:50px;
+}
+
+.message{     
+     padding:8px;
+     font-size:18px;  
+}
+
+
+.option{
+	padding:15px 0px 0px 25px;
+}
+
+.button{
+	padding:15px;
+}
+
+#title{
+	position:relative; 
+  	top:10px; 
+  	left:50px; 
+}

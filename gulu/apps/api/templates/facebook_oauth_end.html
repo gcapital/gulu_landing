@@ -1,0 +1,20 @@
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{% block title %}Gulu App{% endblock %}</title>
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/gulu.css" type="text/css" />
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/app.css" type="text/css" />	
+</head>
+
+<div class="comfirm_box">
+	<div class="head_box">
+	</div>	
+	<div class="body_box">
+	{% if message == 'YES'%}
+	<div class="message">gulu將無法再從您的facebook獲取任何資料。</div>
+	{% else %}{% if message == 'NO'%}
+	<div class="message">將回到首頁...</div>
+	{% else %}{% if message == 'oauth finish'%}
+	<div class="message">已經完成對facebook的認證!!</div>
+	{% endif %}{% endif %}{% endif %}		
+	</div>
+</div>

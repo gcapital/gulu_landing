@@ -119,7 +119,8 @@ urlpatterns += patterns(
 """Facebook"""
 urlpatterns += patterns('api.facebook_api',
     url(r'^sync_fb', 'oauth_facebook_request'),
-    url(r'^oauth_facebook_access', 'oauth_facebook_access'),  
+    url(r'^oauth_facebook_access', 'oauth_facebook_access'),
+    url(r'^cancel_facebook_account', 'facebook_cancel'),  
     url(r'^facebook_postwall', 'facebook_postwall'),
         
 )

@@ -24,7 +24,8 @@ from poster.streaminghttp import register_openers
 class MessageForm(forms.Form):
     message = forms.CharField(max_length=100)
     photo_id = forms.IntegerField(widget=forms.HiddenInput(), required=False)
-    photo_url = forms.CharField(widget=forms.HiddenInput(), required=False)    
+    photo_url = forms.CharField(widget=forms.HiddenInput(), required=False)
+
 
 PTEST=True
 
@@ -33,6 +34,7 @@ FACEBOOK_SCOPE = 'publish_stream,read_stream,user_status,user_videos,user_events
 
 #ask facebook auth
 def oauth_facebook_request(request):
+    
     site_o = get_object_or_404(Site, name = 'facebook')
     uid = request.POST.get('uid')
     if PTEST:
@@ -80,15 +82,31 @@ def oauth_facebook_access(request):
     user_pro = json.loads(content)
     sync_o.verifier = user_pro['id']
     sync_o.save()
+    user_o.syncs.add(sync_o)
     error_msg = None
     
     
-    return render_to_response('oauth_success.html', {
-        'site_name' : 'facebook',
-        'error_msg': error_msg,
+    return render_to_response('facebook_oauth_end.html', {
+        'message' : 'oauth finish',
     }, context_instance = RequestContext(request))
 
 #http://localhost:8000/api/facebook_postwall
+
+def facebook_cancel(request):    
+    message = request.POST.get('submit')
+    if message == 'YES':
+        uid = request.POST.get('uid')
+        user_o = UserProfile.objects.get(id=uid)
+        sync_o = Sync.objects.get(user=uid,site__name='facebook')
+        user_o.syncs.remove(sync_o)
+        sync_o.delete()
+    return render_to_response('facebook_oauth_end.html', 
+                                {'message':message},
+                               context_instance = RequestContext(request))
+        
+    
+        
+
 
 def facebook_postwall(request):
     if request.method == 'POST':

@@ -1,1 +1,27 @@
-TODO: Ask user to cancel facebook oauth
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{% block title %}Gulu App{% endblock %}</title>
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/gulu.css" type="text/css" />
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/app.css" type="text/css" />	
+</head>
+
+<div class="comfirm_box">
+	<div class="head_box">
+	</div>
+	<div class="body_box">
+	<div class="message">您要取消gulu與您facebook的互動嗎?</div>
+		<form enctype="multipart/form-data" method="post" action="/api/cancel_facebook_account/">
+	        {% csrf_token %}
+			<div class="option cf">
+				<div class="fleft operate cf button">
+	        		<input class="btn4 fleft" type="submit" name="submit" value="YES" />
+	        	</div>
+	        	<input name="uid" value="{{uid}}" type="hidden" />
+	        	<div class="fleft operate cf button">
+	        		<input class="btn4 fleft" type="submit" name="submit" value="NO" />
+	        	</div>
+	        </div>
+	
+		</form>
+	</div>
+</div>
