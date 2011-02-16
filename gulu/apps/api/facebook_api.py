@@ -57,7 +57,7 @@ def oauth_facebook_access(request):
     uid = request.GET.get('uid')
     user_o = get_object_or_404(UserProfile, id=uid)
     site_o = get_object_or_404(Site, name = 'facebook')
-    sync_o = Sync(user=user_o, site = site_o, verifier = code)
+    sync_o = Sync(user=user_o, site = site_o, token_secret = code)
     facebook_url = 'https://graph.facebook.com/oauth/access_token?'
     data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS+'?uid=%s'%uid,
             'client_secret':site_o.secret,'code':code}
@@ -77,7 +77,7 @@ def oauth_facebook_access(request):
     h = httplib2.Http()
     resp, content = h.request(url, "GET")
     user_pro = json.loads(content)
-    sync_o.type_id = user_pro['id']
+    sync_o.verifier = user_pro['id']
     sync_o.save()
     error_msg = None
     
@@ -93,7 +93,7 @@ def facebook_postwall(request):
     if request.method == 'POST':
         site_o = get_object_or_404(Site, name = 'facebook')
         sync_o = get_object_or_404(Sync, user=request.user, site = site_o)        
-        url = 'https://graph.facebook.com/%s/photos?access_token=%s'%(sync_o.type_id,sync_o.token)          
+        url = 'https://graph.facebook.com/%s/photos?access_token=%s'%(sync_o.verifier,sync_o.token)          
         form = MessageForm(request.POST)
         if form.is_valid():
             register_openers()

@@ -13,6 +13,7 @@ from wall.forms import WallPostForm
 from gcomments.models import GComment
 from actstream import action
 from actstream.models import Action
+from piston.models import Sync, Site
 from django.contrib.contenttypes.models import ContentType
 from django.contrib.contenttypes import generic
 from django.contrib.auth.models import User
@@ -202,7 +203,13 @@ class create_review(review_handler):
         photo_o = get_object_or_404(Photo,id=photo_id)
         review_o = Review(restaurant=restaurant_o,dish=dish_o,user=user_o,photo=photo_o,content=review_content,title="gulu Review by %s"%user_o.get_full_name)
         review_o.save()
-            
+        
+        site_o = Site.objects.get(name = 'facebook')
+        sync_o = Sync.objects.get(user=user_o, site = site_o)        
+        url = 'https://graph.facebook.com/%s/photos?access_token=%s'%(sync_o.verifier,sync_o.token)
+        datagen, headers = multipart_encode({"source": open(photo_o.image.path, "rb"),
+                                             'message':review_content.encode('utf-8')})
+        req = urllib2.Request(url, datagen, headers)                    
         return review_o
     
 
