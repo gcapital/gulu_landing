@@ -25,9 +25,7 @@ PTEST = False
 
 """
     == User ==
-    No phone, errorMessage, syncArray
-    user object:{uid, username, email, phone, errorMessage, syncArray, user_image, about}
-                (favorate, dish@place, place)
+    fields = ('id', 'username','email','about_me','phone','main_profile_pic','syncs')
 """    
 class get_user_info(user_handler):    
     def read (self, request):
@@ -100,7 +98,7 @@ class signup(user_handler):
         phone = request.POST.get('phone')
         main_profile_pic = Photo.objects.get(id=DEFAULT_USER_PHOTO_ID)
         facebook_site = Site.objects.get(name='facebook')
-        sync_o = Sync(site=facebook_site)        
+        #sync_o = Sync(site=facebook_site)        
         if phone and email and password and username:            
             new_user = UserProfile.objects.create_user(username, email, password)
             new_user.phone = phone
@@ -108,10 +106,10 @@ class signup(user_handler):
             new_user.slug = username
             new_user.first_name = username            
             new_user.save()
-            sync_o.user = new_user
-            sync_o.save()
-            new_user.syncs.add(sync_o)
-            sync_o.save()
+            #sync_o.user = new_user
+            #sync_o.save()
+            #new_user.syncs.add(sync_o)
+            #sync_o.save()
             return new_user
         else:
             return HttpResponseBadRequest({ 'errorMessage':1 }) #error
