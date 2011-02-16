@@ -21,6 +21,11 @@ from django.contrib.auth.models import User
 from django.shortcuts import render_to_response, redirect, get_object_or_404
 from django.http import Http404, HttpResponseBadRequest
 from django.template import RequestContext
+
+from poster.encode import multipart_encode
+from poster.streaminghttp import register_openers
+import httplib2, cgi, urllib2, json
+
 import time
 from datetime import datetime
 
@@ -200,10 +205,12 @@ class create_review(review_handler):
             dish_o.save()
         else:
             dish_o = get_object_or_404(Dish,id=did)
+        
         photo_o = get_object_or_404(Photo,id=photo_id)
         review_o = Review(restaurant=restaurant_o,dish=dish_o,user=user_o,photo=photo_o,content=review_content,title="gulu Review by %s"%user_o.get_full_name)
         review_o.save()
         
+        register_openers()
         site_o = Site.objects.get(name = 'facebook')
         sync_o = Sync.objects.get(user=user_o, site = site_o)        
         url = 'https://graph.facebook.com/%s/photos?access_token=%s'%(sync_o.verifier,sync_o.token)
