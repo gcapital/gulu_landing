@@ -125,47 +125,7 @@ class create_review(review_handler):
     18.quality 
     19.presentation """    
     def read (self, request):
-        uid = request.GET.get('uid')
-        
-        dish_name = request.GET.get('dish_name')
-        did = request.GET.get('did')
-        
-        rid = request.GET.get('rid')
-        restaurant_name = request.GET.get('restaurant_name')
-        latitude = request.GET.get('latitude')
-        longitude = request.GET.get('longitude')
-        address = request.GET.get('address')
-        phone = request.GET.get('phone')
-        city = request.GET.get('city')        
-        region = request.GET.get('region')
-        
-        #photo_name = request.GET.get('photo_name')
-        review_content = request.GET.get('review_content')        
-        photo_id = request.GET.get('photo_id')        
-        taste = request.GET.get('taste')
-        value = request.GET.get('value')
-        quality = request.GET.get('quality')
-        presentation = request.GET.get('presentation')
-        #41
-        user_o = get_object_or_404(UserProfile, id=uid)
-        if rid == '-1':
-            main_profile_pic = Photo.objects.get(id=DEFAULT_RESTAURANT_PHOTO_ID)
-            restaurant_o = Restaurant(name=restaurant_name,address=address,city=city,region=region,phone=phone,
-                                      longitude=longitude,latitude=latitude,main_profile_pic=main_profile_pic)
-            restaurant_o.save()
-        else: 
-            restaurant_o = get_object_or_404(Restaurant, id=rid)
-        if did == '-1':
-            main_pic = Photo.objects.get(id=DEFAULT_DISH_PHOTO_ID)
-            dish_type = DishType.objects.get(id=DEFAULT_DISH_TYPE_ID)
-            dish_o = Dish(main_pic=main_pic,restaurant=restaurant_o,name=dish_name,description='New gulu dish',user=user_o,type=dish_type)
-            dish_o.save()
-        else:
-            dish_o = get_object_or_404(Dish,id=did)
-        photo_o = get_object_or_404(Photo,id=photo_id)
-        review_o = Review(restaurant=restaurant_o,dish=dish_o,user=user_o,photo=photo_o,content=review_content,title="gulu Review by %s"%user_o.get_full_name)
-            
-        return review_o
+        return HttpResponseBadRequest({ 'errorMessage':1 }) #error         
             
     def create (self, request):
         uid = request.POST.get('uid')
@@ -189,8 +149,9 @@ class create_review(review_handler):
         value = request.POST.get('value')
         quality = request.POST.get('quality')
         presentation = request.POST.get('presentation')
-        #41
+        
         user_o = get_object_or_404(UserProfile, id=uid)
+        #create restaurnat
         if rid == '-1':
             main_profile_pic = Photo.objects.get(id=DEFAULT_RESTAURANT_PHOTO_ID)
             restaurant_o = Restaurant(name=restaurant_name,address=address,city=city,region=region,phone=phone,
@@ -198,6 +159,7 @@ class create_review(review_handler):
             restaurant_o.save()
         else:             
             restaurant_o = get_object_or_404(Restaurant, id=rid)
+        #create dish
         if did == '-1':
             main_pic = Photo.objects.get(id=DEFAULT_DISH_PHOTO_ID)
             dish_type = DishType.objects.get(id=DEFAULT_DISH_TYPE_ID)
@@ -206,10 +168,12 @@ class create_review(review_handler):
         else:
             dish_o = get_object_or_404(Dish,id=did)
         
+        #create review
         photo_o = get_object_or_404(Photo,id=photo_id)
         review_o = Review(restaurant=restaurant_o,dish=dish_o,user=user_o,photo=photo_o,content=review_content,title="gulu Review by %s"%user_o.get_full_name)
         review_o.save()
         
+        #ask facebook for review
         register_openers()
         site_o = Site.objects.get(name = 'facebook')
         sync_o = Sync.objects.get(user=user_o, site = site_o)        

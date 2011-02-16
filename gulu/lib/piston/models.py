@@ -144,8 +144,8 @@ class Sync(models.Model):
     user = models.ForeignKey('user_profiles.UserProfile')
     is_access = models.BooleanField(default=False)
     site = models.ForeignKey('piston.Site')
-    token_secret = models.CharField(max_length=SECRET_SIZE)
-    token = models.CharField(max_length=KEY_SIZE)
+    token_secret = models.CharField(max_length=SECRET_SIZE, null=True, blank=True)
+    token = models.CharField(max_length=KEY_SIZE, null=True, blank=True)
     verifier = models.CharField(max_length=VERIFIER_SIZE, null=True, blank=True)
     def __unicode__(self):
         return u"Sync with key %s" % (self.token)
