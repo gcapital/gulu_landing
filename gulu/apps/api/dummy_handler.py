@@ -187,7 +187,7 @@ class create_review(review_handler):
         try:
             sync_o = get_object_or_404(Sync,user=user_o,site=site_o)
         except Http404:
-            return HttpResponseBadRequest({ 'errorMessage':'not sync fb' })
+            return review_o
         
         url = 'https://graph.facebook.com/%s/photos?access_token=%s'%(sync_o.verifier,sync_o.token)
         datagen, headers = multipart_encode({"source": open(photo_o.image.path, "rb"),
