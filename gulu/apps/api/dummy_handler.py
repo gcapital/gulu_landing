@@ -143,8 +143,11 @@ class create_review(review_handler):
         value = request.POST.get('value')
         quality = request.POST.get('quality')
         presentation = request.POST.get('presentation')
+        try:
+            user_o = get_object_or_404(UserProfile, id=uid)
+        except Http404:
+            return HttpResponseBadRequest({ 'errorMessage':'wrong uid' })
         
-        user_o = get_object_or_404(UserProfile, id=uid)
         #create restaurnat
         if rid == '-1':
             main_profile_pic = Photo.objects.get(id=DEFAULT_RESTAURANT_PHOTO_ID)
@@ -152,25 +155,40 @@ class create_review(review_handler):
                                       longitude=longitude,latitude=latitude,main_profile_pic=main_profile_pic)
             restaurant_o.save()
         else:             
-            restaurant_o = get_object_or_404(Restaurant, id=rid)
+            try:
+                restaurant_o = get_object_or_404(Restaurant, id=rid)
+            except Http404:
+                return HttpResponseBadRequest({ 'errorMessage':'wrong rid' })
+            
         #create dish
         if did == '-1':
             main_pic = Photo.objects.get(id=DEFAULT_DISH_PHOTO_ID)
             dish_type = DishType.objects.get(id=DEFAULT_DISH_TYPE_ID)
             dish_o = Dish(main_pic=main_pic,restaurant=restaurant_o,name=dish_name,description='New gulu dish',user=user_o,type=dish_type)
             dish_o.save()
-        else:
-            dish_o = get_object_or_404(Dish,id=did)
+        else:            
+            try:
+                dish_o = get_object_or_404(Dish,id=did)
+            except Http404:
+                return HttpResponseBadRequest({ 'errorMessage':'wrong did' })
         
-        #create review
-        photo_o = get_object_or_404(Photo,id=photo_id)
+        #create review        
+        try:
+            photo_o = get_object_or_404(Photo,id=photo_id)
+        except Http404:
+            return HttpResponseBadRequest({ 'errorMessage':'wrong photo_id' })
         review_o = Review(restaurant=restaurant_o,dish=dish_o,user=user_o,photo=photo_o,content=review_content,title="gulu Review by %s"%user_o.get_full_name)
         review_o.save()
         
         #ask facebook for review
         register_openers()
         site_o = Site.objects.get(name = 'facebook')
-        sync_o = Sync.objects.get(user=user_o, site = site_o)        
+        #sync_o = Sync.objects.get(user=user_o, site = site_o)                
+        try:
+            sync_o = get_object_or_404(Sync,user=user_o,site=site_o)
+        except Http404:
+            return HttpResponseBadRequest({ 'errorMessage':'not sync fb' })
+        
         url = 'https://graph.facebook.com/%s/photos?access_token=%s'%(sync_o.verifier,sync_o.token)
         datagen, headers = multipart_encode({"source": open(photo_o.image.path, "rb"),
                                              'message':review_content.encode('utf-8')})
