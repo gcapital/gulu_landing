@@ -88,7 +88,56 @@ class get_dish_by_rid(BaseHandler):
             rid = 1
         dishes = Dish.objects.filter(restaurant=rid)        
         return dishes
+
+
+class get_dish_nearby(BaseHandler):
+    def isFloat(self, para):
+        part_para = para.split('.',1)
+        for seg in part_para:
+            if seg.isdigit()==False:
+                return False
+        return True                 
+    def read (self, request):        
+        latitude = str(request.GET.get('latitude'))
+        longitude = str(request.GET.get('longitude'))
+        
+        if PTEST:
+            longitude = '0.0'
+            latitude = '0.0'         
+        if self.isFloat(latitude) and self.isFloat(longitude):            
+            latitude = float(latitude)
+            longitude = float(longitude)
+        else:
+            return []                
+        rests = Restaurant.objects.all()    
+        dish_list=[]
+        for each_rest in rests:
+            if each_rest.longitude<=longitude+0.3 and each_rest.longitude>=longitude-0.3 and each_rest.latitude<=latitude+0.3 and each_rest.latitude>=latitude-0.3:
+                near_dish = Dish.objects.filter(restaurant=each_rest)
+                for each_dish in near_dish:
+                    dish_list.append(each_dish)             
+        return dish_list
     
+    def create (self, request):        
+        latitude = str(request.POST.get('latitude'))
+        longitude = str(request.POST.get('longitude'))
+        
+        if PTEST:
+            longitude = '0.0'
+            latitude = '0.0'         
+        if self.isFloat(latitude) and self.isFloat(longitude):            
+            latitude = float(latitude)
+            longitude = float(longitude)
+        else:
+            return []                
+        rests = Restaurant.objects.all()
+        dish_list=[]
+        for each_rest in rests:
+            if each_rest.longitude<=longitude+0.3 and each_rest.longitude>=longitude-0.3 and each_rest.latitude<=latitude+0.3 and each_rest.latitude>=latitude-0.3:
+                near_dish = Dish.objects.filter(restaurant=each_rest)
+                for each_dish in near_dish:
+                    dish_list.append(each_dish)                
+        return dish_list
 """
     == Review ==
     fields = ('id', 'dish','user','content','created','photo') 

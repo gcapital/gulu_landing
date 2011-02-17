@@ -18,7 +18,7 @@ auth = HttpBasicAuthentication(realm="Test Realm")
 dishes_rid = Resource(handler=get_dish_by_rid)
 dishes_term = Resource(get_dish_by_term)#fake
 dish_rid_term_type = Resource(get_dish_by_rid_term_type)#fake
-#dish_nearby = Resource(get_dish_nearby)
+dish_nearby = Resource(get_dish_nearby)
 reviews_uid = Resource(handler=get_review_by_uid)
 reviews_rid = Resource(handler=get_review_by_rid)
 reviews_new = Resource(handler=create_review)#fake
@@ -60,7 +60,7 @@ urlpatterns = patterns('',
     url(r'^get_dish_by_rid/', dishes_rid),    
     url(r'^get_dish_by_term', dishes_term),#fake
     url(r'^get_dish_by_rid_term_type', dish_rid_term_type),#fake
-    #url(r'^get_dish_nearby', dish_nearby),#fake    
+    url(r'^get_dish_nearby', dish_nearby),    
 
     url(r'^get_review_by_uid', reviews_uid),
     url(r'^get_review_by_rid', reviews_rid),    
