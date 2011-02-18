@@ -14,6 +14,16 @@
         Allow from all
     </Directory>
     
+	<Directory /home/gulu/sites/gulu/env/lib/python2.6/site-packages/django/contrib/admin/media>
+		Order deny,allow
+		Allow from all
+	</Driector>
+
+	Alias /media /home/gulu/sites/gulu/env/lib/python2.6/site-packages/django/contrib/admin/media
+	<Location /media>
+		SetHandler None
+	</Location>
+
     Redirect permanent /favicon.ico http://media-api.gulu.com/static/favicon.ico
     
     Alias /robots.txt /home/gulu/sites/gulu/repository/gulu/assets/robots.txt
