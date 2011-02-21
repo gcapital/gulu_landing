@@ -27,7 +27,7 @@ class MessageForm(forms.Form):
     photo_url = forms.CharField(widget=forms.HiddenInput(), required=False)
 
 
-PTEST=True
+PTEST=False
 
 REDIRECT_URI_ACCESS = 'http://api.gulu.com/api/oauth_facebook_access'
 FACEBOOK_SCOPE = 'publish_stream,read_stream,user_status,user_videos,user_events,user_photos,email,user_groups,offline_access'
