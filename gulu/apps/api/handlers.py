@@ -148,14 +148,14 @@ class get_review_by_uid(BaseHandler):
         uid = request.GET.get('uid')
         if PTEST:
             uid = 4
-        reviews = Review.objects.filter(user=uid)[:10]
+        reviews = Review.objects.filter(user=uid).order_by('-created')[:10]
         return reviews
     
     def create(self, request):
         uid = request.POST.get('uid')
         if PTEST:
             uid = 4
-        reviews = Review.objects.filter(user=uid)[:10]
+        reviews = Review.objects.filter(user=uid).order_by('-created')[:10]
         return reviews
     
 class get_review_by_rid(BaseHandler):    
@@ -164,14 +164,14 @@ class get_review_by_rid(BaseHandler):
         rid = request.GET.get('rid')
         if PTEST:
             rid = 1
-        reviews = Review.objects.filter(restaurant=rid)[:10]        
+        reviews = Review.objects.filter(restaurant=rid).order_by('-created')[:10]        
         return reviews
         
     def create(self, request):
         rid = request.POST.get('rid')
         if PTEST:
             rid = 1
-        reviews = Review.objects.filter(restaurant=rid)[:10]
+        reviews = Review.objects.filter(restaurant=rid).order_by('-created')[:10]
         return reviews
 """
     == Deal ==

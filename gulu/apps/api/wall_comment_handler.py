@@ -37,7 +37,7 @@ class get_wall_post_by_uid(BaseHandler):
         uid = request.GET.get('uid')
         if PTEST:
             uid = 4                
-        action_list = Action.objects.filter(actor_content_type=USERPROFILE_TYPE, actor_object_id=uid, action_object_content_type=WALL_TYPE)
+        action_list = Action.objects.filter(actor_content_type=USERPROFILE_TYPE, actor_object_id=uid, action_object_content_type=WALL_TYPE).order_by('-timestamp')
         ret = []
         for a in action_list:
             wall_o = a.action_object
@@ -47,14 +47,13 @@ class get_wall_post_by_uid(BaseHandler):
             wall_dict = {'id':wall_o.id,'poster':wall_o.poster,'content':wall_o.content,
                          'created':wall_o.created, 'comment_count':num, 'time_ago':unix_seconds}
             ret.append(wall_dict)
-        ret.reverse() #Let the most Recently on top
         return ret
     
     def create (self, request):
         uid = request.POST.get('uid')
         if PTEST:
             uid = 4                
-        action_list = Action.objects.filter(actor_content_type=USERPROFILE_TYPE, actor_object_id=uid, action_object_content_type=WALL_TYPE)
+        action_list = Action.objects.filter(actor_content_type=USERPROFILE_TYPE, actor_object_id=uid, action_object_content_type=WALL_TYPE).order_by('-timestamp')
         ret = []
         for a in action_list:
             wall_o = a.action_object
@@ -64,7 +63,6 @@ class get_wall_post_by_uid(BaseHandler):
             wall_dict = {'id':wall_o.id,'poster':wall_o.poster,'content':wall_o.content,
                          'created':wall_o.created, 'comment_count':num, 'time_ago':unix_seconds}
             ret.append(wall_dict)
-        ret.reverse() #Let the most Recently on top
         return ret
 
 """Need Define Input"""
@@ -156,7 +154,7 @@ class get_wall_comment_by_postid(BaseHandler):
             pid = 16
         action_o = get_object_or_404(Action,action_object_content_type=WALL_TYPE,action_object_object_id=pid)
         aid = action_o.id
-        gc_list = GComment.objects.filter(content_type=ACTION_TYPE,object_pk=aid)
+        gc_list = GComment.objects.filter(content_type=ACTION_TYPE,object_pk=aid).order_by('-submit_date')
         ret = []
         for gc_o in gc_list:
             unix_seconds = time.mktime(datetime.now().timetuple()) - time.mktime(gc_o.submit_date.timetuple())
@@ -170,7 +168,7 @@ class get_wall_comment_by_postid(BaseHandler):
             pid = 16
         action_o = get_object_or_404(Action,action_object_content_type=WALL_TYPE,action_object_object_id=pid)
         aid = action_o.id
-        gc_list = GComment.objects.filter(content_type=ACTION_TYPE,object_pk=aid)
+        gc_list = GComment.objects.filter(content_type=ACTION_TYPE,object_pk=aid).order_by('-submit_date')
         ret = []
         for gc_o in gc_list:
             unix_seconds = time.mktime(datetime.now().timetuple()) - time.mktime(gc_o.submit_date.timetuple())
