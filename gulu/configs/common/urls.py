@@ -26,31 +26,31 @@ urlpatterns=patterns( '',
     url( r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True} ),
 
     # Non-module views
-    url( r'^$', 'globals.views.home', name = "globals-home" ),
-    url( r'^signup/$', 'globals.views.signup', name = "globals-signup" ),
-    url( r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'globals_login.html'}, name = "globals-login" ),
-    url( r'^logged_in/$', 'globals.views.logged_in', name = "globals-logged-in" ),
-    url( r'^logout/$', 'django.contrib.auth.views.logout_then_login', name = "globals-logout" ),
-    url( r'^forgot-password/$', 'globals.views.forgot_password', name = "globals-forgot-password" ),
- 
-    # Module views
-    ( r'^comments/', include( 'django.contrib.comments.urls' ) ),
-    ( r'^dish/', include( 'dish.urls' ) ),
-    ( r'^deal/', include( 'deal.urls' ) ),
-    ( r'^invite/', include( 'invite.urls' ) ),
-    ( r'^like/', include('like.urls')),
-    ( r'^mission/', include( 'mission.urls' ) ),
-    ( r'^photos/', include( 'photos.urls' ) ),
-    ( r'^restaurant/', include( 'restaurant.urls' ) ),
-    #( r'^globals/', include( 'globals.urls' ) ),
-    ( r'^review/', include( 'review.urls' ) ),
-    ( r'^users/', include( 'user_profiles.urls' ) ),
-    ( r'^wall/', include( 'wall.urls' ) ),
-    ( r'^recommend/', include( 'recommend.urls' ) ),
+    # url( r'^$', 'globals.views.home', name = "globals-home" ),
+    # url( r'^signup/$', 'globals.views.signup', name = "globals-signup" ),
+    # url( r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'globals_login.html'}, name = "globals-login" ),
+    # url( r'^logged_in/$', 'globals.views.logged_in', name = "globals-logged-in" ),
+    # url( r'^logout/$', 'django.contrib.auth.views.logout_then_login', name = "globals-logout" ),
+    # url( r'^forgot-password/$', 'globals.views.forgot_password', name = "globals-forgot-password" ),
+    #  
+    # # Module views
+    # ( r'^comments/', include( 'django.contrib.comments.urls' ) ),
+    # ( r'^dish/', include( 'dish.urls' ) ),
+    # ( r'^deal/', include( 'deal.urls' ) ),
+    # ( r'^invite/', include( 'invite.urls' ) ),
+    # ( r'^like/', include('like.urls')),
+    # ( r'^mission/', include( 'mission.urls' ) ),
+    # ( r'^photos/', include( 'photos.urls' ) ),
+    # ( r'^restaurant/', include( 'restaurant.urls' ) ),
+    # #( r'^globals/', include( 'globals.urls' ) ),
+    # ( r'^review/', include( 'review.urls' ) ),
+    # ( r'^users/', include( 'user_profiles.urls' ) ),
+    # ( r'^wall/', include( 'wall.urls' ) ),
+    # ( r'^recommend/', include( 'recommend.urls' ) ),
     (r'^search/', include('search.urls')),
     (r'^api/', include('api.urls')),
     # Template test view
-    url( r'^test/$', 'django.views.generic.simple.direct_to_template', {'template': 'test.html'} ),
+    # url( r'^test/$', 'django.views.generic.simple.direct_to_template', {'template': 'test.html'} ),
     
     # Catchall for profile/restaurant views
  )
