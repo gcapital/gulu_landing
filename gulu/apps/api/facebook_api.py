@@ -28,7 +28,7 @@ class MessageForm(forms.Form):
     photo_url = forms.CharField(widget=forms.HiddenInput(), required=False)
 
 
-PTEST=False
+PTEST=True
 
 REDIRECT_URI_ACCESS = 'http://api.gulu.com/api/oauth_facebook_access'
 FACEBOOK_SCOPE = 'publish_stream,read_stream,user_status,user_videos,user_events,user_photos,email,user_groups,offline_access'
@@ -49,7 +49,7 @@ def oauth_facebook_request(request):
                    'uid':uid,
                    }, context_instance = RequestContext(request))
             
-    facebook_url = "https://www.facebook.com/dialog/oauth?"    
+    facebook_url = "https://www.facebook.com/dialog/oauth?display=touch&"
     data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS+'?uid=%s'%uid, 
             'scope':FACEBOOK_SCOPE}
     parameter = urlencode(data)
