@@ -13,6 +13,7 @@ from django.http import HttpResponseRedirect, Http404
 from django.contrib.auth.decorators import login_required
 from django import forms
 from django.db.models import FileField
+from django.views.decorators.csrf import csrf_exempt
 """"PYTHON LIB"""
 from urllib import urlencode
 import httplib2, cgi, urllib2, json
@@ -33,6 +34,7 @@ REDIRECT_URI_ACCESS = 'http://api.gulu.com/api/oauth_facebook_access'
 FACEBOOK_SCOPE = 'publish_stream,read_stream,user_status,user_videos,user_events,user_photos,email,user_groups,offline_access'
 
 #ask facebook auth
+@csrf_exempt
 def oauth_facebook_request(request):
     
     site_o = get_object_or_404(Site, name = 'facebook')
