@@ -39,7 +39,7 @@ def oauth_facebook_request(request):
     
     site_o = get_object_or_404(Site, name = 'facebook')
     uid = request.POST.get('uid')
-    if PTEST:
+    if request.method == 'GET':
         uid = request.GET.get('uid')
     user_o = get_object_or_404(UserProfile, id=uid)
     sync_list = Sync.objects.filter(site=site_o, user = user_o)
@@ -50,6 +50,8 @@ def oauth_facebook_request(request):
                    }, context_instance = RequestContext(request))
             
     facebook_url = "https://www.facebook.com/dialog/oauth?display=touch&"
+    if request.method == 'GET':
+        facebook_url = "https://www.facebook.com/dialog/oauth?"
     data = {'client_id':site_o.key,'redirect_uri':REDIRECT_URI_ACCESS+'?uid=%s'%uid, 
             'scope':FACEBOOK_SCOPE}
     parameter = urlencode(data)
