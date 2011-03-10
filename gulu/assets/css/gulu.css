@@ -168,7 +168,8 @@ a img {
 .fb_like_btn {
   height: 18px;
   position: relative;
-  top: 32px;
+  left:-12px;
+  top:14px;
 }
 
 .bulletin {
