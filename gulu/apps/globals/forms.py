@@ -19,6 +19,6 @@ class CreateNewsletterForm(forms.ModelForm):
 		email 		= models.EmailField()
 
 		widgets = {
-			'username': forms.TextInput(attrs={'class': 'username'}),
-			'email': forms.TextInput(attrs={'class': 'email'}),
+			'username': forms.TextInput(attrs={'class': 'username','value':'User name you want on gulu'}),
+			'email': forms.TextInput(attrs={'class': 'email', 'value':'Email'}),
 		}
