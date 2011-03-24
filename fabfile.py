@@ -21,7 +21,8 @@ env.apache_config_path = '/etc/apache2/sites-enabled/gulu_landing'
 env.nginx_config_path = '/etc/nginx/sites-enabled/gulu_landing'
 #env.solr_config_path = '/etc/solr/conf/schema.xml'
 env.python = 'python2.6'
-env.repository_url = "git@github.com:gcapital/gulu_landing.git"
+env.repository_url = "git@github-landing:gcapital/gulu_landing.git"
+env.ssh_key = "~/.ssh/id_rsa2"
 
 """
 Environments
@@ -305,7 +306,7 @@ def reboot():
     
     sudo('/etc/init.d/apache2 restart', pty=False)
     sudo('/etc/init.d/nginx restart')
-    sudo('/etc/init.d/tomcat6 restart')
+    #sudo('/etc/init.d/tomcat6 restart')
 
 def maintenance_down():
     """
