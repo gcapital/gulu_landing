@@ -6,7 +6,7 @@ TEMPLATE_DEBUG = DEBUG
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = 'http://gulu.com/assets/'
+MEDIA_URL = 'http://media.gulu.com/assets/'
 
 ADMIN_MEDIA_PREFIX = 'http://gulu.com/assets/admin_media/'
 
