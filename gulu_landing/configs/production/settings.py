@@ -13,6 +13,7 @@ ADMIN_MEDIA_PREFIX = 'http://gulu.com/assets/admin_media/'
 # Predefined domain
 SITE_DOMAIN = 'gulu.com'
 
+
 # Email
 EMAIL_BACKEND = 'django_ses.SESBackend'
 EMAIL_HOST = 'localhost'
