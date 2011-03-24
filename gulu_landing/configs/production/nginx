@@ -1,0 +1,20 @@
+upstream gulu_landing {
+    server 127.0.0.1:8080;
+}
+
+server {
+    listen   80;
+    server_name gulu.com www.gulu.com;
+
+    access_log /home/gulu/logs/nginx.access.log;
+    error_log /home/gulu/logs/nginx.error.log;
+
+    location / {
+        proxy_pass  http://gulu_landing;
+        include     /etc/nginx/proxy.conf;
+    }
+
+    location  /assets/ {
+        root /home/gulu/sites/gulu_landing/repository/gulu_landing/;
+    }
+}

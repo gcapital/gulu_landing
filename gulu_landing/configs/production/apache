@@ -1,0 +1,25 @@
+<VirtualHost *:8080>
+    ServerName gulu.com
+    ServerAlias www.gulu.com
+
+    WSGIScriptAlias / /home/gulu/sites/gulu_landing/repository/gulu_landing/configs/production/production.wsgi
+    
+    #Redirect permanent /favicon.ico http://media-beta.gulu.com/static/favicon.ico
+    
+    #Alias /robots.txt /home/gulu/sites/gulu/repository/gulu/assets/robots.txt
+ 
+    ErrorLog /home/gulu/logs/apache.error.log
+    LogLevel warn
+
+    CustomLog /home/gulu/logs/apache.access.log combined
+    
+    ServerSignature Off
+    
+    #RewriteEngine on
+    # canonical hostname
+    #RewriteCond %{HTTP_HOST} ^www [NC] 
+    #RewriteRule ^/(.*)  http://gulu.ec2-122-248-196-115.ap-southeast-1.compute.amazonaws.com/$1 [L,R]
+    
+    #RewriteCond %{REQUEST_URI} /maintenance.html$ 
+    #RewriteRule $ / [R=302,L]
+</VirtualHost>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>{% block title %}Gulu{% endblock %}</title>
+	<link rel="stylesheet" href="{{ MEDIA_URL }}css/gulu_landing.css" type="text/css" />
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    <script type="text/javascript" src="{{MEDIA_URL}}js/gulu.js"></script>
+    <script type="text/javascript" src="{{MEDIA_URL}}js/fb.js"></script>
+	<script type="text/javascript">
+	   $(document).ready(function($) {
+	       var reg_gulu_fb = new Facebook();
+	       $('#fb_connect').click(function(){
+	           reg_gulu_fb.doLogin("{% url facebook-connect %}");
+	       });
+	   })
+	</script>
+	{% block extrahead %}{% endblock %}
+</head>
+
+<body class="{% block bodyclass %}{% endblock %}">
+  <div class="unregistered">
+    {% block content %}{% endblock %}
+  </div>
+
+{% block base_bottom_script %}
+<div id="fb-root"></div>
+<script>
+// Facebook init
+window.fbAsyncInit = function() {
+	FB.init({
+		appId  : '{{ FACEBOOK_APP_ID }}',
+		status : true,
+		cookie : true,
+		xfbml  : true
+	});
+};
+(function() {
+	var e = document.createElement('script');
+	e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+	e.async = true;
+	document.getElementById('fb-root').appendChild(e);
+}());
+</script>
+{% endblock %}
+
+{% block bottom_script %}
+{% endblock %}
+
+</body>
+</html>
+

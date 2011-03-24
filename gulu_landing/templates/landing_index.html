@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="landing">
+  <!-- Header Div starts from here -->
+  <div class="header">
+    <div class="logo"> <a href="/"><img src="{{ MEDIA_URL }}images/img_logo_text_en.png" alt="" /></a> </div>
+    <div class="cf"></div>
+    <img src="{{ MEDIA_URL }}images/bg_pencil.png" alt="" class="pencil"/>
+    <div class="cf"></div>
+
+    <div class="S_sites">
+      <a href="#"><img src="{{ MEDIA_URL }}images/icon_twitter_s.png" alt="" /></a>
+      <a href="#"><img src="{{ MEDIA_URL }}images/icon_plurk_s.png" alt="" /></a>
+	  <div id="header_facebook" style="left: 40px; top: -2px">
+	    <iframe src="http://www.facebook.com/plugins/like.php?href=gulu.com&amp;layout=button_count&amp;show_faces=true&amp;width=80&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:80px; height:21px;" allowTransparency="true"></iframe>
+	  </div><!-- #header_facebook -->
+    </div>
+
+    <div class="cf"></div>
+  </div>
+  <!-- Header Div ends here --> 
+  <!-- Container Div starts from here -->
+  <div class="container">
+    <div class="cont_left">
+      <div class="left_chip"></div>
+      <div class="right_chip"></div>
+      <div class="cf"></div>
+      <h1>gulu</h1>
+      <h2>&nbsp;is a Social Dining Application</h2>
+      <div class="cf"></div>
+      <ul>
+        <li>Send your friends on food missions</li>
+        <li class="li_2">Share food photos and reviews</li>
+        <li class="li_3">Coordinate dining-out in real time</li>
+        <li class="li_4">Android & iPhone</li>
+      </ul>
+      <div class="app_store"> <a href="#"><img src="{{ MEDIA_URL }}images/btn_android_large.png" alt="" /></a> <a href="#"><img src="{{ MEDIA_URL }}images/btn_iphone_large.png" alt="" /></a> </div>
+      <div class="cf"></div>
+    </div>
+    <div class="cont_right" style="height: 270px; padding-top: 70px;">
+      {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="messages-li {{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+      {% endif %}
+      <h1>Sign up for a beta invite:</h1>
+      <h2>1.</h2>
+      <a href="#" id="fb_connect"><img src="{{ MEDIA_URL }}images/btn_fb_connect.png" alt="" /></a>
+      <div class="cf"></div>
+      <h2>2.</h2>
+      <form method="post" id="register" action="{% url landing-index %}">
+        {% csrf_token %}
+        <div class="CR_form">
+          <span class="CR_form_label">Email address:</span>
+          {{ form.email }}
+          <span class="CR_form_error">{{ form.email.errors }}</span>
+          <input type="submit" class="submit" value="" />
+        </div>
+      </form>
+    </div>
+    <div class="cf"></div>
+    <p class="TM">© 2011, Genie Capital, All Rights Reserved.</p>
+  </div>
+  <!-- Container Div ends here -->   
+
+</div>
+{% endblock %}

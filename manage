@@ -1,2 +1,2 @@
 #!/bin/sh
-python ./gulu/configs/${DEPLOYMENT_TARGET:="common"}/manage.py $*
+python ./gulu_landing/configs/${DEPLOYMENT_TARGET:="common"}/manage.py $*

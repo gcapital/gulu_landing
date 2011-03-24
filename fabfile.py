@@ -1,179 +1,312 @@
-# Gulu fabfile, modified from Chicago Tribune
+# Gulu-landing fabfile
 
 from fabric.api import *
+from fabric.operations import *
+from fabric.utils import *
+from fabric.contrib.files import *
+from fabric.colors import green, yellow, red
 
 """
 Base configuration
 """
 env.disable_known_hosts = True
-env.project_name = 'gulu'
-env.database_password = 'PrtPA4KV4E'
+env.project_name = 'gulu_landing'
 env.site_media_prefix = "static"
 env.path = '/home/gulu/sites/%(project_name)s' % env
 env.log_path = '/home/gulu/logs/%(project_name)s' % env
 env.env_path = '%(path)s/env' % env
+env.src_path = '%(path)s/src' % env
 env.repo_path = '%(path)s/repository' % env
-env.apache_config_path = '/home/gulu/sites/apache/%(project_name)s' % env
+env.apache_config_path = '/etc/apache2/sites-enabled/gulu_landing'
+env.nginx_config_path = '/etc/nginx/sites-enabled/gulu_landing'
+#env.solr_config_path = '/etc/solr/conf/schema.xml'
 env.python = 'python2.6'
 env.repository_url = "git@github.com:gcapital/gulu_landing.git"
-env.multi_server = False
-env.memcached_server_address = "cache.example.com"
 
 """
 Environments
 """
 def production():
     """
-    Work on production environment
+    Selects production environment.
     """
+    
+    ### This is currently holding the landing page
+    #abort("Production deployment is currently disabled.")
+    
     env.settings = 'production'
     env.hosts = ['gulu.com']
     env.user = 'gulu'
-    env.s3_bucket = 'media.gulu.com'
+    env.generic = False
 
 def staging():
+    abort("Staging deployment is currently disabled.")
     """
-    Work on staging environment
+    Selects staging environment.
     """
     env.settings = 'staging'
     env.hosts = ['beta.gulu.com'] 
     env.user = 'gulu'
-    env.s3_bucket = 'media-beta.gulu.com'
-    
+    env.generic = False
+
+def demo():
+    abort("Demo deployment is currently disabled.")
+    """
+    Selects demo environment.
+    """
+    env.settings = 'demo'
+    env.hosts = ['demo.gulu.com']
+    env.user = 'gulu'
+    env.generic = False
+
+def generic(host_name):
+    abort("Generic deployment is currently disabled.")
+    """
+    Selects generic environment (arbitrary host)
+    """
+    env.settings = 'generic'
+    env.hosts = [host_name,]
+    env.user = 'gulu'
+    env.generic = True # NOT staging / production deployment
+   
+   
 """
 Branches
 """
 def stable():
     """
-    Work on stable branch.
+    Selects stable branch.
     """
     env.branch = 'stable'
 
 def master():
     """
-    Work on development branch.
+    Selects development branch.
     """
     env.branch = 'master'
 
 def branch(branch_name):
     """
-    Work on any specified branch.
+    Selects any an arbitrary branch.
     """
     env.branch = branch_name
-    
+
+ 
 """
 Commands - setup
 """
 def setup():
     """
-    Setup a fresh virtualenv, install everything we need, and fire up the database.
+    Sets up a remote deployment environment.
     
     Does NOT perform the functions of deploy().
     """
-    require('settings', provided_by=[production, staging])
+    require('generic', 'settings', provided_by=[production, staging, generic])
     require('branch', provided_by=[stable, master, branch])
+    
+    if env.generic:
+        print green("Performing a generic setup on: %s" % env.hosts[0])
+    else:
+        print green("Performing a staging/production setup on: %s" % env.hosts[0])
     
     setup_directories()
     setup_virtualenv()
     clone_repo()
     checkout_latest()
-    destroy_database()
-    create_database()
+    fix_perms()
+    install_django_nonrel()
     install_requirements()
     load_data()
-    install_apache_conf()
+    
+    if env.generic:
+        write_conf_generic()
+    
+    install_webserver_conf()
+    #install_solr_conf()
+    #rebuild_solr_index()
+    reboot()
 
 def setup_directories():
     """
-    Create directories necessary for deployment.
+    Creates directories necessary for deployment.
     """
+    print yellow("Creating project directories...")
+    
     run('mkdir -p %(path)s' % env)
     run('mkdir -p %(env_path)s' % env)
+    run('mkdir -p %(src_path)s' % env)
     run ('mkdir -p %(log_path)s;' % env)
     sudo('chgrp -R www-data %(log_path)s; chmod -R g+w %(log_path)s;' % env)
     run('ln -s %(log_path)s %(path)s/logs' % env)
     
 def setup_virtualenv():
     """
-    Setup a fresh virtualenv.
+    Sets up a fresh virtualenv and installs pip.
     """
+    print yellow("Setting up a fresh virtual environment...")
+    
     run('virtualenv -p %(python)s --no-site-packages %(env_path)s;' % env)
-    run('source %(env_path)s/bin/activate; easy_install -U setuptools; easy_install pip;' % env)
+    with prefix('source %(env_path)s/bin/activate' % env):
+        run('easy_install -U setuptools; easy_install pip;' % env)
 
 def clone_repo():
     """
     Do initial clone of the git repository.
     """
+    print yellow("Cloning git repo...")
+    
     run('git clone -q %(repository_url)s %(repo_path)s' % env)
 
 def checkout_latest():
     """
-    Pull the latest code on the specified branch.
+    Pull the latest code on the specified branch.  Overwrites any local
+    configuration changes.
     """
-    run('cd %(repo_path)s; git checkout %(branch)s; git pull origin %(branch)s' % env)
+    print yellow("Pulling latest source...")
+    
+    with prefix('cd %(repo_path)s' % env):
+        sudo('chown -R %(user)s %(path)s' % env)
+        run('git reset --hard HEAD')
+        run('git checkout %(branch)s' % env)
+        run('git pull origin %(branch)s' % env)
+
+def fix_perms():
+    """
+    Gives www-data user permissions to photos directory
+    """
+    sudo('chown -R www-data %(repo_path)s/%(project_name)s/assets' % env)
 
 def install_requirements():
     """
     Install the required packages using pip.
     """
-    run('source %(env_path)s/bin/activate; pip install -E %(env_path)s -r %(repo_path)s/requirements.txt' % env)
+    print yellow("Installing pip requirements...")
+    
+    with prefix('source %(env_path)s/bin/activate' % env):
+        run('pip install -E %(env_path)s -r %(repo_path)s/requirements.txt' % env)
 
-def install_apache_conf():
+def install_django_nonrel():
     """
-    Install the apache site config file.
+    Installs django-nonrel
     """
+    print yellow("Installing django-nonrel...")
+    
+    with prefix('cd %(src_path)s' % env):
+        run('hg clone https://bitbucket.org/wkornewald/django-nonrel' % env)
+    with prefix('source %(env_path)s/bin/activate' % env):
+        run('python %(src_path)s/django-nonrel/setup.py --quiet install' % env)
+
+def install_webserver_conf():
+    """
+    Install the apache and nginx site config file.
+    """
+    print yellow("Installing apache and nginx config...")
+    
+    # TODO: update images so chown isn't necessary
+    sudo('chown -R www-data /var/log/apache2')
     sudo('cp %(repo_path)s/%(project_name)s/configs/%(settings)s/apache %(apache_config_path)s' % env)
+    sudo('cp %(repo_path)s/%(project_name)s/configs/%(settings)s/nginx %(nginx_config_path)s' % env)
+
+def install_solr_conf():
+    """
+    Install the solr conf file
+    """
+    with prefix('source %(env_path)s/bin/activate' % env):
+        with prefix('cd %(repo_path)s/%(project_name)s/configs/%(settings)s' % env):
+            sudo('python manage.py build_solr_schema > %(solr_config_path)s' % env)
+    
+def rebuild_solr_index():
+    """
+    Rebuilds the solr index
+    """
+    rebuild = prompt('Rebuild solr index? [Y/n]', default='Y', validate=r'y|Y|n|N')
+    
+    if rebuild in "yY":
+        print yellow("Rebuilding solr index (this will take a while)...")
+        with prefix('source %(env_path)s/bin/activate' % env):
+            with prefix('cd %(repo_path)s/%(project_name)s/configs/%(settings)s' % env):
+                sudo('python manage.py rebuild_index --remove --verbosity 1')
+
+def update_solr_index():
+    """
+    Updates the solr index
+    """
+    update = prompt('Update solr index? [Y/n]', default='Y', validate=r'y|Y|n|N')
+    
+    if update in "yY":
+        print yellow("Updating solr index (this will take a while)...")
+        with prefix('source %(env_path)s/bin/activate' % env):
+            with prefix('cd %(repo_path)s/%(project_name)s/configs/%(settings)s' % env):
+                sudo('python manage.py update_index --remove --verbosity 1')
+
+def write_conf_generic():
+    """
+    Writes the django, apache, and nginx settings files for a generic deployment.
+    """
+    print yellow("Writing conf files...")
+    
+    require('generic', provided_by=[generic])
+    
+    cfg_path = "%(repo_path)s/%(project_name)s/configs/generic/" % env
+    sed("%ssettings.py" % cfg_path, r'^.*MEDIA_URL.*$', "MEDIA_URL = \"http://%s/assets/\"" % env.hosts[0])
+    sed("%sapache" % cfg_path, r'^.*ServerName.*$', "ServerName %s" % env.hosts[0])
+    sed("%snginx" % cfg_path, r'^.*server_name.*$', "server_name %s;" % env.hosts[0])
 
 """
 Commands - deployment
 """
 def deploy():
     """
-    Deploy the latest version of the site to the server and restart Apache2.
-    
-    Does not perform the functions of load_new_data().
+    Deploy the latest version of the site to the server and restarts web servers.
     """
-    require('settings', provided_by=[production, staging])
+    require('generic', 'settings', provided_by=[production, staging, generic])
     require('branch', provided_by=[stable, master, branch])
     
-    with settings(warn_only=True):
-        maintenance_up()
+    if env.generic:
+        print green("Performing a generic deployment to: %s" % env.hosts[0])
+    else:
+        print green("Performing a staging/production deployment to: %s" % env.hosts[0])
+    
+    #with settings(warn_only=True):
+        #maintenance_up()
         
     checkout_latest()
-    gzip_assets()
-    deploy_to_s3()
-    maintenance_down()
+    fix_perms()
     
+    if env.generic:
+        write_conf_generic()
+    
+    install_webserver_conf()
+    #install_solr_conf()
+    #update_solr_index()
+    reboot()
+    
+def deploy_onebox():
+    """
+    Deploys the latest version to a onebox
+    """
+    require('settings', provided_by=[onebox])
+    require('branch', provided_by=[stable, master, branch])
+
+    checkout_latest()
+
 def maintenance_up():
     """
     Install the Apache maintenance configuration.
     """
     sudo('cp %(repo_path)s/%(project_name)s/configs/%(settings)s/apache_maintenance %(apache_config_path)s' % env)
     reboot()
-
-def gzip_assets():
-    """
-    GZips every file in the assets directory and places the new file
-    in the gzip directory with the same filename.
-    """
-    run('cd %(repo_path)s; python gzip_assets.py' % env)
-
-def deploy_to_s3():
-    """
-    Deploy the latest project site media to S3.
-    """
-    env.gzip_path = '%(path)s/repository/%(project_name)s/gzip/assets/' % env
-    run(('s3cmd -P --add-header=Content-encoding:gzip --guess-mime-type --rexclude-from=%(path)s/repository/s3exclude sync %(gzip_path)s s3://%(s3_bucket)s/%(site_media_prefix)s/') % env)
        
 def reboot(): 
     """
-    Restart the Apache2 server.
+    Restarts the apache2 and nginx servers.
     """
-    if env.multi_server:
-        run('/mnt/apps/bin/restart-all-apache.sh')
-    else:
-        sudo('service apache2 restart')
+    print yellow("Restarting web servers...")
     
+    sudo('/etc/init.d/apache2 restart', pty=False)
+    sudo('/etc/init.d/nginx restart')
+    sudo('/etc/init.d/tomcat6 restart')
+
 def maintenance_down():
     """
     Reinstall the normal site configuration.
@@ -218,19 +351,15 @@ def load_new_data():
     require('settings', provided_by=[production, staging])
     
     maintenance_up()
-    pgpool_down()
     destroy_database()
     create_database()
     load_data()
-    pgpool_up()
     maintenance_down()
     
 def create_database(func=run):
     """
     Creates the user and database for this project.
     """
-    func('echo "CREATE USER %(project_name)s WITH PASSWORD \'%(database_password)s\';" | psql postgres' % env)
-    func('createdb -O %(project_name)s %(project_name)s' % env)
     
 def destroy_database(func=run):
     """
@@ -238,43 +367,27 @@ def destroy_database(func=run):
     
     Will not cause the fab to fail if they do not exist.
     """
+    print yellow("Destroying database...")
     with settings(warn_only=True):
-        func('dropdb %(project_name)s' % env)
-        func('dropuser %(project_name)s' % env)
+        sudo('mongo %(project_name)s  --eval "db.dropDatabase();"' % env)
         
 def load_data():
     """
-    Loads data from the repository into PostgreSQL.
+    Loads data from the repository into MongoDB.
     """
-    run('source %(env_path)s/bin/activate; cd %(path)s/repository; ./manage syncdb --noinput' % env)
-    #south migration
-    #run('psql -q %(project_name)s < %(path)s/repository/data/psql/dump.sql' % env)
-    #run('psql -q %(project_name)s < %(path)s/repository/data/psql/finish_init.sql' % env)
-    
-def pgpool_down():
-    """
-    Stop pgpool so that it won't prevent the database from being rebuilt.
-    """
-    sudo('/etc/init.d/pgpool stop')
-    
-def pgpool_up():
-    """
-    Start pgpool.
-    """
-    sudo('/etc/init.d/pgpool start')
+    with prefix('source %(env_path)s/bin/activate' % env):
+        with prefix('cd %(repo_path)s/%(project_name)s/configs/%(settings)s' % env):
+            run('python manage.py syncdb --noinput')
+    run('mongorestore -d %(project_name)s %(repo_path)s/data/gulu' % env)
 
 """
 Commands - miscellaneous
-"""
-    
+"""  
 def clear_cache():
     """
     Restart memcache, wiping the current cache.
     """
-    if env.multi_server:
-        run('restart-memcache.sh %(memcached_server_address)' % env)
-    else:
-        sudo('service memcached restart')
+    sudo('service memcached restart')
     
 def echo_host():
     """
@@ -289,27 +402,23 @@ def shiva_the_destroyer():
     """
     Remove all directories, databases, etc. associated with the application.
     """
+    go = prompt(red("WARNING: This command will destroy everything related to this deployment.  Type 'yes' to continue:"))
+    if go not in ["yes", "Yes", "YES"]:
+        print yellow("Exiting...")
+        return
+
+    print yellow("Destroying environment...")
     with settings(warn_only=True):
-        run('rm -Rf %(path)s' % env)
-        run('rm -Rf %(log_path)s' % env)
-        pgpool_down()
-        run('dropdb %(project_name)s' % env)
-        run('dropuser %(project_name)s' % env)
-        pgpool_up()
+        sudo('rm -Rf %(path)s' % env)
+        sudo('rm -Rf %(log_path)s' % env)
         sudo('rm %(apache_config_path)s' % env)
+        sudo('rm %(nginx_config_path)s' % env)
+        destroy_database()
         reboot()
-        run('s3cmd del --recursive s3://%(s3_bucket)s/%(site_media_prefix)s' % env)
 
 """
 Utility functions (not to be called directly)
-"""
-def _execute_psql(query):
-    """
-    Executes a PostgreSQL command using the command line interface.
-    """
-    env.query = query
-    run(('cd %(path)s/repository; psql -q %(project_name)s -c "%(query)s"') % env)
-    
+""" 
 def bootstrap():
     """
     Local development bootstrap: you should only run this once.
