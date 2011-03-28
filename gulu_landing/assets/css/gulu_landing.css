@@ -537,7 +537,7 @@ input[type="text"].sp {
 .landing .app_store img{margin:0 4px 0 0;}
 
 .landing .cont_right{width:284px; height:291px; float:right; background:url(../images/bg_landing_right_s.png) no-repeat left top; position:relative; padding: 40px 0 0 24px;}
-.landing .cont_right h1{font-weight: bold; font-size: 24px; color:#696969; padding:2px 0 0 3px;}
+.landing .cont_right h1{font-weight: bold; font-size: 22px; color:#696969; padding:2px 0 0 3px;}
 .landing .cont_right h2{font-weight: bold; font-size: 14px; float:left; color:#696969; padding:10px 5px 0 25px;}
 .landing .cont_right .or{font-weight: bold; font-size: 14px; float:left; color:#696969; line-height:40px;margin-left:10px;}
 .landing .cont_right img{float:left; margin:10px 0 0 2px;}
