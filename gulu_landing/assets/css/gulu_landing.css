@@ -2417,7 +2417,7 @@ img.small_frame {
 }
 
 #footer {
-    width: 1100px;
+    width: 1024px;
     height: 220px;
     background: url(../images/bg_footer_paper.png) no-repeat center top;
     margin: 0 auto 0px auto;
@@ -6503,7 +6503,7 @@ mygulu_d_recommend h3 {
 
 /* ======================================== Unregistered restaurant / review styles ============================================ */
 
-.unregistered {width:1100px; margin:0px auto; }
+.unregistered {width:1024px; margin:0px auto; }
 
 .unregistered .restaurant { background:url(../images/bg_content_paper_top.png) no-repeat center 80px; height:900px; }
 
