@@ -4,9 +4,9 @@
 <div class="landing">
   <!-- Header Div starts from here -->
   <div class="header">
-    <div class="logo"> <a href="/"><img src="{{ MEDIA_URL }}images/img_logo_text_en.png" alt="" /></a> </div>
-    <div class="cf"></div>
-
+    <div class="logo"> <a href="/"><img src="{{ MEDIA_URL }}images/img_logo_text_en.png" alt=""></a> </div>
+    <img class="pencil" src="{{ MEDIA_URL }}images/bg_pencil.png" alt="">
+    <div class="cf"></div>    
     <div class="S_sites">
       <a href="http://twitter.com/GenieCapital" target="_blank"><img src="{{ MEDIA_URL }}images/icon_twitter_s.png" alt="" /></a>
       <a href="http://www.plurk.com/GenieCapital" target="_blank"><img src="{{ MEDIA_URL }}images/icon_plurk_s.png" alt="" /></a>
@@ -34,10 +34,10 @@
         <li class="li_3">Coordinate dining-out in real time</li>
         <li class="li_4">Android & iPhone</li>
       </ul>
-      <div class="app_store"> <img src="{{ MEDIA_URL }}images/btn_android_large.png" alt="" /><img src="{{ MEDIA_URL }}images/btn_iphone_large.png" alt="" /></div>
+      <div class="app_store"> <img src="{{ MEDIA_URL }}images/btn_android_large_s.png" alt="" /><img src="{{ MEDIA_URL }}images/btn_iphone_large_s.png" alt="" /></div>
       <div class="cf"></div>
     </div>
-    <div class="cont_right" style="height: 270px; padding-top: 70px;">
+    <div class="cont_right">
       {% if messages %}
         <ul class="messages">
             {% for message in messages %}
@@ -46,17 +46,19 @@
         </ul>
       {% endif %}
       <h1>Sign up for a beta invite:</h1>
-      <h2>1.</h2>
       <a href="#" id="fb_connect"><img src="{{ MEDIA_URL }}images/btn_fb_connect.png" alt="" /></a>
+      <div class="fleft or">OR</div>
       <div class="cf"></div>
-      <h2>2.</h2>
-      <form method="post" id="register" action="{% url landing-index %}">
+      
+      <form method="post" id="register" class="cf" action="{% url landing-index %}">
         {% csrf_token %}
         <div class="CR_form">
           <span class="CR_form_label">Email address:</span>
           {{ form.email }}
-          <span class="CR_form_error">{{ form.email.errors }}</span>
-          <input type="submit" class="submit" value="" />
+          <div class="cf">
+            <span class="CR_form_error fleft">{{ form.email.errors }}</span>
+            <input type="submit" class="submit" value="" />
+          </div>
         </div>
       </form>
     </div>

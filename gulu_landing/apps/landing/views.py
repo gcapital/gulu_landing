@@ -12,6 +12,7 @@ def index(request):
             form.save()
             messages.info(request, "Thanks for signing up.  We'll let you know when the beta " \
                 "is available")
+            return redirect('landing-index')
     else:
         form = RegistrationForm()
     
