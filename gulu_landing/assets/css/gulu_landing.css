@@ -554,3 +554,10 @@ input[type="text"].sp {
 
 .landing p.TM{font:normal 11px Arial, Helvetica, sans-serif; color:#898989; text-align:center; padding:0px;}
 
+.landing .CR_form .cf {
+	clear:both;
+}
+
+form#register {
+	clear:both;
+}
